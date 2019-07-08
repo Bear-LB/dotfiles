@@ -36,4 +36,4 @@ git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
 #clones dotfiles to home
 dir=$(mktemp -d)
 git clone -b master --depth 1 https://github.com/Batresh/heavydot "$dir/gitrepo"
-cp -rfT "$dir/gitrepo" /root
+cp -rfT "$dir/gitrepo" /home/bear
