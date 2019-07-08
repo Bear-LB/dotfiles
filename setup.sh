@@ -31,6 +31,7 @@ ln -s /usr/local/share/terminfo/x/xterm-termite /lib/terminfo/x/xterm-termite
 update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/termite 60
 #change shell to zsh
 chsh -s /usr/bin/zsh root
+chsh -s /usr/bin/zsh bear
 #install theme
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
 #clones dotfiles to home
