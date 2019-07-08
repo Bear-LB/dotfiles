@@ -24,8 +24,7 @@ make && make install
 cd ~/tmp
 git clone --recursive https://github.com/thestinger/termite.git
 cd termite
-make
-make install
+make && make install
 ldconfig
 mkdir -p /lib/terminfo/x
 ln -s /usr/local/share/terminfo/x/xterm-termite /lib/terminfo/x/xterm-termite
