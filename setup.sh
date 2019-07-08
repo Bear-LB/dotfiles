@@ -34,6 +34,14 @@ chsh -s /usr/bin/zsh root
 chsh -s /usr/bin/zsh bear
 #install theme
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
+
+#compton with blur
+apt build-dep compton
+cd ~/tmp
+git clone https://github.com/tryone144/compton
+make
+make docs
+make install
 #clones dotfiles to home
 dir=$(mktemp -d)
 git clone -b master --depth 1 https://github.com/Batresh/heavydot "$dir/gitrepo"
