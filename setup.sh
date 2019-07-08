@@ -46,3 +46,5 @@ make install
 dir=$(mktemp -d)
 git clone -b master --depth 1 https://github.com/Batresh/heavydot "$dir/gitrepo"
 cp -rfT "$dir/gitrepo" /home/bear
+#add .zshrc config file for root user too.
+cp /home/bear/.zshrc ~/.zshrc
