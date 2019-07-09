@@ -152,8 +152,6 @@ ENABLE_CORRECTION="true"
 # Command execution time stamp shown in the history command output.
 HIST_STAMPS="mm/dd/yyyy"
 
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -179,5 +177,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+source /opt/powerlevel10k/powerlevel10k.zsh-theme
 
