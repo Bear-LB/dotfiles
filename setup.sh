@@ -43,6 +43,13 @@ cd compton
 make
 make docs
 make install
+
+#flashfocus
+apt install -y python-cffi
+cd ~/tmp
+git clone https://github.com/fennerm/flashfocus
+cd flashfocus
+pip install flashfocus
 #clones dotfiles to home
 dir=$(mktemp -d)
 git clone -b master --depth 1 https://github.com/Batresh/heavydot "$dir/gitrepo"
