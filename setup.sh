@@ -39,6 +39,7 @@ git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
 apt -y build-dep compton
 cd ~/tmp
 git clone https://github.com/tryone144/compton
+cd compton
 make
 make docs
 make install
