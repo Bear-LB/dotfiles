@@ -11,3 +11,4 @@ todo:
 
 New composite manager with blur. (current one too cpu hungry)
 
+Compare fonts installed in TTF folder and remove the useless fonts which were extracted
