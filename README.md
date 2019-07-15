@@ -9,6 +9,6 @@ if you happend to read this, the setup file assumes kde is already installed and
 
 todo:
 
-New composite manager with blur. (current one too cpu hungry)
+Optimize Compton & Flashfocus in non-virtualized enviroment
 
 Compare fonts installed in TTF folder and remove the useless fonts which were extracted
