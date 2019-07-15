@@ -34,7 +34,9 @@ chsh -s /usr/bin/zsh root
 chsh -s /usr/bin/zsh bear
 #install theme
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
-
+#install font
+wget -P ~/tmp https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/SourceCodePro.zip
+unzip ~/tmp/SourceCodePro.zip -d /usr/share/fonts/TTF
 #compton with blur
 apt -y build-dep compton
 cd ~/tmp
