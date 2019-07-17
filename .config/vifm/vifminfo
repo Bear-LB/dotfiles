@@ -1,0 +1,537 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/home/bear/
+	..
+1562762232
+'b
+	/home/bear/bin/
+	..
+1562762232
+'h
+	/home/bear/
+	..
+1563275794
+'m
+	/home/bear/.config/vifm
+	vifminfo
+1563275779
+'n
+	/home/bear/.config/vifm
+	vifminfo
+1563275776
+'v
+	/home/bear/.config/vifm
+	vifminfo
+1563275740
+
+# Bookmarks:
+
+# TUI:
+al
+q1
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/etc/fonts
+	fonts.conf
+3
+d/etc
+	fonts
+26
+d/
+	home
+5
+d/home
+	bear
+1
+d/home/bear
+	.fonts.conf
+28
+d/home
+	..
+0
+d/
+	root
+15
+d/root
+	.config
+2
+d/root/.config
+	lxpanel
+11
+d/root
+	.kde
+3
+d/
+	etc
+4
+d/etc
+	fonts
+26
+d/
+	etc
+4
+d/etc
+	fonts
+26
+d/etc/fonts
+	fonts.conf
+3
+d/etc
+	fonts
+26
+d/
+	usr
+22
+d/usr
+	share
+12
+d/
+	etc
+4
+d/etc
+	fonts
+26
+d/etc/fonts
+	conf.d
+2
+d/etc/fonts/conf.d
+	90-synthetic.conf
+37
+d/etc/fonts
+	conf.avail
+1
+d/etc/fonts/conf.avail
+	..
+0
+d/etc/fonts
+	fonts.conf
+3
+d/etc
+	fonts
+26
+d/etc/fonts
+	conf.avail
+1
+d/etc/fonts/conf.avail
+	30-0-google-crosextra-carlito-fontconfig.conf
+7
+d/etc/fonts
+	conf.avail
+1
+d/etc
+	fonts
+26
+d/
+	etc
+4
+d/etc
+	fonts
+13
+d/
+	root
+15
+d/root
+	.vim
+6
+d/
+	home
+5
+d/home
+	bear
+1
+d/home/bear
+	Videos
+18
+d/home/bear/Videos
+	..
+0
+d/home/bear
+	Documents
+12
+d/home/bear/Documents
+	compton.conf
+2
+d/home/bear
+	.dbeaver4
+3
+d/home/bear/.dbeaver4
+	..
+0
+d/home/bear
+	.config
+2
+d/home/bear/.config
+	wall.jpg
+36
+d/home/bear
+	.config
+2
+d/home/bear/.config
+	wall.jpg
+32
+d/home/bear
+	.directory
+27
+d/home
+	bear
+1
+d/home/bear
+	.vscode-oss
+12
+d/home
+	bear
+1
+d/
+	home
+6
+d/home
+	bear
+1
+d/home/bear
+	.config
+2
+d/home/bear/.config
+	vifm
+9
+d/home/bear/.config/vifm
+	vifminfo
+4
+d/home/bear/.config
+	vifm
+9
+d/home/bear/.config/vifm
+	vifmrc
+6
+d/home/bear/.config
+	vifm
+9
+d/home/bear/.config/vifm
+	scripts
+2
+d/home/bear/.config/vifm/scripts
+	..
+0
+d/home/bear/.config/vifm
+	scripts
+2
+d/home/bear/.config
+	vifm
+12
+d/home/bear/.config/vifm
+	lal
+3
+d/home/bear/.config
+	user-dirs.locale
+31
+d/home/bear
+	Music
+16
+d/home/bear/Music
+	..
+0
+d/home/bear
+	Documents
+14
+d/home/bear/Documents
+	wall.jpg
+4
+d/home/bear
+	Documents
+14
+d/home/bear/Documents
+	asas
+1
+d/home/bear
+	.config
+2
+d/home/bear/.config
+	vifm
+8
+d/home/bear/.config/vifm
+	scripts
+2
+d/home/bear/.config/vifm/scripts
+	vifmimg
+4
+d/home/bear/.config/vifm
+	lal
+3
+d/home/bear/.config
+	wall.jpg
+34
+d/home/bear
+	.config
+2
+d/home/bear/.config
+	user-dirs.locale
+33
+d/home/bear
+	.config
+2
+d/home/bear/.config
+	plasma-workspace
+4
+d/home/bear/.config/plasma-workspace
+	env
+1
+d/home/bear/.config/plasma-workspace/env
+	..
+0
+d/home/bear/.config/plasma-workspace
+	env
+1
+d/home/bear/.config
+	plasma-workspace
+4
+d/home/bear/.config/plasma-workspace
+	env
+1
+d/home/bear/.config/plasma-workspace/env
+	kde-i3.sh
+1
+d/home/bear/.config/plasma-workspace
+	env
+1
+d/home/bear/.config
+	pcmanfm
+4
+d/home/bear
+	.config
+2
+d/home/bear/.config
+	wall.jpg
+36
+d/home/bear
+	.config
+2
+d/home/bear/.config
+	wall.jpg
+34
+d/home/bear
+	.config
+2
+d/home/bear/.config
+	gtkrc-2.0
+6
+d/home/bear
+	Documents
+15
+d/home/bear/Documents
+	asas
+1
+d/home/bear
+	Downloads
+16
+d/home/bear/Downloads
+	cowsay
+12
+d/home/bear
+	Downloads
+16
+d/home/bear/Downloads
+	Sauce Code Pro Nerd Font Complete.ttf
+6
+d
+
+# Right window history (oldest to newest):
+D/home/bear/.config/vifm
+	colors
+1
+D/home/bear/.config/vifm/colors
+	..
+0
+D/home/bear/.config/vifm
+	scripts
+2
+D/home/bear/.config/vifm/scripts
+	vifmimg
+4
+D/home/bear
+	..
+0
+D/home
+	bear
+1
+D/home/bear
+	.config
+2
+D/home/bear/.config
+	KDE
+1
+D/home/bear
+	.local
+6
+D/home/bear/.local
+	bin
+1
+D/home/bear/.local/bin
+	i3cmds
+1
+D/home/bear/.local/bin/i3cmds
+	..
+0
+D/home/bear/.local/bin
+	i3cmds
+1
+D/home/bear/.local
+	bin
+1
+D/home/bear/.local/bin
+	i3cmds
+1
+D/home/bear/.local/bin/i3cmds
+	i3resize
+1
+D/home/bear/.local/bin
+	i3cmds
+1
+D/home/bear/.local
+	bin
+1
+D/home/bear
+	.local
+6
+D/home
+	bear
+1
+D/home/bear
+	.config
+2
+D/home/bear/.config
+	VSCodium
+2
+D/home/bear
+	.config
+2
+D/home/bear/.config
+	compton
+8
+D/home/bear/.config/compton
+	compton.conf
+1
+D/home/bear/.config
+	compton
+8
+D/home/bear/.config/compton
+	compton.conf
+1
+D/home/bear/.config
+	compton
+8
+D/home/bear/.config/compton
+	compton.conf
+1
+D/home/bear/.config
+	compton
+8
+D/home/bear
+	.config
+2
+D/home
+	bear
+1
+D/
+	home
+6
+D/home
+	bear
+1
+D/home/bear
+	.config
+2
+D/home
+	bear
+1
+D/home/bear
+	.config
+2
+D/home
+	bear
+1
+D/home/bear
+	.config
+2
+D/home
+	..
+0
+D/
+	root
+16
+D/root
+	.bash_history
+15
+D/
+	root
+16
+D/root
+	.config
+3
+D/root/.config
+	openbox
+13
+D/root
+	.config
+3
+D/root/.config
+	mimeapps.list
+32
+D/root
+	..
+0
+D/
+	home
+6
+D/home
+	..
+0
+D/
+	home
+6
+D/home
+	bear
+1
+D/home/bear
+	.config
+2
+D/home/bear/.config
+	wall.jpg
+36
+D
+
+# Command line history (oldest to newest):
+:cd ~
+:q!
+:rename
+:q
+
+# Search history (oldest to newest):
+/vifm
+
+# Prompt history (oldest to newest):
+plal
+
+# Local filter history (oldest to newest):
+
+# Registers:
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+
+# State:
+f
+i1
+[.0
+[F
+F
+I1
+].0
+]F
+s0
