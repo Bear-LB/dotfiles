@@ -1,0 +1,12 @@
+super + Return
+	$TERMINAL
+super + d
+	rofi -show drun
+super + r
+	$TERMINAL -e $FILE
+super + w
+	$BROWSER
+super + m
+	$TERMINAL -e ncmpcpp
+super + i
+	$TERMINAL -e htop
