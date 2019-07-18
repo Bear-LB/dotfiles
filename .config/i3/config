@@ -145,7 +145,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
+# resize window
 
 bindsym $mod+l exec --no-startup-id i3resize left
 bindsym $mod+p exec --no-startup-id i3resize up
@@ -162,8 +162,6 @@ bindsym $mod+Shift+l move left 30
 bindsym $mod+Shift+p move up 30
 bindcode $mod+Shift+47 move down 30
 bindcode $mod+Shift+48 move right 30
-# rofi
-bindsym $mod+d exec rofi -show drun
 
 #flash current window
 bindsym $mod+n exec --no-startup-id flash_window
@@ -173,15 +171,12 @@ bindsym $mod+n exec --no-startup-id flash_window
 #	Startup
 
 #********************************************************************************
-exec --no-startup-id sxhkd
 exec --no-startup-id feh --randomize --bg-scale ~/.Pictures/Wallpapers/*
 exec_always --no-startup-id compton --config ~/.config/compton/compton.conf
 exec --no-startup-id m 26/10 4
 exec_always --no-startup-id conky -c ~/.config/conky/conkyrc
 exec --no-startup-id latte-dock %u
 exec --no-startup-id redshift-gtk
-exec_always --no-startup-id flashfocus
-
 #********************************************************************************
 
 #	Appearance
