@@ -2,3 +2,4 @@
 
 sxhkd &
 unclutter &	
+flashfocus &
