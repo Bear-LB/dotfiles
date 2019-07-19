@@ -10,7 +10,7 @@ mkdir -p build && cd build/
 ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
 make && make install
 #software
-apt install -y neofetch feh vifm rofi ncmpcpp mpd mpc
+apt install -y neofetch feh vifm rofi ncmpcpp mpd
 
 #dependencies for termite
 apt install -y libgtk-3-dev gtk-doc-tools gnutls-bin valac intltool libpcre2-dev libglib3.0-cil-dev libgnutls28-dev libgirepository1.0-dev gperf
