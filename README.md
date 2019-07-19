@@ -9,3 +9,5 @@ if you happend to read this, the setup file assumes kde is already installed and
 todo:
 
 Optimize Compton & Flashfocus in non-virtualized enviroment
+
+Folder redirection ncmpcpp
