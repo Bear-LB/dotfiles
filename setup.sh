@@ -11,9 +11,12 @@ git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
 #change shell to zsh
 chsh -s /usr/bin/zsh root
 chsh -s /usr/bin/zsh bear
-
+#nerd fonts
+sudo -u bear yay -S --noconfirm nerd-fonts-source-code-pro
+#ueberzug
+sudo -u bear yay -S --noconfirm python-ueberzug-git 
 #flashfocus
-flashfocus-git
+sudo -u bear yay -S --noconfirm flashfocus-git
 #clones dotfiles to home
 dir=$(mktemp -d)
 git clone -b master --depth 1 https://github.com/Batresh/heavydot "$dir/gitrepo"
