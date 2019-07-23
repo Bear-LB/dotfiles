@@ -19,7 +19,7 @@ sudo -u bear yay -S --noconfirm python-ueberzug-git
 sudo -u bear yay -S --noconfirm flashfocus-git
 #clones dotfiles to home
 dir=$(mktemp -d)
-git clone -b master --depth 1 https://github.com/Batresh/heavydot "$dir/gitrepo"
+git clone -b master --depth 1 https://github.com/Batresh/dotfiles "$dir/gitrepo"
 cp -rfT "$dir/gitrepo" /home/bear
 cd ~
 rm -rf .git
