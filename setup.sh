@@ -15,8 +15,10 @@ chsh -s /usr/bin/zsh bear
 sudo -u bear yay -S --noconfirm nerd-fonts-source-code-pro
 #ueberzug
 sudo -u bear yay -S --noconfirm python-ueberzug-git 
-#flashfocus
+#flashfocus REQUIRES MANUAL.. FIX
 sudo -u bear yay -S --noconfirm flashfocus-git
+#spotify
+sudo -u bear yay -S --noconfirm spotify
 #clones dotfiles to home
 dir=$(mktemp -d)
 git clone -b master --depth 1 https://github.com/Batresh/dotfiles "$dir/gitrepo"
