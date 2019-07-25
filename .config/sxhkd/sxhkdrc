@@ -8,5 +8,7 @@ super + w
 	$BROWSER
 super + m
 	$TERMINAL -e ncmpcpp
-super + i
+super + h
 	$TERMINAL -e htop
+super + g
+	$TERMINAL -e gotop
