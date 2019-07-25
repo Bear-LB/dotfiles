@@ -19,6 +19,8 @@ sudo -u bear yay -S --noconfirm python-ueberzug-git
 sudo -u bear yay -S --noconfirm flashfocus-git
 #spotify
 sudo -u bear yay -S --noconfirm spotify
+#
+sudo -u bear yay -S --noconfirm gotop-git
 #clones dotfiles to home
 dir=$(mktemp -d)
 git clone -b master --depth 1 https://github.com/Batresh/dotfiles "$dir/gitrepo"
