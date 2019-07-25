@@ -19,7 +19,7 @@ sudo -u bear yay -S --noconfirm python-ueberzug-git
 sudo -u bear yay -S --noconfirm flashfocus-git
 #spotify
 sudo -u bear yay -S --noconfirm spotify
-#
+#gotop
 sudo -u bear yay -S --noconfirm gotop-git
 #clones dotfiles to home
 dir=$(mktemp -d)
