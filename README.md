@@ -1,6 +1,6 @@
 # Heavydot deployment
 Note to self.
-1. 'bear' in setup.sh gets replaced depending on username
+1. 'bear' gets replaced in setup.sh depending on username
 2. setup.sh
 3. install active window control, event calender
 
