@@ -7,3 +7,4 @@ export BROWSER="firefox"
 sxhkd &
 unclutter &
 mpd &
+pkill flashfocus & #to ensure it works after logging out / logging back in
