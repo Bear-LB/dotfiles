@@ -8,14 +8,14 @@ sudo -u bear yay -S --noconfirm compton-git
 #update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/termite 60
 #install zsh theme
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
-#change shell to zsh
+#change shell to zsh (only effective after reboot)
 chsh -s /usr/bin/zsh root
 chsh -s /usr/bin/zsh bear
 #nerd fonts
 sudo -u bear yay -S --noconfirm nerd-fonts-source-code-pro
 #ueberzug
 sudo -u bear yay -S --noconfirm python-ueberzug-git 
-#flashfocus REQUIRES MANUAL.. FIX
+#flashfocus REQUIRES REMOVAL... FIX
 sudo -u bear yay -S --noconfirm flashfocus-git
 #spotify
 sudo -u bear yay -S --noconfirm spotify
