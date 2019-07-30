@@ -1,4 +1,4 @@
-pacman --noconfirm -S yay neofetch feh vifm rofi ncmpcpp mpd termite sxhkd unclutter
+pacman --noconfirm -S yay neofetch feh vifm rofi ncmpcpp mpd termite sxhkd unclutter zathura
 #i3-gaps
 sudo -u bear yay -S --noconfirm i3-gaps-next-git
 #compton
