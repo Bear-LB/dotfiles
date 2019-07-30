@@ -1,13 +1,13 @@
+#software
 pacman --noconfirm -S yay neofetch feh vifm rofi ncmpcpp mpd termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu
 #i3-gaps
 sudo -u bear yay -S --noconfirm i3-gaps-next-git
 #compton
 sudo -u bear yay -S --noconfirm compton-git
-
-#ln -s /usr/local/share/terminfo/x/xterm-termite /lib/terminfo/x/xterm-termite
-#update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/termite 60
 #install zsh theme
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
+#install oh-my-zsh
+sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 #change shell to zsh (only effective after reboot)
 chsh -s /usr/bin/zsh root
 chsh -s /usr/bin/zsh bear
