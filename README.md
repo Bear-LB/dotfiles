@@ -5,22 +5,14 @@ Note to self.
 3. install active window control, event calender
 
 # Manual Setup
-Latte sort: Application Launcher, Pager, Active Window Control, Global Menu Separator, Event Calender, Seperator, Lock/Shutdown, Battery & Brightness
+Latte sort: Application Launcher, Battery & Brigtness, Pager, Latte Plasmoid, Separator, Event Calender, Seperator, Active Window Control, Global Menu, System Tray.
 
-Look and Feel: Sweet
+Kvantum Theme: Kv Glass
 
-Plasma Theme: PearDark
+Plasma Theme: Mirage
 
 Splash Screen: None
 
-Colors: PearDarkBlue
-
-Application style: kvantum-dark
-
-GTK2 & GTK3 theme: Breath-Dark
-
-Window Decorations / Aurorae: Sweet-Dark
-
-Icons: candy-icons
+Colors: Breeze Dark
 
 Kvantum Theme: Kv Glass
