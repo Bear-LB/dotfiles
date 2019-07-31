@@ -5,7 +5,7 @@ Note to self.
 3. install active window control, event calender
 
 # Manual Setup
-Latte sort: Application Launcher, Battery & Brigtness, Pager, Latte Plasmoid, Separator, Event Calender, Seperator, Active Window Control, Global Menu, System Tray.
+Latte sort: Application Menu, Battery & Brigtness, Pager, Latte Plasmoid, Separator, Event Calender, Seperator, Active Window Control, Global Menu, System Tray.
 
 Kvantum Theme: Kv Glass
 
