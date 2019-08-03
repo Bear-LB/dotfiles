@@ -1,5 +1,5 @@
 #software
-pacman --noconfirm -S yay neofetch feh vifm rofi ncmpcpp mpd termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu
+pacman --noconfirm -S yay neofetch feh vifm rofi ncmpcpp mpd termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu newsboat
 #i3-gaps
 sudo -u bear yay -S --noconfirm i3-gaps-next-git
 #compton
