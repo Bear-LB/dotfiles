@@ -2,10 +2,10 @@
 Note to self.
 1. 'bear' gets replaced in setup.sh depending on username
 2. setup.sh
-3. install active window control, event calender
+3. install active window control, event calender widgets
 
 # Manual Setup
-Latte sort: Application Menu, Battery & Brigtness, Pager, Latte Plasmoid, Separator, Event Calender, Seperator, Active Window Control, Global Menu, System Tray.
+Latte sort: Application Menu, Pager, Active Window Control, Seperator, Seperator, Global Menu, Latte Plasmoid, Event Calender, System Tray.
 
 Kvantum Theme: Kv Glass
 
@@ -16,3 +16,4 @@ Splash Screen: None
 Colors: Breeze Dark
 
 Kvantum Theme: Kv Glass
+
