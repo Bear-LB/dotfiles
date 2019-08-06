@@ -20,6 +20,9 @@ sudo -u bear yay -S --noconfirm otf-san-francisco
 sudo -u bear yay -S --noconfirm python-ueberzug-git 
 #spotify
 sudo -u bear yay -S --noconfirm spotify
+sudo -y bear yay -S --noconfirm spicetify-cli
+chmod -R 777 /opt/spotify
+spicetify backup apply enable-devtool
 #gotop
 sudo -u bear yay -S --noconfirm gotop-git
 #clones dotfiles to home
