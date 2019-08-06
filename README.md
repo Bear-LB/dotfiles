@@ -17,3 +17,4 @@ Colors: Breeze Dark
 
 Kvantum Theme: Kv Glass
 
+System Font: SF Pro Display Regular 14pt
