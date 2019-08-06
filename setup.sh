@@ -1,9 +1,11 @@
 #software
 pacman --noconfirm -S yay neofetch feh vifm rofi ncmpcpp mpd termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu newsboat
+#Flashfocus
+sudo -u bear yay -S --noconfirm flashfocus-git
 #i3-gaps
 sudo -u bear yay -S --noconfirm i3-gaps-next-git
 #compton
-sudo -u bear yay -S --noconfirm compton-git
+sudo -u bear yay -S --noconfirm compton-tryone-git
 #install zsh theme
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
 #install oh-my-zsh
@@ -11,12 +13,11 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/maste
 #change shell to zsh (only effective after reboot)
 chsh -s /usr/bin/zsh root
 chsh -s /usr/bin/zsh bear
-#nerd fonts
+#fonts
 sudo -u bear yay -S --noconfirm nerd-fonts-source-code-pro
+sudo -u bear yay -S --noconfirm otf-san-francisco
 #ueberzug
 sudo -u bear yay -S --noconfirm python-ueberzug-git 
-#flashfocus REQUIRES REMOVAL... FIX
-sudo -u bear yay -S --noconfirm flashfocus-git
 #spotify
 sudo -u bear yay -S --noconfirm spotify
 #gotop
