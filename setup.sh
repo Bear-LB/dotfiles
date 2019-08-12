@@ -31,5 +31,10 @@ git clone -b master --depth 1 https://github.com/Batresh/dotfiles "$dir/gitrepo"
 cp -rfT "$dir/gitrepo" /home/bear
 cd ~
 rm -rf .git
+#add blackarch repo
+cd /tmp
+curl -O https://blackarch.org/strap.sh
+chmod +x strap.sh
+./strap.sh
 #add .zshrc config file for root user too.
 cp /home/bear/.zshrc ~/.zshrc
