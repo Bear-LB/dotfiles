@@ -1,34 +1,35 @@
+name=$(ls /home)
 #software
 pacman --noconfirm -S yay neofetch feh vifm rofi ncmpcpp mpd termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu newsboat
 #Flashfocus
-sudo -u bear yay -S --noconfirm flashfocus-git
+sudo -u $name yay -S --noconfirm flashfocus-git
 #i3-gaps
-sudo -u bear yay -S --noconfirm i3-gaps-next-git
+sudo -u $name yay -S --noconfirm i3-gaps-next-git
 #compton
-sudo -u bear yay -S --noconfirm compton-tryone-git
+sudo -u $name yay -S --noconfirm compton-tryone-git
 #install zsh theme
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
 #install oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 #change shell to zsh (only effective after reboot)
 chsh -s /usr/bin/zsh root
-chsh -s /usr/bin/zsh bear
+chsh -s /usr/bin/zsh $name
 #fonts
-sudo -u bear yay -S --noconfirm nerd-fonts-source-code-pro
-sudo -u bear yay -S --noconfirm otf-san-francisco
+sudo -u $name yay -S --noconfirm nerd-fonts-source-code-pro
+sudo -u $name yay -S --noconfirm otf-san-francisco
 #ueberzug
-sudo -u bear yay -S --noconfirm python-ueberzug-git 
+sudo -u $name yay -S --noconfirm python-ueberzug-git 
 #spotify
-sudo -u bear yay -S --noconfirm spotify
-sudo -y bear yay -S --noconfirm spicetify-cli
+sudo -u $name yay -S --noconfirm spotify
+sudo -y $name yay -S --noconfirm spicetify-cli
 chmod -R 777 /opt/spotify
 spicetify backup apply enable-devtool
 #gotop
-sudo -u bear yay -S --noconfirm gotop-git
+sudo -u $name yay -S --noconfirm gotop-git
 #clones dotfiles to home
 dir=$(mktemp -d)
 git clone -b master --depth 1 https://github.com/Batresh/dotfiles "$dir/gitrepo"
-cp -rfT "$dir/gitrepo" /home/bear
+cp -rfT "$dir/gitrepo" /home/$name
 cd ~
 rm -rf .git
 #add blackarch repo
@@ -37,4 +38,4 @@ curl -O https://blackarch.org/strap.sh
 chmod +x strap.sh
 ./strap.sh
 #add .zshrc config file for root user too.
-cp /home/bear/.zshrc ~/.zshrc
+cp /home/$name/.zshrc ~/.zshrc
