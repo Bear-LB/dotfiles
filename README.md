@@ -9,7 +9,7 @@ Latte sort: Application Menu, Pager, Active Window Control, Seperator, Seperator
 
 Kvantum Theme: Kv Glass
 
-Plasma Theme: Mirage
+Plasma Theme: Koompi
 
 Splash Screen: None
 
@@ -18,3 +18,9 @@ Colors: Breeze Dark
 Kvantum Theme: Kv Glass
 
 System Font: SF Pro Display Regular 14pt
+
+Better performance:
+
+Disable all Desktop Effects in Settings -> Desktop Effects.
+
+Settings -> Display and Monitor -> Compositor: uncheck enable compositor on startup, set Tearing Prevention to Never
