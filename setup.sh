@@ -26,6 +26,8 @@ chmod -R 777 /opt/spotify
 spicetify backup apply enable-devtool
 #gotop
 sudo -u $name yay -S --noconfirm gotop-git
+#musnify-mpd
+sudo -u $name yay -S --noconfirm musnify-mpd
 #clones dotfiles to home
 dir=$(mktemp -d)
 git clone -b master --depth 1 https://github.com/Batresh/dotfiles "$dir/gitrepo"
