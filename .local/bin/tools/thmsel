@@ -1,0 +1,6 @@
+#!/bin/sh
+
+thmfp=$(sxiv -otb ~/Pictures/Wallpapers)
+newthm=$(basename $thmfp)
+wpg -s $newthm
+thmupd
