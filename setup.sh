@@ -2,7 +2,7 @@ name=$(ls /home)
 # Software
 pacman --noconfirm -S yay neofetch feh vifm rofi ncmpcpp mpd termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu
 # Software 2
-pacman --noconfirm -S newsboat pywal
+pacman --noconfirm -S newsboat pywal compton
 # i3-Gaps
 sudo -u $name yay -S --noconfirm i3-gaps-next-git
 # Compton
