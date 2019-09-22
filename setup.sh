@@ -1,47 +1,48 @@
 name=$(ls /home)
-#software
+# Software
 pacman --noconfirm -S yay neofetch feh vifm rofi ncmpcpp mpd termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu
-#software 2
-pacman --noconfirm -S newsboat
-#Flashfocus
-sudo -u $name yay -S --noconfirm flashfocus-git
-#i3-gaps
+# Software 2
+pacman --noconfirm -S newsboat pywal
+# i3-Gaps
 sudo -u $name yay -S --noconfirm i3-gaps-next-git
-#compton
+# Compton
 sudo -u $name yay -S --noconfirm compton-tryone-git
-#install zsh theme
+# Install zsh theme
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
-#install oh-my-zsh
+# Install oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 #change shell to zsh (only effective after reboot)
 chsh -s /usr/bin/zsh root
 chsh -s /usr/bin/zsh $name
-#fonts
+# Fonts
 sudo -u $name yay -S --noconfirm nerd-fonts-source-code-pro
-sudo -u $name yay -S --noconfirm otf-san-francisco
-#ueberzug
-sudo -u $name yay -S --noconfirm python-ueberzug-git 
-#spotify
+# Ueberzug
+sudo -u $name yay -S --noconfirm python-ueberzug-git
+# Flashfocus
+sudo -u $name yay -S --noconfirm flashfocus-git
+# WPGTK
+sudo -u $name yay -S --noconfirm wpgtk
+# Spotify
 sudo -u $name yay -S --noconfirm spotify
 sudo -y $name yay -S --noconfirm spicetify-cli
 chmod -R 777 /opt/spotify
 spicetify backup apply enable-devtool
-#gotop
+# Gotop
 sudo -u $name yay -S --noconfirm gotop-git
-#musnify-mpd
+# Musnify-mpd
 sudo -u $name yay -S --noconfirm musnify-mpd
-#clones dotfiles to home
+# Clone dotfiles to home
 dir=$(mktemp -d)
 git clone -b master --depth 1 https://github.com/Batresh/dotfiles "$dir/gitrepo"
 cp -rfT "$dir/gitrepo" /home/$name
 cd ~
 rm -rf .git
-#add blackarch repo
+# Add blackarch repo
 cd /tmp
 curl -O https://blackarch.org/strap.sh
 chmod +x strap.sh
 ./strap.sh
-#add .zshrc config file for root user too.
+# Add .zshrc config file for root user too.
 cp /home/$name/.zshrc ~/.zshrc
 # Make pacman and yay colorful and adds eye candy on the progress bar because why not.
 grep "^Color" /etc/pacman.conf >/dev/null || sed -i "s/^#Color/Color/" /etc/pacman.conf
