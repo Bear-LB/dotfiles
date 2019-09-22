@@ -6,6 +6,7 @@ export FILE="$HOME/.config/vifm/scripts/vifmrun"
 export BROWSER="firefox"
 sxhkd &
 unclutter &
+compton --config ~/.config/compton/compton.conf &
 mpd &
 musnify-mpd &
-pkill flashfocus &
+flashfocus &
