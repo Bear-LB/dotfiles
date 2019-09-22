@@ -1,6 +1,8 @@
 name=$(ls /home)
 #software
-pacman --noconfirm -S yay neofetch feh vifm rofi ncmpcpp mpd termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu newsboat
+pacman --noconfirm -S yay neofetch feh vifm rofi ncmpcpp mpd termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu
+#software 2
+pacman --noconfirm -S newsboat
 #Flashfocus
 sudo -u $name yay -S --noconfirm flashfocus-git
 #i3-gaps
