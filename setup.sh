@@ -10,7 +10,7 @@ pass=$(echo YOURPASSWORD)
 
 
 
-useradd -m -g wheel -s /bin/bash "$name"
+useradd -m -g wheel -s /bin/bash "$name" 2>&1 ||
 usermod -a -G wheel "$name" && mkdir -p /home/"$name" && chown "$name":wheel /home/"$name"
 echo "$name:$pass" | chpasswd
 unset pass1
@@ -23,7 +23,8 @@ pacman --noconfirm --needed -S base-devel
 newperms() {
 	sed -i "/#Deploydot/d" /etc/sudoers
 	echo "$* #Deploydot" >> /etc/sudoers ;}
-"%wheel ALL=(ALL) NOPASSWD: ALL"
+
+newperms "%wheel ALL=(ALL) NOPASSWD: ALL"
 
 # Use all cores for compile
 sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
