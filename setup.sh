@@ -11,7 +11,6 @@ pass=$(echo YOURPASSWORD)
 
 
 useradd -m -g wheel -s /bin/bash "$name" && mkdir -p /home/"$name" && chown "$name":wheel /home/"$name"
-#usermod -a -G wheel "$name" && 
 echo "$name:$pass" | chpasswd
 unset pass
 # Preparation
@@ -40,11 +39,13 @@ cd yay
 sudo -u "$name" makepkg --noconfirm -si
 cd /tmp
 # Essential Software
-
+pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xbacklight xorg-xdpyinfo xdotool
 # Bloat Software
-pacman --noconfirm -S neofetch feh vifm rofi ncmpcpp mpd termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu
+pacman --noconfirm -S neofetch feh vifm rofi ncmpcpp mpd mpc termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu poppler
 # Bloat Software 2
-pacman --noconfirm -S newsboat python-pywal compton zsh
+pacman --noconfirm -S newsboat python-pywal compton zsh tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat
+# Bloat Software 3
+pacman --noconfirm -S firefox mpv i3lock neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc
 # i3-Gaps
 sudo -u "$name" yay -S --noconfirm i3-gaps-next-git
 # Install zsh theme
@@ -62,6 +63,8 @@ sudo -u "$name" yay -S --noconfirm python-ueberzug-git
 sudo -u "$name" yay -S --noconfirm flashfocus-git
 # WPGTK
 sudo -u "$name" yay -S --noconfirm wpgtk
+# Polybar
+sudo -u "$name" yay -S --noconfirm polybar
 # Spotify
 sudo -u "$name" yay -S --noconfirm spotify
 sudo -y "$name" yay -S --noconfirm spicetify-cli
