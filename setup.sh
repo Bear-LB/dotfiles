@@ -46,7 +46,7 @@ git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
 sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 #change shell to zsh (only effective after reboot)
 chsh -s /usr/bin/zsh root
-chsh -s /usr/bin/zsh $name
+chsh -s /usr/bin/zsh "$name"
 # Fonts
 sudo -u "$name" yay -S --noconfirm nerd-fonts-source-code-pro
 # Ueberzug
