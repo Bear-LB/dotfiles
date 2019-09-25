@@ -13,7 +13,7 @@ pass=$(echo YOURPASSWORD)
 useradd -m -g wheel -s /bin/bash "$name" && mkdir -p /home/"$name" && chown "$name":wheel /home/"$name"
 #usermod -a -G wheel "$name" && 
 echo "$name:$pass" | chpasswd
-unset pass1
+unset pass
 # Preparation
 # Refresh Arch keyrings and Upgrade.
 pacman --noconfirm -Sy archlinux-keyring
