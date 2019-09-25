@@ -30,7 +30,7 @@ grep "ILoveCandy" /etc/pacman.conf >/dev/null || sed -i "/#VerbosePkgLists/a ILo
 pacman --noconfirm -S git
 git clone https://aur.archlinux.org/yay.git
 cd yay
-makepkg -si
+sudo -u "$name" makepkg -si
 cd ..
 # Essential Software
 
