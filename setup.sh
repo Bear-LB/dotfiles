@@ -35,7 +35,7 @@ cd ..
 # Essential Software
 
 # Bloat Software
-pacman --noconfirm -S yay neofetch feh vifm rofi ncmpcpp mpd termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu
+pacman --noconfirm -S neofetch feh vifm rofi ncmpcpp mpd termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu
 # Bloat Software 2
 pacman --noconfirm -S newsboat pywal compton
 # i3-Gaps
