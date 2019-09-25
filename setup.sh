@@ -44,7 +44,7 @@ cd /tmp
 # Bloat Software
 pacman --noconfirm -S neofetch feh vifm rofi ncmpcpp mpd termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu
 # Bloat Software 2
-pacman --noconfirm -S newsboat python-pywal compton zsh
+pacman --noconfirm -S newsboat python-pywal compton zsh tmux
 # i3-Gaps
 sudo -u "$name" yay -S --noconfirm i3-gaps-next-git
 # Install zsh theme
