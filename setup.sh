@@ -10,14 +10,14 @@ pass=$(echo YOURPASSWORD)
 
 
 
-useradd -m -g wheel -s /bin/bash "$name" 2>&1 ||
-usermod -a -G wheel "$name" && mkdir -p /home/"$name" && chown "$name":wheel /home/"$name"
+useradd -m -g wheel -s /bin/bash "$name" && mkdir -p /home/"$name" && chown "$name":wheel /home/"$name"
+#usermod -a -G wheel "$name" && 
 echo "$name:$pass" | chpasswd
 unset pass1
 # Preparation
 # Refresh Arch keyrings and Upgrade.
 pacman --noconfirm -Sy archlinux-keyring
-pacman -Syu --noconfirm
+pacman --noconfirm -Syu
 pacman --noconfirm --needed -S base-devel
 
 newperms() {
@@ -35,10 +35,10 @@ grep "ILoveCandy" /etc/pacman.conf >/dev/null || sed -i "/#VerbosePkgLists/a ILo
 # Install Yay and Git
 pacman --noconfirm -S git
 cd /tmp
-git clone https://aur.archlinux.org/yay.git
+sudo -u "$name" git clone https://aur.archlinux.org/yay.git
 cd yay
 sudo -u "$name" makepkg -si
-cd ..
+cd /tmp
 # Essential Software
 
 # Bloat Software
