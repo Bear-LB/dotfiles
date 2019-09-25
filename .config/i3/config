@@ -1,36 +1,13 @@
-# >>> Plasma Integration <<<
-
-# Try to kill the wallpaper set by Plasma (it takes up the entire workspace
-# and hides everythiing)
-exec --no-startup-id wmctrl -c Plasma
-for_window [title="Desktop — Plasma"] kill; floating enable; border none
-
-# Avoid tiling latte panel components
-for_window [title="Latte Dock"] floating enable;
-
-# Avoid tiling popups, dropdown windows from plasma
-for_window [class="plasmashell"] floating enable;
-for_window [class="Plasma"] floating enable; border none
-for_window [title="plasma-desktop"] floating enable; border none
-for_window [class="krunner"] floating enable; border none
-for_window [class="Kmix"] floating enable; border none
-for_window [title="win7"] floating enable; border none
-for_window [class="Klipper"] floating enable; border none
-for_window [class="Plasmoidviewer"] floating enable; border none
-for_window [class="(?i)*nextcloud*"] floating disable
-for_window [class="plasmashell" window_type="notification"] floating enable, border none, move right 700px, move down 450px, no_focus
-
-# >>> Window Rules <<<
-
-# >>> Avoid tiling for non-Plasma stuff <<<
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="bubble"] floating enable
-for_window [window_role="task_dialog"] floating enable
-for_window [window_role="Preferences"] floating enable
-for_window [window_role="About"] floating enable 
-for_window [window_type="dialog"] floating enable
-for_window [window_type="menu"] floating enable
-for_window [title="Android Emulator"] floating enable #android emulator
+# #---Dropdown Windows---# #
+# General dropdown window traits. The order can matter.
+for_window [instance="dropdown_*"] floating enable
+for_window [instance="dropdown_*"] move scratchpad
+for_window [instance="dropdown_*"] sticky enable
+for_window [instance="dropdown_*"] scratchpad show
+for_window [instance="dropdown_tmuxdd"] resize set 1150 450
+for_window [instance="dropdown_dropdowncalc"] resize set 800 400
+for_window [instance="dropdown_dropdowncalc"] border pixel 2
+for_window [instance="dropdown_*"] move position center
 
 #****************************************************************************
 
@@ -39,10 +16,9 @@ for_window [title="Android Emulator"] floating enable #android emulator
 #****************************************************************************
 
 set $mod Mod4
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:SF Pro Text 9
+#font pango:SF Pro Text 20
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -67,13 +43,6 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-
-# move focused windows
-#bindsym $mod+Shift+Left move left
-#bindsym $mod+Shift+Down move down
-#bindsym $mod+Shift+Up move up
-#bindsym $mod+Shift+Right move right
-
 # split in horizontal orientation
 bindsym $mod+h split h
 
@@ -86,15 +55,12 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+t split toggle
 
+bindsym $mod+m exec --no-startup-id ddspawn tmuxdd
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -133,10 +99,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Open specific applications in floating mode
-for_window [class="(?i)virtualbox"] floating enable border normal
-
-# switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
+for_window [title="sxiv"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -163,19 +126,14 @@ bindsym $mod+Shift+p move up 30
 bindcode $mod+Shift+47 move down 30
 bindcode $mod+Shift+48 move right 30
 
-#flash current window
-bindsym $mod+n exec --no-startup-id flash_window
-
 #*********************************************************************************
 
 #	Startup
 
 #********************************************************************************
-exec_always --no-startup-id feh --randomize --bg-scale ~/.Pictures/Wallpapers/*
-exec --no-startup-id compton --config ~/.config/compton/compton.conf
-exec --no-startup-id latte-dock %u
 exec --no-startup-id redshift-gtk
-exec --no-startup-id flashfocus
+exec --no-startup-id wpg -m
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 #********************************************************************************
 
 #	Appearance
@@ -184,32 +142,65 @@ exec --no-startup-id flashfocus
 
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+# Manual color settings.
+set $xforeground #c5c8c6
+set $xbackground #1d1f21
+set $xcursor #c5c8c6
+set $xcolor0 #282a2e
+set $xcolor8 #373b41
+set $xcolor1 #dd5030
+set $xcolor9 #cc6666
+set $xcolor2 #8c9440
+set $xcolor10 #b5bd68
+set $xcolor3 #de935f
+set $xcolor11 #f0c674
+set $xcolor4 #5f819d
+set $xcolor12 #81a2be
+set $xcolor5 #85678f
+set $xcolor13 #b294bb
+set $xcolor6 #5e8d87
+set $xcolor14 #8abeb7
+set $xcolor7 #707880
+set $xcolor15 #c5c8c6
 
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color0 #f0f0f0
+set_from_resource $a i3wm.color1 #f0f0f0
+set_from_resource $b i3wm.color2 #f0f0f0
+# class                 border  backgr. text indicator child_border
+client.focused          $gg     $bg     $fg  $fg       $a
+client.focused_inactive $gg     $bg     $fg  $fg       $b
+client.unfocused        $gg     $bg     $fg  $fg       $bg
+client.urgent           $bg     $bg     $fg  $fg       $fg
+client.placeholder      $bg     $bg     $fg  $fg       $fg
+
+client.background       $bg
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window none
 new_float normal
-
+for_window [class="^.*"] border pixel 4
 # Hide borders
-hide_edge_borders none
+hide_edge_borders smart
 
 # change borders
 bindsym $mod+y border none
-bindsym $mod+u border pixel 1
+bindsym $mod+u border pixel 10
 bindsym $mod+i border normal
 
 
 #############################
 ### settings for i3-gaps: ###
 #############################
-gaps inner 15
-gaps outer 15
 
-bindsym $mod+s gaps inner current plus 5
-bindsym $mod+Shift+s gaps inner current minus 5
+# Set inner/outer gaps
+gaps inner 15
+#
+bindsym $mod+s gaps inner current plus 10
+bindsym $mod+Shift+s gaps inner current minus 10
 
 smart_gaps on
