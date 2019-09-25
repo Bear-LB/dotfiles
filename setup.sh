@@ -1,11 +1,27 @@
-
-name=$(ls /home)
-
+#THINGS TO MODIFY BEFORE DEPLOYMENT
+#------------------------------------------------------------
+# YOUR NAME
+name=$(YOURNAME)
+# YOUR PASSWORD
+pass=$(YOURPASSWORD)
+#-------------------------------------------------------------
+useradd -m -g wheel -s /bin/bash "$name"
+usermod -a -G wheel "$name" && mkdir -p /home/"$name" && chown "$name":wheel /home/"$name"
+echo "$name:$pass1" | chpasswd
+unset pass1
 # Preparation
-newperms() { # Set special sudoers settings for install (or after).
-	sed -i "/#LARBS/d" /etc/sudoers
-	echo "$* #LARBS" >> /etc/sudoers ;}
+# Refresh Arch keyrings and Upgrade.
+pacman --noconfirm -Sy archlinux-keyring
+pacman -Syu --noconfirm
+pacman --noconfirm -S base-devel
+
+newperms() {
+	sed -i "/#Deploydot/d" /etc/sudoers
+	echo "$* #Deploydot" >> /etc/sudoers ;}
 "%wheel ALL=(ALL) NOPASSWD: ALL"
+
+# Use all cores for compile
+sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
 
 # Make pacman and yay colorful and adds eye candy on the progress bar because why not.
 grep "^Color" /etc/pacman.conf >/dev/null || sed -i "s/^#Color/Color/" /etc/pacman.conf
@@ -61,11 +77,15 @@ cp /home/$name/.zshrc ~/.zshrc
 
 # This line, overwriting the `newperms` command above will allow the user to run
 # serveral important commands, `shutdown`, `reboot`, updating, etc. without a password.
-newperms "%wheel ALL=(ALL) ALL #LARBS
+newperms "%wheel ALL=(ALL) ALL #Deploydot
 %wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/yay,/usr/bin/pacman -Syyuw --noconfirm"
 
 # Remove System Beep
 rmmod pcspkr
 echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 
-#Start Services
+# Start and enable Services
+systemctl enable NetworkManager
+systemctl enable cronie
+systemctl start NetworkManager
+systemctl start cronie
