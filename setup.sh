@@ -34,6 +34,7 @@ grep "^Color" /etc/pacman.conf >/dev/null || sed -i "s/^#Color/Color/" /etc/pacm
 grep "ILoveCandy" /etc/pacman.conf >/dev/null || sed -i "/#VerbosePkgLists/a ILoveCandy" /etc/pacman.conf
 # Install Yay and Git
 pacman --noconfirm -S git
+cd /tmp
 git clone https://aur.archlinux.org/yay.git
 cd yay
 sudo -u "$name" makepkg -si
