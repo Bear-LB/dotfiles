@@ -26,12 +26,17 @@ sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
 # Make pacman and yay colorful and adds eye candy on the progress bar because why not.
 grep "^Color" /etc/pacman.conf >/dev/null || sed -i "s/^#Color/Color/" /etc/pacman.conf
 grep "ILoveCandy" /etc/pacman.conf >/dev/null || sed -i "/#VerbosePkgLists/a ILoveCandy" /etc/pacman.conf
-
+# Install Yay and Git
+pacman --noconfirm -S git
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ..
 # Essential Software
 
-# Software
+# Bloat Software
 pacman --noconfirm -S yay neofetch feh vifm rofi ncmpcpp mpd termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu
-# Software 2
+# Bloat Software 2
 pacman --noconfirm -S newsboat pywal compton
 # i3-Gaps
 sudo -u $name yay -S --noconfirm i3-gaps-next-git
