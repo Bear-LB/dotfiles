@@ -3,12 +3,12 @@ super + Return
 super + d
 	rofi -show drun
 super + r
-	$TERMINAL -e $FILE
+	$TERMINAL -e 'zsh -c "(cat ~/.config/wpg/sequences &) & $FILE"'
 super + w
 	$BROWSER
-super + m
-	$TERMINAL -e ncmpcpp
 super + h
-	$TERMINAL -e htop
+	$TERMINAL -e 'zsh -c "(cat ~/.config/wpg/sequences &) & htop"'
 super + g
-	$TERMINAL -e gotop
+	$TERMINAL -e 'zsh -c "(cat ~/.config/wpg/sequences &) & gtop"'
+super + n
+	$TERMINAL -e 'zsh -c "(cat ~/.config/wpg/sequences &) & newsboat"'
