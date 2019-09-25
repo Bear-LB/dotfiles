@@ -1,13 +1,18 @@
 #THINGS TO MODIFY BEFORE DEPLOYMENT
 #------------------------------------------------------------
-# YOUR NAME
-name=$(YOURNAME)
-# YOUR PASSWORD
-pass=$(YOURPASSWORD)
+# YOURNAME
+name=$(echo YOURNAME)
+# YOURPASSWORD
+pass=$(echo YOURPASSWORD)
 #-------------------------------------------------------------
+
+
+
+
+
 useradd -m -g wheel -s /bin/bash "$name"
 usermod -a -G wheel "$name" && mkdir -p /home/"$name" && chown "$name":wheel /home/"$name"
-echo "$name:$pass1" | chpasswd
+echo "$name:$pass" | chpasswd
 unset pass1
 # Preparation
 # Refresh Arch keyrings and Upgrade.
