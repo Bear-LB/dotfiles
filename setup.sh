@@ -37,7 +37,7 @@ pacman --noconfirm -S git
 cd /tmp
 sudo -u "$name" git clone https://aur.archlinux.org/yay.git
 cd yay
-sudo -u "$name" makepkg -si
+sudo -u "$name" makepkg --noconfirm -si
 cd /tmp
 # Essential Software
 
