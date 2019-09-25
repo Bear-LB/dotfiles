@@ -62,6 +62,8 @@ sudo -u "$name" yay -S --noconfirm python-ueberzug-git
 sudo -u "$name" yay -S --noconfirm flashfocus-git
 # WPGTK
 sudo -u "$name" yay -S --noconfirm wpgtk
+# Polybar
+sudo -u "$name" yay -S --noconfirm polybar
 # Spotify
 sudo -u "$name" yay -S --noconfirm spotify
 sudo -y "$name" yay -S --noconfirm spicetify-cli
