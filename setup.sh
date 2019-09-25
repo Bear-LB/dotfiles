@@ -37,11 +37,9 @@ cd ..
 # Bloat Software
 pacman --noconfirm -S neofetch feh vifm rofi ncmpcpp mpd termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu
 # Bloat Software 2
-pacman --noconfirm -S newsboat pywal compton
+pacman --noconfirm -S newsboat python-pywal compton zsh
 # i3-Gaps
-sudo -u $name yay -S --noconfirm i3-gaps-next-git
-# Compton
-sudo -u $name yay -S --noconfirm compton-tryone-git
+sudo -u "$name" yay -S --noconfirm i3-gaps-next-git
 # Install zsh theme
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
 # Install oh-my-zsh
@@ -50,22 +48,22 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/maste
 chsh -s /usr/bin/zsh root
 chsh -s /usr/bin/zsh $name
 # Fonts
-sudo -u $name yay -S --noconfirm nerd-fonts-source-code-pro
+sudo -u "$name" yay -S --noconfirm nerd-fonts-source-code-pro
 # Ueberzug
-sudo -u $name yay -S --noconfirm python-ueberzug-git
+sudo -u "$name" yay -S --noconfirm python-ueberzug-git
 # Flashfocus
-sudo -u $name yay -S --noconfirm flashfocus-git
+sudo -u "$name" yay -S --noconfirm flashfocus-git
 # WPGTK
-sudo -u $name yay -S --noconfirm wpgtk
+sudo -u "$name" yay -S --noconfirm wpgtk
 # Spotify
-sudo -u $name yay -S --noconfirm spotify
-sudo -y $name yay -S --noconfirm spicetify-cli
+sudo -u "$name" yay -S --noconfirm spotify
+sudo -y "$name" yay -S --noconfirm spicetify-cli
 chmod -R 777 /opt/spotify
 spicetify backup apply enable-devtool
 # Gotop
-sudo -u $name yay -S --noconfirm gotop-git
+sudo -u "$name" yay -S --noconfirm gotop-git
 # Musnify-mpd
-sudo -u $name yay -S --noconfirm musnify-mpd
+sudo -u "$name" yay -S --noconfirm musnify-mpd
 # Clone dotfiles to home
 dir=$(mktemp -d)
 git clone -b master --depth 1 https://github.com/Batresh/dotfiles "$dir/gitrepo"
