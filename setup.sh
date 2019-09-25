@@ -13,7 +13,7 @@ unset pass1
 # Refresh Arch keyrings and Upgrade.
 pacman --noconfirm -Sy archlinux-keyring
 pacman -Syu --noconfirm
-pacman --noconfirm -S base-devel
+pacman --noconfirm --needed -S base-devel
 
 newperms() {
 	sed -i "/#Deploydot/d" /etc/sudoers
