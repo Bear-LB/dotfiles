@@ -45,7 +45,7 @@ pacman --noconfirm -S neofetch feh vifm rofi ncmpcpp mpd mpc termite sxhkd unclu
 # Bloat Software 2
 pacman --noconfirm -S newsboat python-pywal compton zsh tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat
 # Bloat Software 3
-pacman --noconfirm -S firefox mpv i3lock neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc
+pacman --noconfirm -S firefox mpv i3lock neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer
 # i3-Gaps
 sudo -u "$name" yay -S --noconfirm i3-gaps-next-git
 # Install zsh theme
@@ -77,8 +77,9 @@ sudo -u "$name" yay -S --noconfirm musnify-mpd
 # Clone dotfiles to home
 dir=$(mktemp -d)
 git clone -b master --depth 1 https://github.com/Batresh/dotfiles "$dir/gitrepo"
+chown -R "$name:wheel" "$dir"
 cp -rfT "$dir/gitrepo" /home/$name
-cd ~
+cd /home/$name
 rm -rf .git
 # Add blackarch repo
 cd /tmp
