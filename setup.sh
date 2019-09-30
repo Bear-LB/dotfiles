@@ -58,7 +58,7 @@ chsh -s /usr/bin/zsh "$name"
 # Fonts
 sudo -u "$name" yay -S --noconfirm nerd-fonts-source-code-pro
 # Ueberzug
-sudo -u "$name" yay -S --noconfirm python-ueberzug-git
+sudo -u "$name" yay -S --noconfirm python-ueberzug
 # Flashfocus
 sudo -u "$name" yay -S --noconfirm flashfocus-git
 # WPGTK
