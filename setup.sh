@@ -67,7 +67,7 @@ sudo -u "$name" yay -S --noconfirm wpgtk
 sudo -u "$name" yay -S --noconfirm polybar
 # Spotify
 sudo -u "$name" yay -S --noconfirm spotify
-sudo -y "$name" yay -S --noconfirm spicetify-cli
+sudo -u "$name" yay -S --noconfirm spicetify-cli
 chmod -R 777 /opt/spotify
 spicetify backup apply enable-devtool
 # Gotop
