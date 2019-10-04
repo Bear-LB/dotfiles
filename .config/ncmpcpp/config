@@ -65,6 +65,6 @@ mouse_support = "yes"
 display_remaining_time = "no"
 follow_now_playing_lyrics = "yes"
 
-execute_on_song_change = "~/.ncmpcpp/art.sh"
+execute_on_song_change = "~/.config/ncmpcpp/art.sh"
 
 
