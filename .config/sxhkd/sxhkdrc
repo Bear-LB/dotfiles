@@ -12,3 +12,13 @@ super + g
 	$TERMINAL -e 'zsh -c "(cat ~/.config/wpg/sequences &) & gtop"'
 super + n
 	$TERMINAL -e 'zsh -c "(cat ~/.config/wpg/sequences &) & newsboat"'
+XF86MonBrightnessDown
+	xbacklight -dec 15
+XF86MonBrightnessUp
+	xbacklight -inc 15
+XF86AudioMute
+	lmc mute
+XF86AudioLowerVolume
+	lmc down 5
+XF86AudioRaiseVolume
+	lmc up 5
