@@ -100,6 +100,4 @@ echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 
 # Start and enable Services
 systemctl enable NetworkManager
-systemctl enable cronie
 systemctl start NetworkManager
-systemctl start cronie
