@@ -46,6 +46,8 @@ pacman --noconfirm -S neofetch feh vifm rofi ncmpcpp mpd mpc termite sxhkd unclu
 pacman --noconfirm -S newsboat python-pywal compton zsh tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat
 # Bloat Software 3
 pacman --noconfirm -S firefox mpv i3lock neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer
+# Bloat Software 4
+pacman --noconfirm -S transmission-cli
 # i3-Gaps
 sudo -u "$name" yay -S --noconfirm i3-gaps-next-git
 # Install zsh theme
@@ -65,6 +67,8 @@ sudo -u "$name" yay -S --noconfirm flashfocus-git
 sudo -u "$name" yay -S --noconfirm wpgtk
 # Polybar
 sudo -u "$name" yay -S --noconfirm polybar
+# Transmission TUI
+sudo -u "$name" yay -S --noconfirm stig
 # Spotify
 sudo -u "$name" yay -S --noconfirm spotify
 sudo -u "$name" yay -S --noconfirm spicetify-cli
