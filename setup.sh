@@ -81,7 +81,6 @@ sudo -u "$name" yay -S --noconfirm musnify-mpd
 # Clone dotfiles to home
 dir=$(mktemp -d)
 git clone -b master --depth 1 https://github.com/Batresh/dotfiles "$dir/gitrepo"
-chown -R "$name:wheel" "$dir"
 cp -rfT "$dir/gitrepo" /home/$name
 cd /home/$name
 rm -rf .git
@@ -101,7 +100,8 @@ newperms "%wheel ALL=(ALL) ALL #Deploydot
 # Remove System Beep
 rmmod pcspkr
 echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
-
+# Permissions
+chown -R "$name:wheel" "/home/$name"
 # Start and enable Services
 systemctl enable NetworkManager
 systemctl start NetworkManager
