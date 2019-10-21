@@ -1,10 +1,22 @@
-#THINGS TO MODIFY BEFORE DEPLOYMENT
+# THINGS TO MODIFY BEFORE DEPLOYMENT
 #------------------------------------------------------------
 # YOURNAME
 name=$(echo YOURNAME)
 # YOURPASSWORD
 pass=$(echo YOURPASSWORD)
 #-------------------------------------------------------------
+# Remember to install corresponding drivers
+
+
+
+
+
+
+
+
+
+
+
 
 
 
