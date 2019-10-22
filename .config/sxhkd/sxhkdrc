@@ -9,7 +9,7 @@ super + w
 super + h
 	$TERMINAL -e 'zsh -c "(cat ~/.config/wpg/sequences &) & htop"'
 super + g
-	$TERMINAL -e 'zsh -c "(cat ~/.config/wpg/sequences &) & gtop"'
+	$TERMINAL -e 'zsh -c "(cat ~/.config/wpg/sequences &) & gotop"'
 super + n
 	$TERMINAL -e 'zsh -c "(cat ~/.config/wpg/sequences &) & newsboat"'
 XF86MonBrightnessDown
