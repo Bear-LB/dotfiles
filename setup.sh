@@ -59,13 +59,12 @@ pacman --noconfirm -S newsboat python-pywal compton zsh tmux htop ed arandr ffmp
 # Bloat Software 3
 pacman --noconfirm -S firefox mpv i3lock neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer
 # Bloat Software 4
-pacman --noconfirm -S transmission-cli sxiv pulseaudio pulseaudio-alsa pulsemixer
+pacman --noconfirm -S transmission-cli sxiv pulseaudio pulseaudio-alsa pulsemixer xsettingsd
 # i3-Gaps
 sudo -u "$name" yay -S --noconfirm i3-gaps-next-git
 # Install zsh theme
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
-# Install oh-my-zsh
-sh -c "$(wget -O- https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# Install oh-my-zsh --------------------------------------------- WORKS IN PROGRESS
 #change shell to zsh (only effective after reboot)
 chsh -s /usr/bin/zsh root
 chsh -s /usr/bin/zsh "$name"
