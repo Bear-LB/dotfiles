@@ -29,7 +29,7 @@ unset pass
 # Refresh Arch keyrings and Upgrade.
 pacman --noconfirm -Sy archlinux-keyring
 pacman --noconfirm -Syu
-pacman --noconfirm --needed -S base-devel
+pacman --noconfirm --needed -S base-devel linux-firmware diffutils vim networkmanager man-db man-pages texinfo exfat-utils e2fsprogs
 
 newperms() {
 	sed -i "/#Deploydot/d" /etc/sudoers
@@ -51,7 +51,7 @@ cd yay
 sudo -u "$name" makepkg --noconfirm -si
 cd /tmp
 # Essential Software
-pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xbacklight xorg-xdpyinfo xdotool
+pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xbacklight xorg-xdpyinfo xdotool mesa
 # Bloat Software
 pacman --noconfirm -S neofetch feh vifm rofi ncmpcpp mpd mpc termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu poppler
 # Bloat Software 2
