@@ -113,6 +113,8 @@ rmmod pcspkr
 echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 # Permissions
 chown -R "$name:wheel" "/home/$name"
+# Because spotifyd executes command on song pause
+chown "$name:wheel" /usr/bin/mpc
 # Start and enable Services
 systemctl enable NetworkManager
 systemctl start NetworkManager
