@@ -80,11 +80,10 @@ sudo -u "$name" yay -S --noconfirm wpgtk
 sudo -u "$name" yay -S --noconfirm polybar
 # Transmission TUI
 sudo -u "$name" yay -S --noconfirm stig
-# Spotify
-sudo -u "$name" yay -S --noconfirm spotify
-sudo -u "$name" yay -S --noconfirm spicetify-cli
-chmod -R 777 /opt/spotify
-spicetify backup apply enable-devtool
+# Spotify daemon
+sudo -u "$name" yay -S --noconfirm spotifyd-full 
+# ncurses Spotify
+sudo -u "$name" yay -S --noconfirm spotify-tui
 # Gotop
 sudo -u "$name" yay -S --noconfirm gotop-git
 # Musnify-mpd
