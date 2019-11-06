@@ -4,32 +4,44 @@ for_window [instance="dropdown_*"] floating enable
 for_window [instance="dropdown_*"] move scratchpad
 for_window [instance="dropdown_*"] sticky enable
 for_window [instance="dropdown_*"] scratchpad show
-for_window [instance="dropdown_tmuxdd"] resize set 1150 450
+for_window [instance="dropdown_tmuxdd"] resize set 1100 450
 for_window [instance="dropdown_dropdowncalc"] resize set 800 400
 for_window [instance="dropdown_dropdowncalc"] border pixel 2
 for_window [instance="dropdown_*"] move position center
 
-#****************************************************************************
+set $mod Mod4
+set $alt Mod1
+set $coloract "{active}"
+set $colorin "{inactive}"
+set_from_resource $color15 i3wm.color15 "{color15}"
+set_from_resource $split i3wm.color10 "{color10}"
+set_from_resource $coloru i3wm.color2 "{color2}"
+set_from_resource $color0 i3wm.color0 "{color0}"
+set_from_resource $color8 i3wm.color8 "{color8}"
 
-#	Keybinds
+font pango:monospace 8 
+gaps outer 0
+gaps inner 12
+for_window [class="^.*"] border pixel 4
 
-#****************************************************************************
+exec --no-startup-id redshift-gtk
+exec --no-startup-id wpg -m
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+######### COLORS ##########
+#
+# class                 border    backgr    text    indicator child_border
+client.focused          $coloract $coloract $color15 $split  $coloract
+client.focused_inactive $coloract $coloract $color15 $split  $colorin
+client.unfocused        $colorin  $colorin  $color15 $split  $colorin
+client.urgent           $coloru   $coloru   $color15 $coloru $coloru
+client.placeholder      $color0   $color8   $color15 $color0 $color8
+client.background       $color0
+
+
+###### KEYBINDINGS #######
 
 set $mod Mod4
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
 #font pango:SF Pro Text 20
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -63,17 +75,16 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-
+set $ws1 "1:一"
+set $ws2 "2:二"
+set $ws3 "3:三"
+set $ws4 "4:四"
+set $ws5 "5:五"
+set $ws6 "6:六"
+set $ws7 "7:七"
+set $ws8 "8:八"
+set $ws9 "9:九"
+set $ws10 "10:十"
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -125,82 +136,3 @@ bindsym $mod+Shift+l move left 30
 bindsym $mod+Shift+p move up 30
 bindcode $mod+Shift+47 move down 30
 bindcode $mod+Shift+48 move right 30
-
-#*********************************************************************************
-
-#	Startup
-
-#********************************************************************************
-exec --no-startup-id redshift-gtk
-exec --no-startup-id wpg -m
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-#********************************************************************************
-
-#	Appearance
-
-#********************************************************************************
-
-# Theme colors
-# class                   border  backgr. text    indic.   child_border
-# Manual color settings.
-set $xforeground #c5c8c6
-set $xbackground #1d1f21
-set $xcursor #c5c8c6
-set $xcolor0 #282a2e
-set $xcolor8 #373b41
-set $xcolor1 #dd5030
-set $xcolor9 #cc6666
-set $xcolor2 #8c9440
-set $xcolor10 #b5bd68
-set $xcolor3 #de935f
-set $xcolor11 #f0c674
-set $xcolor4 #5f819d
-set $xcolor12 #81a2be
-set $xcolor5 #85678f
-set $xcolor13 #b294bb
-set $xcolor6 #5e8d87
-set $xcolor14 #8abeb7
-set $xcolor7 #707880
-set $xcolor15 #c5c8c6
-
-# Set colors from Xresources
-# Change 'color7' and 'color2' to whatever colors you want i3 to use 
-# from the generated scheme.
-# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
-# it fails to get colors from Xresources.
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color0 #f0f0f0
-set_from_resource $a i3wm.color1 #f0f0f0
-set_from_resource $b i3wm.color2 #f0f0f0
-# class                 border  backgr. text indicator child_border
-client.focused          $gg     $bg     $fg  $fg       $a
-client.focused_inactive $gg     $bg     $fg  $fg       $b
-client.unfocused        $gg     $bg     $fg  $fg       $bg
-client.urgent           $bg     $bg     $fg  $fg       $fg
-client.placeholder      $bg     $bg     $fg  $fg       $fg
-
-client.background       $bg
-# Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window none
-new_float normal
-for_window [class="^.*"] border pixel 4
-# Hide borders
-hide_edge_borders smart
-
-# change borders
-bindsym $mod+y border none
-bindsym $mod+u border pixel 10
-bindsym $mod+i border normal
-
-
-#############################
-### settings for i3-gaps: ###
-#############################
-
-# Set inner/outer gaps
-gaps inner 15
-#
-bindsym $mod+s gaps inner current plus 10
-bindsym $mod+Shift+s gaps inner current minus 10
-
-smart_gaps on

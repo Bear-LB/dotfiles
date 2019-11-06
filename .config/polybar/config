@@ -4,7 +4,7 @@ foreground = {color15}
 active = {active}
 inactive = {inactive}
 highlight = {color1}
-error = {color4}
+error = {color2}
 
 [bar/main]
 override-redirect = false
@@ -15,11 +15,11 @@ offset-y = 0
 radius = 0.0
 fixed-center = true
 
-background = {color0}00
+background = #00000000
 foreground = {color15}
 
 line-size = 0
-label-line-color = #00000000
+label-line-color = #f00
 
 border-color = #00000000
 border-top-size = 12
@@ -33,13 +33,14 @@ module-margin-left = 0
 module-margin-right = 0
 
 font-0 = Iosevka Nerd Font:size=13
+font-1 = SourceHanSansJP:size=13
 
-locale = en_GB.UTF-8
+locale = en_DK.UTF-8
 enable-ipc = true
 
 modules-left = time date gap mood
 modules-center = i3 gap xwindow
-modules-right = battery gap wlan eth netact gap mpd volume
+modules-right = battery gap wlan netactw eth netacte gap spotify volume
 
 tray-position = none
 tray-padding = 10
@@ -54,7 +55,7 @@ content-padding = 0
 
 [module/mood]
 type = custom/script
-exec = head -n1 ~/.config/polybar/mood
+exec = cat ~/.config/polybar/mood
 interval = 1
 format = <label>
 format-background = {color2}
@@ -67,82 +68,100 @@ click-left = i3-msg -q 'exec --no-startup-id thmsel'
 type = internal/xwindow
 format-background = ${{colors.highlight}}
 format-padding = 1
-label = %title:0:20: ...%
+label = %title:0:25: ...%
 
 [module/i3]
 type = internal/i3
-format = <label-mode><label-state>
-index-sort = true
-wrapping-scroll = false
-fuzzy-matching = true
+;format = <label-mode><label-state>
+;index-sort = true
+;wrapping-scroll = false
+;fuzzy-matching = true
+strip-wsnumbers = true
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 7;
+ws-icon-6 = 8;
+ws-icon-7 = 9;
+ws-icon-8 = 10;
+;ws-icon-default = 
 
 ; Only show workspaces on the same output as the bar
 pin-workspaces = true
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 7;華
-ws-icon-6 = 8;
-ws-icon-7 = 9;
-ws-icon-8 = 10;
-ws-icon-default = 
-
 label-mode-padding = 1
 label-mode-foreground = ${{colors.foreground}}
 label-mode-background = ${{colors.highlight}}
+label-mode-font = 2
 
 label-focused-background = ${{colors.active}}
 label-focused-padding = 1
+label-focused-font = 2
 
 label-unfocused-padding = 1
 label-unfocused-background = ${{colors.inactive}}
+label-unfocused-font = 2
 
 label-visible-background = ${{colors.highlight}}
 label-visible-padding = 1
+label-visible-font = 2
 
 label-urgent-background = ${{colors.highlight}}
 label-urgent-padding = 1
+label-urgent-font = 2
 
-[module/mpd]
-type = internal/mpd
-format-online = <label-song>
+[module/spotify]
+type = custom/script
+exec = ~/.config/polybar/spotifyctl.sh
+interval = 3
+click-left = playerctl previous
+click-right = playerctl next
+click-middle = playerctl play-pause
+label = %output:0:30:...%
 
-label-song = " %title%"
-label-song-maxlen = 20
-label-song-ellipsis = true
+format-background = ${{colors.highlight}}
+format-foreground = {color15}
 
-format-playing-padding = 1
-format-playing-background = ${{colors.highlight}}
-format-paused-padding = 1
-format-paused-background = ${{colors.inactive}}
-
-[module/netact]
+[module/netactw]
 type = internal/network
-interface = ${{file:~/.config/polybar/netadpt}}
-;accumulate-stats = true
-interval = 1.0
+interface = wlp2s0
+interval = 3.0
 
 format-connected = <label-connected>
 format-connected-padding = 1
 format-connected-background = ${{colors.active}}
 format-connected-foreground = ${{colors.foreground}}
 
-format-disconnected =
+format-disconnected = 
+
+label-connected = " %downspeed%  %upspeed%"
+
+[module/netacte]
+type = internal/network
+interface = enp3s0
+interval = 3.0
+
+format-connected = <label-connected>
+format-connected-padding = 1
+format-connected-background = ${{colors.active}}
+format-connected-foreground = ${{colors.foreground}}
+
+format-disconnected = 
 
 label-connected = " %downspeed%  %upspeed%"
 
 [module/wlan]
 type = internal/network
-interface = wlp4s0
+interface = wlp2s0
 interval = 3.0
 
 format-connected-padding = 1
 format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
-format-connected-background = {color2}
+format-connected-background = ${{colors.inactive}}
 
 format-disconnected =
 
@@ -174,7 +193,7 @@ label = %time%
 type = internal/date
 interval = 5
 
-date = " %A, %d %B"
+date = " %A, %d"
 
 format-padding = 1
 format-background = {inactive}
@@ -201,8 +220,8 @@ format-muted-padding = 1
 
 [module/battery]
 type = internal/battery
-battery = BAT1
-adapter = ACAD
+battery = CMB1
+adapter = AC
 full-at = 98
 
 format-charging =   <animation-charging> <label-charging>
@@ -214,19 +233,19 @@ format-full-padding = 1
 format-full-background = ${{colors.inactive}}
 
 ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-1 =  
+ramp-capacity-2 =  
 ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-4 =  
 ramp-capacity-foreground = ${{colors.foreground}}
 
 animation-charging-foreground = ${{colors.foreground}}
 animation-charging-framerate = 500
 animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-1 =  
+animation-charging-2 =  
 animation-charging-3 = 
-animation-charging-4 = 
+animation-charging-4 =  
 format-charging-background = ${{colors.inactive}}
 format-discharging-background = ${{colors.active}}
 
