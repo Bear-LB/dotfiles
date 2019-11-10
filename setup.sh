@@ -53,13 +53,13 @@ cd /tmp
 # Essential Software
 pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xbacklight xorg-xdpyinfo xdotool mesa
 # Bloat Software
-pacman --noconfirm -S neofetch feh vifm rofi ncmpcpp mpd mpc termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu poppler
+pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpd mpc termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu poppler
 # Bloat Software 2
 pacman --noconfirm -S newsboat python-pywal compton zsh tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat
 # Bloat Software 3
 pacman --noconfirm -S firefox mpv i3lock neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer
 # Bloat Software 4
-pacman --noconfirm -S transmission-cli sxiv pulseaudio pulseaudio-alsa pulsemixer xsettingsd lxappearance scrot
+pacman --noconfirm -S transmission-cli sxiv pulseaudio pulseaudio-alsa pulsemixer xsettingsd lxappearance scrot nitrogen
 # i3-Gaps
 sudo -u "$name" yay -S --noconfirm i3-gaps-next-git
 # Install zsh theme
