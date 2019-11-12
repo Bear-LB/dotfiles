@@ -59,7 +59,7 @@ pacman --noconfirm -S newsboat python-pywal compton zsh tmux htop ed arandr ffmp
 # Bloat Software 3
 pacman --noconfirm -S firefox mpv i3lock neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer
 # Bloat Software 4
-pacman --noconfirm -S transmission-cli sxiv pulseaudio pulseaudio-alsa pulsemixer xsettingsd lxappearance scrot nitrogen
+pacman --noconfirm -S transmission-cli sxiv pulseaudio pulseaudio-alsa pulsemixer xsettingsd lxappearance scrot nitrogen xorg-font-utils
 # i3-Gaps
 sudo -u "$name" yay -S --noconfirm i3-gaps-next-git
 # Install zsh theme
@@ -68,8 +68,6 @@ git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
 #change shell to zsh (only effective after reboot)
 chsh -s /usr/bin/zsh root
 chsh -s /usr/bin/zsh "$name"
-# Fonts
-sudo -u "$name" yay -S --noconfirm nerd-fonts-source-code-pro
 # Ueberzug
 sudo -u "$name" yay -S --noconfirm python-ueberzug
 # Flashfocus
@@ -88,6 +86,14 @@ sudo -u "$name" yay -S --noconfirm spotify-tui
 sudo -u "$name" yay -S --noconfirm gotop-git
 # Musnify-mpd
 sudo -u "$name" yay -S --noconfirm musnify-mpd
+¤ Fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Inconsolata.zip -O /tmp/Inconsolata.zip
+unzip Inconsolata.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Cousine.zip -O /tmp/Cousine.zip
+unzip Cousine.zip
+rm /tmp/*Windows*
+mkdir /usr/share/fonts/inconsolata && mkdir /usr/share/fonts/cousine/
+cp /tmp/Cousine* /usr/share/fonts/cousine/ && cp /tmp/Inconsolata* /usr/share/fonts/inconsolata/
 # Clone dotfiles to home
 dir=$(mktemp -d)
 git clone -b master --depth 1 https://github.com/Batresh/dotfiles "$dir/gitrepo"
