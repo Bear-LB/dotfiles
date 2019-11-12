@@ -7,6 +7,7 @@ export BROWSER="firefox"
 sxhkd &
 unclutter &
 compton --config ~/.config/compton/compton.conf &
+dunst &
 mpd &
 musnify-mpd &
 flashfocus &
