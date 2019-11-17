@@ -1,5 +1,4 @@
-# #---Dropdown Windows---# #
-# General dropdown window traits. The order can matter.
+# Dropdown & Floating traits #
 for_window [instance="dropdown_*"] floating enable
 for_window [instance="dropdown_*"] move scratchpad
 for_window [instance="dropdown_*"] sticky enable
@@ -8,7 +7,14 @@ for_window [instance="dropdown_tmuxdd"] resize set 1100 450
 for_window [instance="dropdown_dropdowncalc"] resize set 800 400
 for_window [instance="dropdown_dropdowncalc"] border pixel 2
 for_window [instance="dropdown_*"] move position center
+for_window [class="mpv"] floating enable move right 1223px,move down 677px
+for_window [class="mpv"] move scratchpad
+for_window [class="mpv"] sticky enable
+for_window [class="mpv"] scratchpad show
+for_window [class="mpv"] resize set 700
+for_window [title="sxiv"] floating enable
 
+###### DEFINITIONS ######
 set $mod Mod4
 set $alt Mod1
 set $coloract "{active}"
@@ -19,16 +25,18 @@ set_from_resource $coloru i3wm.color2 "{color2}"
 set_from_resource $color0 i3wm.color0 "{color0}"
 set_from_resource $color8 i3wm.color8 "{color8}"
 
-font pango:monospace 8 
+font pango:monospace 8
+
+##### GAPS & BORDERS ######
 gaps outer 0
 gaps inner 12
 for_window [class="^.*"] border pixel 4
-
+######### STARTUP #########
 exec --no-startup-id redshift-gtk
 exec --no-startup-id wpg -m
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 ######### COLORS ##########
-#
+
 # class                 border    backgr    text    indicator child_border
 client.focused          $coloract $coloract $color15 $split  $coloract
 client.focused_inactive $coloract $coloract $color15 $split  $colorin
@@ -37,44 +45,27 @@ client.urgent           $coloru   $coloru   $color15 $coloru $coloru
 client.placeholder      $color0   $color8   $color15 $color0 $color8
 client.background       $color0
 
-
+# I3 RELATED EXEC COMMANDS # 
+bindsym $mod+v exec i3 "[class=\"mpv\"] scratchpad show"
+bindsym $mod+m exec --no-startup-id ddspawn tmuxdd
 ###### KEYBINDINGS #######
 
-set $mod Mod4
-#font pango:SF Pro Text 20
-
-# Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# kill focused window
 bindsym $mod+Shift+q kill
 
-# alternatively, you can use the cursor keys
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# split in horizontal orientation
-bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
 bindsym $mod+t split toggle
 
-bindsym $mod+m exec --no-startup-id ddspawn tmuxdd
-# toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:一"
 set $ws2 "2:二"
 set $ws3 "3:三"
@@ -85,7 +76,7 @@ set $ws7 "7:七"
 set $ws8 "8:八"
 set $ws9 "9:九"
 set $ws10 "10:十"
-# switch to workspace
+
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -97,7 +88,6 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
-# move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -109,24 +99,14 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
-# Open specific applications in floating mode
-for_window [title="sxiv"] floating enable
-
-# reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
-# resize window
-
 bindsym $mod+l exec --no-startup-id i3resize left
 bindsym $mod+p exec --no-startup-id i3resize up
 bindcode $mod+47 exec --no-startup-id i3resize down
 bindcode $mod+48 exec --no-startup-id i3resize right
 
-#move floating windows
 bindsym $mod+Shift+Left move left 30
 bindsym $mod+Shift+Up move up 30
 bindsym $mod+Shift+Down move down 30
