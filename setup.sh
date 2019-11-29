@@ -63,7 +63,7 @@ pacman --noconfirm -S transmission-cli sxiv pulseaudio pulseaudio-alsa pulsemixe
 # Bloat Software 5
 pacman --noconfirm -S xorg-font-utils streamlink wget adobe-source-han-sans-jp-fonts playerctl
 # Systemd software ?!
-pacman --noconfirm -S mpd || 
+pacman --noconfirm -S mpd || sudo -u "$name" yay -S --noconfirm mpd-light
 # i3-Gaps
 sudo -u "$name" yay -S --noconfirm i3-gaps-next-git
 # Install zsh theme
