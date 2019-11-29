@@ -61,7 +61,7 @@ pacman --noconfirm -S firefox mpv i3lock neovim gnome-keyring exfat-utils dosfst
 # Bloat Software 4
 pacman --noconfirm -S transmission-cli sxiv pulseaudio pulseaudio-alsa pulsemixer xsettingsd lxappearance scrot nitrogen
 # Bloat Software 5
-pacman --noconfirm -S xorg-font-utils streamlink wget
+pacman --noconfirm -S xorg-font-utils streamlink wget adobe-source-han-sans-jp-fonts
 # i3-Gaps
 sudo -u "$name" yay -S --noconfirm i3-gaps-next-git
 # Install zsh theme
