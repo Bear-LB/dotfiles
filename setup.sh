@@ -53,7 +53,7 @@ cd /tmp
 # Essential Software
 pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xbacklight xorg-xdpyinfo xdotool mesa
 # Bloat Software
-pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpd mpc termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu poppler
+pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpc termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu poppler
 # Bloat Software 2
 pacman --noconfirm -S newsboat python-pywal compton zsh tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat
 # Bloat Software 3
