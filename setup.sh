@@ -53,7 +53,7 @@ cd /tmp
 # Essential Software
 pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xbacklight xorg-xdpyinfo xdotool mesa
 # Bloat Software
-pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpd mpc termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu poppler
+pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpc termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu poppler
 # Bloat Software 2
 pacman --noconfirm -S newsboat python-pywal compton zsh tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat
 # Bloat Software 3
@@ -61,7 +61,9 @@ pacman --noconfirm -S firefox mpv i3lock neovim gnome-keyring exfat-utils dosfst
 # Bloat Software 4
 pacman --noconfirm -S transmission-cli sxiv pulseaudio pulseaudio-alsa pulsemixer xsettingsd lxappearance scrot nitrogen
 # Bloat Software 5
-pacman --noconfirm -S xorg-font-utils streamlink wget adobe-source-han-sans-jp-fonts
+pacman --noconfirm -S xorg-font-utils streamlink wget adobe-source-han-sans-jp-fonts playerctl
+# Systemd software ?!
+pacman --noconfirm -S mpd || sudo -u "$name" yay -S --noconfirm mpd-light
 # i3-Gaps
 sudo -u "$name" yay -S --noconfirm i3-gaps-next-git
 # Install zsh theme
@@ -96,6 +98,8 @@ unzip /tmp/Cousine.zip
 rm /tmp/*Windows*
 mkdir /usr/share/fonts/inconsolata && mkdir /usr/share/fonts/cousine/
 cp /tmp/Cousine* /usr/share/fonts/cousine/ && cp /tmp/Inconsolata* /usr/share/fonts/inconsolata/
+# Ohmyzsh
+sudo -u $name sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # Clone dotfiles to home
 dir=$(mktemp -d)
 git clone -b master --depth 1 https://github.com/Batresh/dotfiles "$dir/gitrepo"
