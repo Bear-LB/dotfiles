@@ -89,7 +89,7 @@ sudo -u "$name" yay -S --noconfirm spotifyd-full
 # ncurses Spotify
 sudo -u "$name" yay -S --noconfirm spotify-tui
 # Gotop
-sudo -u "$name" yay -S --noconfirm gotop-git
+sudo -u "$name" yay -S --noconfirm gotop-bin
 # Musnify-mpd
 sudo -u "$name" yay -S --noconfirm musnify-mpd
 ¤ Fonts
