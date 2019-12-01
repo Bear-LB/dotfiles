@@ -78,6 +78,8 @@ sudo -u "$name" yay -S --noconfirm python-ueberzug
 sudo -u "$name" yay -S --noconfirm flashfocus-git
 # WPGTK
 sudo -u "$name" yay -S --noconfirm wpgtk
+# Corrupter for i3lock
+sudo -u "$name" yay -S --noconfirm corrupter-bin
 # Polybar
 sudo -u "$name" yay -S --noconfirm polybar
 # Transmission TUI
