@@ -100,8 +100,6 @@ unzip /tmp/Cousine.zip
 rm /tmp/*Windows*
 mkdir /usr/share/fonts/inconsolata && mkdir /usr/share/fonts/cousine/
 cp /tmp/Cousine* /usr/share/fonts/cousine/ && cp /tmp/Inconsolata* /usr/share/fonts/inconsolata/
-# Ohmyzsh
-sudo -u $name sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # Clone dotfiles to home
 dir=$(mktemp -d)
 git clone -b master --depth 1 https://github.com/Batresh/dotfiles "$dir/gitrepo"
@@ -131,3 +129,5 @@ chown "$name:wheel" /usr/bin/mpc
 # Start and enable Services
 systemctl enable NetworkManager
 systemctl start NetworkManager
+# Ohmyzsh
+sudo -u $name sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
