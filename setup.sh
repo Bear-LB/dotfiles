@@ -64,7 +64,7 @@ pacman --noconfirm -S sxiv pulseaudio pulseaudio-alsa pulsemixer xsettingsd lxap
 pacman --noconfirm -S xorg-font-utils streamlink wget adobe-source-han-sans-jp-fonts playerctl
 # Systemd software ?!
 pacman --noconfirm -S mpd || sudo -u "$name" yay -S --noconfirm mpd-light
-pacman --noconfirm -S transmission-cli
+pacman --noconfirm -S transmission-cli && sudo -u "$name" yay -S --noconfirm stig
 # i3-Gaps
 sudo -u "$name" yay -S --noconfirm i3-gaps-next-git
 # Install zsh theme
@@ -83,8 +83,6 @@ sudo -u "$name" yay -S --noconfirm wpgtk
 sudo -u "$name" yay -S --noconfirm corrupter-bin
 # Polybar
 sudo -u "$name" yay -S --noconfirm polybar
-# Transmission TUI
-sudo -u "$name" yay -S --noconfirm stig
 # Spotify daemon
 sudo -u "$name" yay -S --noconfirm spotifyd-full 
 # ncurses Spotify
