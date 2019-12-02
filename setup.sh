@@ -133,7 +133,7 @@ sudo -u bear wpg -ta /home/$name/.config/i3/config
 sudo -u bear wpg -ta /home/$name/.config/polybar/config
 # Lightdm
 pacman --noconfirm -S lightdm lightdm-webkit2-greeter
-pacman --noconfirm -S lightdm-66serv && pacman --noconfirm -S dbus-66serv consolekit2 consolekit-66serv
+pacman --noconfirm -S lightdm-66serv && pacman --noconfirm -S dbus-66serv consolekit2 consolekit-66serv networkmanager-66serv
 sudo -u "$name" yay -S --noconfirm lightdm-webkit-theme-aether
 # s6 and s6-rc
 pacman --noconfirm -S boot-user@-66mod
@@ -144,5 +144,7 @@ pacman --noconfirm -S boot-user@-66mod
 # Systemctl
 systemctl enable NetworkManager
 systemctl start NetworkManager
+# Avoid Getting DNS
+sed -i "\$adns=none" /etc/NetworkManager/NetworkManager.conf
 # Ohmyzsh
 sudo -u $name sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
