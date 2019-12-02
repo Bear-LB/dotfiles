@@ -93,13 +93,14 @@ sudo -u "$name" yay -S --noconfirm gotop-bin
 # Musnify-mpd
 sudo -u "$name" yay -S --noconfirm musnify-mpd
 ¤ Fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Inconsolata.zip -O /tmp/Inconsolata.zip
-unzip /tmp/Inconsolata.zip
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Iosevka.zip -O /tmp/Iosevka.zip
+unzip /tmp/Iosevka.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Cousine.zip -O /tmp/Cousine.zip
 unzip /tmp/Cousine.zip
 rm /tmp/*Windows*
-mkdir /usr/share/fonts/inconsolata && mkdir /usr/share/fonts/cousine/
-cp /tmp/Cousine* /usr/share/fonts/cousine/ && cp /tmp/Inconsolata* /usr/share/fonts/inconsolata/
+mkdir /usr/share/fonts/iosevka && mkdir /usr/share/fonts/cousine/
+cp /tmp/Cousine* /usr/share/fonts/cousine/ && cp /tmp/Iosevka* /usr/share/fonts/iosevka/
+fc-cache
 # Clone dotfiles to home
 dir=$(mktemp -d)
 git clone -b master --depth 1 https://github.com/Batresh/dotfiles "$dir/gitrepo"
