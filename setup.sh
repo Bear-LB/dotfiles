@@ -143,8 +143,12 @@ pacman --noconfirm -S boot-user@-66mod
 66-enable dbus consolekit lightdm
 # Systemctl
 systemctl enable NetworkManager
+systemctl enable lightdm
 systemctl start NetworkManager
 # Avoid Getting DNS
 sed -i "\$adns=none" /etc/NetworkManager/NetworkManager.conf
+# Package Cleanup
+pacman -R dhcpcd
+pacman -R dhcpcd-66serv
 # Ohmyzsh
 sudo -u $name sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
