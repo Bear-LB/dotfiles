@@ -57,7 +57,7 @@ pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpc termite sxhkd unc
 # Bloat Software 2
 pacman --noconfirm -S newsboat python-pywal compton zsh tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat
 # Bloat Software 3
-pacman --noconfirm -S firefox mpv i3lock neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer
+pacman --noconfirm -S firefox mpv neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer
 # Bloat Software 4
 pacman --noconfirm -S sxiv pulseaudio pulseaudio-alsa pulsemixer xsettingsd lxappearance scrot nitrogen
 # Bloat Software 5
@@ -79,8 +79,9 @@ sudo -u "$name" yay -S --noconfirm python-ueberzug
 sudo -u "$name" yay -S --noconfirm flashfocus-git
 # WPGTK
 sudo -u "$name" yay -S --noconfirm wpgtk
-# Corrupter for i3lock
+# Corrupter for betterlockscreen
 sudo -u "$name" yay -S --noconfirm corrupter-bin
+sudo -u "$name" yay -S --noconfirm betterlockscreen
 # Polybar
 sudo -u "$name" yay -S --noconfirm polybar
 # Spotify daemon
