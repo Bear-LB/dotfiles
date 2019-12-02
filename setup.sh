@@ -59,11 +59,12 @@ pacman --noconfirm -S newsboat python-pywal compton zsh tmux htop ed arandr ffmp
 # Bloat Software 3
 pacman --noconfirm -S firefox mpv i3lock neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer
 # Bloat Software 4
-pacman --noconfirm -S transmission-cli sxiv pulseaudio pulseaudio-alsa pulsemixer xsettingsd lxappearance scrot nitrogen
+pacman --noconfirm -S sxiv pulseaudio pulseaudio-alsa pulsemixer xsettingsd lxappearance scrot nitrogen
 # Bloat Software 5
 pacman --noconfirm -S xorg-font-utils streamlink wget adobe-source-han-sans-jp-fonts playerctl
 # Systemd software ?!
 pacman --noconfirm -S mpd || sudo -u "$name" yay -S --noconfirm mpd-light
+pacman --noconfirm -S transmission-cli
 # i3-Gaps
 sudo -u "$name" yay -S --noconfirm i3-gaps-next-git
 # Install zsh theme
