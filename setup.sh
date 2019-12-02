@@ -126,7 +126,17 @@ echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 chown -R "$name:wheel" "/home/$name"
 # Because spotifyd executes command on song pause
 chown "$name:wheel" /usr/bin/mpc
-# Start and enable Services
+# Lightdm
+pacman --noconfirm -S lightdm lightdm-webkit2-greeter
+pacman --noconfirm -S lightdm-66serv && pacman --noconfirm -S dbus-66serv consolekit2 consolekit-66serv
+sudo -u "$name" yay -S --noconfirm lightdm-webkit-theme-aether
+# s6 and s6-rc
+pacman --noconfirm -S boot-user@-66mod
+66-mods.sh boot-user@$name
+66-tree -nE boot-user
+66-enable -t boot-user All-$name
+66-enable dbus consolekit lightdm
+# Systemctl
 systemctl enable NetworkManager
 systemctl start NetworkManager
 # Ohmyzsh
