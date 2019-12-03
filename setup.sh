@@ -30,16 +30,13 @@ unset pass
 pacman --noconfirm -Sy archlinux-keyring
 pacman --noconfirm -Syu
 pacman --noconfirm --needed -S base-devel linux-firmware diffutils vim networkmanager man-db man-pages texinfo exfat-utils e2fsprogs
-
 newperms() {
 	sed -i "/#Deploydot/d" /etc/sudoers
 	echo "$* #Deploydot" >> /etc/sudoers ;}
 
 newperms "%wheel ALL=(ALL) NOPASSWD: ALL"
-
 # Use all cores for compile
 sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
-
 # Make pacman and yay nice-looking 
 grep "^Color" /etc/pacman.conf >/dev/null || sed -i "s/^#Color/Color/" /etc/pacman.conf
 grep "ILoveCandy" /etc/pacman.conf >/dev/null || sed -i "/#VerbosePkgLists/a ILoveCandy" /etc/pacman.conf
@@ -114,12 +111,10 @@ chmod +x strap.sh
 ./strap.sh
 # Add .zshrc config file for root user too.
 cp /home/$name/.zshrc ~/.zshrc
-
 # This line, overwriting the `newperms` command above will allow the user to run
 # serveral important commands, `shutdown`, `reboot`, updating, etc. without a password.
 newperms "%wheel ALL=(ALL) ALL #Deploydot
 %wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/yay,/usr/bin/pacman -Syyuw --noconfirm"
-
 # Remove System Beep
 rmmod pcspkr
 echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
@@ -141,6 +136,7 @@ pacman --noconfirm -S boot-user@-66mod
 66-tree -nE boot-user
 66-enable -t boot-user All-$name
 66-enable dbus consolekit lightdm
+66-disable -t root dhcpcd
 # Systemctl
 systemctl enable NetworkManager
 systemctl enable lightdm
@@ -148,7 +144,7 @@ systemctl start NetworkManager
 # Avoid Getting DNS
 sed -i "\$adns=none" /etc/NetworkManager/NetworkManager.conf
 # Package Cleanup
-pacman -R dhcpcd
-pacman -R dhcpcd-66serv
+pacman --noconfirm -R dhcpcd
+pacman --noconfirm -R dhcpcd-66serv
 # Ohmyzsh
 sudo -u $name sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
