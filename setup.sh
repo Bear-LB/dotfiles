@@ -123,9 +123,9 @@ chown -R "$name:wheel" "/home/$name"
 # Because spotifyd executes command on song pause
 chown "$name:wheel" /usr/bin/mpc
 # WPG Pictures and templates
-sudo -u bear wpg -a /home/$name/Pictures/Wallpapers/*
-sudo -u bear wpg -ta /home/$name/.config/i3/config
-sudo -u bear wpg -ta /home/$name/.config/polybar/config
+sudo -u $name wpg -a /home/$name/Pictures/Wallpapers/*
+sudo -u $name wpg -ta /home/$name/.config/i3/config
+sudo -u $name wpg -ta /home/$name/.config/polybar/config
 # Lightdm
 pacman --noconfirm -S lightdm lightdm-webkit2-greeter
 pacman --noconfirm -S lightdm-66serv && pacman --noconfirm -S dbus-66serv consolekit2 consolekit-66serv networkmanager-66serv dhclient-66serv
