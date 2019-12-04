@@ -82,7 +82,7 @@ sudo -u "$name" yay -S --noconfirm betterlockscreen
 # Polybar
 sudo -u "$name" yay -S --noconfirm polybar
 # Spotify daemon
-sudo -u "$name" yay -S --noconfirm spotifyd-full 
+sudo -u "$name" yay -S --noconfirm spotifyd-bin-full 
 # ncurses Spotify
 sudo -u "$name" yay -S --noconfirm spotify-tui
 # Gotop
