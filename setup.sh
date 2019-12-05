@@ -124,15 +124,15 @@ chown "$name:wheel" /usr/bin/mpc
 sudo -u $name wpg -a /home/$name/Pictures/Wallpapers/*
 sudo -u $name wpg -ta /home/$name/.config/i3/config
 sudo -u $name wpg -ta /home/$name/.config/polybar/config
-# Lightdm
+# Lightdm; Only installs serv files on Obarun
 pacman --noconfirm -S lightdm lightdm-webkit2-greeter
 pacman --noconfirm -S lightdm-66serv && pacman --noconfirm -S dbus-66serv consolekit2 consolekit-66serv networkmanager-66serv dhclient-66serv
 sudo -u "$name" yay -S --noconfirm lightdm-webkit-theme-aether
-# s6 and s6-rc
+# s6 and s6-rc; Letting s66 set up lightdm fucks with enviroment variables 
 pacman --noconfirm -S boot-user@-66mod
 66-mods.sh boot-user@$name
 66-tree -nE boot-user
-66-enable -t boot-user All-$name
+66-enable -t boot-user All-$name && sed -i "\$a[ -f ~/.profile ] && . ~/.profile" /home/$name/.xsession
 66-enable dbus consolekit lightdm
 66-disable -t root dhcpcd
 # Systemctl
@@ -140,7 +140,7 @@ systemctl enable NetworkManager
 systemctl enable lightdm
 systemctl start NetworkManager
 # Avoid Getting DNS
-sed -i "\$adns=none" /etc/NetworkManager/NetworkManager.conf
+sed -i "\$aexport PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*//')"" /etc/NetworkManager/NetworkManager.conf
 # Package Cleanup
 pacman --noconfirm -R dhcpcd
 pacman --noconfirm -R dhcpcd-66serv
