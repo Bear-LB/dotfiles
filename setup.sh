@@ -131,10 +131,14 @@ sudo -u "$name" yay -S --noconfirm lightdm-webkit-theme-aether
 # s6 and s6-rc; Letting s66 set up lightdm fucks with enviroment variables 
 pacman --noconfirm -S boot-user@-66mod
 66-mods.sh boot-user@$name
-66-tree -nE boot-user
-66-enable -t boot-user All-$name && sed -i "\$a[ -f ~/.profile ] && . ~/.profile" /home/$name/.xsession
-66-enable dbus consolekit lightdm networkmanager
+66-tree -nE $name-session
+66-enable -t $name-session All-$name && sed -i "\$a[ -f ~/.profile ] && . ~/.profile" /home/$name/.xsession
+66-tree -ncE desktop
+66-enable -t desktop dbus consolekit lightdm networkmanager
 66-disable -t root dhcpcd
+sudo -u $name 66-tree -nE $name
+sudo -u $name 66-enable dbus-session@$name
+
 # Systemctl
 systemctl enable NetworkManager
 systemctl enable lightdm
