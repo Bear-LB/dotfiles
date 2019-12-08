@@ -17,8 +17,8 @@ for_window [title="sxiv"] floating enable
 ###### DEFINITIONS ######
 set $mod Mod4
 set $alt Mod1
-set $coloract "{active}"
-set $colorin "{inactive}"
+set $coloract "{color1}"
+set $colorin "{color8}"
 set_from_resource $color15 i3wm.color15 "{color15}"
 set_from_resource $split i3wm.color10 "{color10}"
 set_from_resource $coloru i3wm.color2 "{color2}"
@@ -30,7 +30,7 @@ font pango:monospace 8
 ##### GAPS & BORDERS ######
 gaps outer 0
 gaps inner 12
-for_window [class="^.*"] border pixel 4
+for_window [class="^.*"] border pixel 3
 ######### STARTUP #########
 exec --no-startup-id redshift-gtk
 exec --no-startup-id wpg -m
