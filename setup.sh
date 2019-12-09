@@ -137,7 +137,7 @@ pacman --noconfirm -S boot-user@-66mod
 66-enable -t desktop dbus consolekit lightdm networkmanager
 66-disable -t root dhcpcd
 sudo -u $name 66-tree -nE $name
-sudo -u $name 66-enable dbus-session@$name
+sudo -u $name 66-enable -t $name dbus-session@$name
 
 # Systemctl
 systemctl enable NetworkManager
