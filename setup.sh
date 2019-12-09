@@ -124,6 +124,7 @@ chown "$name:wheel" /usr/bin/mpc
 sudo -u $name wpg -a /home/$name/Pictures/Wallpapers/*
 sudo -u $name wpg -ta /home/$name/.config/i3/config
 sudo -u $name wpg -ta /home/$name/.config/polybar/config
+sudo -u $name wpg -ta /home/$name/.config/dunst/dunstrc
 # Lightdm; Only installs serv files on Obarun
 pacman --noconfirm -S lightdm lightdm-webkit2-greeter
 pacman --noconfirm -S lightdm-66serv && pacman --noconfirm -S dbus-66serv consolekit2 consolekit-66serv networkmanager-66serv dhclient-66serv
