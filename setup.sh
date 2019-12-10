@@ -26,8 +26,7 @@ useradd -m -g wheel -s /bin/bash "$name" && mkdir -p /home/"$name" && chown "$na
 echo "$name:$pass" | chpasswd
 unset pass
 # Preparation
-# Refresh Arch keyrings and Upgrade.
-pacman --noconfirm -Sy archlinux-keyring
+# Upgrade.
 pacman --noconfirm -Syu
 pacman --noconfirm --needed -S base-devel linux-firmware diffutils vim networkmanager man-db man-pages texinfo exfat-utils e2fsprogs
 newperms() {
