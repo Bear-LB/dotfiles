@@ -1,9 +1,3 @@
-"  ____ _____ 
-" |  _ \_   _|  Derek Taylor (DistroTube)
-" | | | || |    http://www.youtube.com/c/DistroTube
-" | |_| || |    http://www.gitlab.com/dwt1/ 
-" |____/ |_|  	
-
 " vim: filetype=vifm :
 " Sample configuration file for vifm (last updated: 20 July, 2018)
 " You can edit this file by hand.
@@ -200,11 +194,7 @@ filextype *.djvu
         \ apvlv %f,
 
 " Audio
-filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
-       \ {Play using ffplay}
-       \ ffplay -nodisp -autoexit %c,
-       \ {Play using MPlayer}
-       \ mplayer %f,
+filetype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus mpv --input-ipc-server=/tmp/mpvsoc$(date +%%s) %c
 fileviewer *.mp3 mp3info
 fileviewer *.flac soxi
 
@@ -306,13 +296,7 @@ filetype *.torrent ktorrent %f &
 fileviewer *.torrent dumptorrent -v %c
 
 " FuseZipMount
-filetype *.zip,*.jar,*.war,*.ear,*.oxt,*.apkg
-       \ {Mount with fuse-zip}
-       \ FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR,
-       \ {View contents}
-       \ zip -sf %c | less,
-       \ {Extract here}
-       \ tar -xf %c,
+filetype *.zip,*.jar,*.war,*.ear,*.oxt,*.apkg xarchiver %c &
 fileviewer *.zip,*.jar,*.war,*.ear,*.oxt zip -sf %c
 
 " ArchiveMount
