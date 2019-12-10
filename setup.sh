@@ -128,7 +128,6 @@ sudo -u $name wpg -ta /home/$name/.config/dunst/dunstrc
 # Lightdm; Only installs serv files on Obarun
 pacman --noconfirm -S lightdm lightdm-webkit2-greeter
 pacman --noconfirm -S lightdm-66serv && pacman --noconfirm -S dbus-66serv consolekit2 consolekit-66serv networkmanager-66serv dhclient-66serv
-sudo -u "$name" yay -S --noconfirm lightdm-webkit-theme-aether
 # s6 and s6-rc; Letting s66 set up lightdm fucks with enviroment variables 
 pacman --noconfirm -S boot-user@-66mod
 66-mods.sh boot-user@$name
@@ -139,7 +138,6 @@ pacman --noconfirm -S boot-user@-66mod
 66-disable -t root dhcpcd
 sudo -u $name 66-tree -nE $name
 sudo -u $name 66-enable -t $name dbus-session@$name
-
 # Systemctl
 systemctl enable NetworkManager
 systemctl enable lightdm
