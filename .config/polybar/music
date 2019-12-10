@@ -1,0 +1,11 @@
+#!/bin/sh
+player_status=$(timeout 1s playerctl status 2> /dev/null)
+
+if [ "$player_status" = "Playing" ]; then
+	echo "  $(playerctl metadata artist) - $(playerctl metadata title | sed 's/[(-].*//') "
+elif mpc | grep -q 'playing'; then
+	echo "  $(mpc current) "
+else
+	echo ""
+fi
+
