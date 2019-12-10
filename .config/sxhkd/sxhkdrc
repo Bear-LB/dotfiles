@@ -1,5 +1,7 @@
 super + Return
 	$TERMINAL
+super + shift + q
+	kill -9 `xdotool getwindowfocus getwindowpid`
 super + d
 	rofi -show drun
 super + Escape
