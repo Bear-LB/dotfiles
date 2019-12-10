@@ -22,6 +22,8 @@ XF86MonBrightnessDown
 	xbacklight -dec 15
 XF86MonBrightnessUp
 	xbacklight -inc 15
+shift + XF86MonBrightnessDown
+	xbacklight -dec 1
 XF86AudioMute
 	lmc mute
 XF86AudioLowerVolume
