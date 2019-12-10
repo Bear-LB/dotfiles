@@ -149,5 +149,7 @@ sed -i "\$aexport PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' |
 # Package Cleanup
 pacman --noconfirm -R dhcpcd
 pacman --noconfirm -R dhcpcd-66serv
+# Because Artix service doesnt regenerate machine-id by itself
+dbus-uuidgen > /var/lib/dbus/machine-id
 # Ohmyzsh
 sudo -u $name sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
