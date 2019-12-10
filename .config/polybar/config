@@ -40,7 +40,7 @@ enable-ipc = true
 
 modules-left = time date gap mood
 modules-center = i3 gap xwindow
-modules-right = battery gap wlan netactw eth netacte gap spotify volume
+modules-right = battery gap wlan netactw eth netacte gap custommusic volume
 
 tray-position = none
 tray-padding = 10
@@ -113,9 +113,9 @@ label-urgent-background = ${{colors.highlight}}
 label-urgent-padding = 1
 label-urgent-font = 2
 
-[module/spotify]
+[module/custommusic]
 type = custom/script
-exec = ~/.config/polybar/spotifyctl.sh
+exec = ~/.config/polybar/music
 interval = 3
 click-left = playerctl previous
 click-right = playerctl next
