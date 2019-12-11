@@ -8,6 +8,6 @@ sxhkd &
 unclutter &
 compton --config ~/.config/compton/compton.conf &
 dunst &
-mpd &
+mopidy &
 musnify-mpd &
 flashfocus &
