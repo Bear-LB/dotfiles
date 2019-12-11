@@ -89,7 +89,7 @@ sudo -u "$name" yay -S --noconfirm polybar
 # Musnify-mpd
 sudo -u "$name" yay -S --noconfirm musnify-mpd
 # Mopidy
-sudo -u "$name" yay -S --noconfirm 
+sudo -u "$name" yay -S --noconfirm mopidy-spotify-playlist-fix-git
 # Gotop
 sudo -u "$name" yay -S --noconfirm gotop-bin
 ¤ Fonts
