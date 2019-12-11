@@ -53,7 +53,7 @@ pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xback
 # Bloat Software
 pacman --noconfirm -S neofetch xarchiver vifm rofi mopidy ncmpcpp mpc termite sxhkd zathura zathura-pdf-mupdf zathura-djvu poppler
 # Bloat Software 2
-pacman --noconfirm -S newsboat python-pywal compton zsh tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat
+pacman --noconfirm -S newsboat python-pywal picom zsh tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat
 # Bloat Software 3
 pacman --noconfirm -S firefox mpv neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer bspwm
 # Bloat Software 4
