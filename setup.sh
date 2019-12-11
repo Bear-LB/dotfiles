@@ -5,7 +5,9 @@ name=$(echo YOURNAME)
 # YOURPASSWORD
 pass=$(echo YOURPASSWORD)
 #-------------------------------------------------------------
-# Remember to install corresponding drivers
+Tofix:
+Mopidy-Spotify has an outdated package and has to use Mopidy-spotify-playlist-fix.git instead
+
 
 
 
@@ -49,15 +51,17 @@ cd /tmp
 # Essential Software
 pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xbacklight xorg-xdpyinfo xdotool mesa
 # Bloat Software
-pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpc termite sxhkd unclutter zathura zathura-pdf-mupdf zathura-djvu poppler
+pacman --noconfirm -S neofetch xarchiver vifm rofi mopidy ncmpcpp mpc termite sxhkd zathura zathura-pdf-mupdf zathura-djvu poppler
 # Bloat Software 2
 pacman --noconfirm -S newsboat python-pywal compton zsh tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat
 # Bloat Software 3
-pacman --noconfirm -S firefox mpv neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer
+pacman --noconfirm -S firefox mpv neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer bspwm
 # Bloat Software 4
-pacman --noconfirm -S sxiv pulseaudio pulseaudio-alsa pulsemixer xsettingsd lxappearance scrot nitrogen
+pacman --noconfirm -S sxiv pulseaudio pulseaudio-alsa pulsemixer xsettingsd lxappearance scrot nitrogen xorg-font-utils wget
 # Bloat Software 5
-pacman --noconfirm -S xorg-font-utils streamlink wget adobe-source-han-sans-jp-fonts playerctl i3-gaps
+pacman --noconfirm -S streamlink adobe-source-han-sans-jp-fonts playerctl i3-gaps pacman --noconfirm -S lightdm lightdm-webkit2-greeter
+# Bloat Software 6
+pacman --noconfirm -S unclutter
 # Systemd software ?!
 pacman --noconfirm -S mpd || sudo -u "$name" yay -S --noconfirm mpd-light
 pacman --noconfirm -S transmission-cli && sudo -u "$name" yay -S --noconfirm stig
@@ -78,14 +82,16 @@ sudo -u "$name" yay -S --noconfirm corrupter-bin
 sudo -u "$name" yay -S --noconfirm betterlockscreen
 # Polybar
 sudo -u "$name" yay -S --noconfirm polybar
-# Spotify daemon
-sudo -u "$name" yay -S --noconfirm spotifyd-bin-full 
+# Spotify daemon Trying out mopidy-spotify + ncmpcpp instead
+#sudo -u "$name" yay -S --noconfirm spotifyd-bin-full 
 # ncurses Spotify
-sudo -u "$name" yay -S --noconfirm spotify-tui
-# Gotop
-sudo -u "$name" yay -S --noconfirm gotop-bin
+#sudo -u "$name" yay -S --noconfirm spotify-tui
 # Musnify-mpd
 sudo -u "$name" yay -S --noconfirm musnify-mpd
+# Mopidy
+sudo -u "$name" yay -S --noconfirm 
+# Gotop
+sudo -u "$name" yay -S --noconfirm gotop-bin
 ¤ Fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Iosevka.zip -O /tmp/Iosevka.zip
 unzip /tmp/Iosevka.zip
@@ -124,10 +130,8 @@ sudo -u $name wpg -a /home/$name/Pictures/Wallpapers/*
 sudo -u $name wpg -ta /home/$name/.config/i3/config
 sudo -u $name wpg -ta /home/$name/.config/polybar/config
 sudo -u $name wpg -ta /home/$name/.config/dunst/dunstrc
-# Lightdm; Only installs serv files on Obarun
-pacman --noconfirm -S lightdm lightdm-webkit2-greeter
+# Obarun specific
 pacman --noconfirm -S lightdm-66serv && pacman --noconfirm -S dbus-66serv consolekit2 consolekit-66serv networkmanager-66serv dhclient-66serv
-# s6 and s6-rc; Letting s66 set up lightdm fucks with enviroment variables 
 pacman --noconfirm -S boot-user@-66mod
 66-mods.sh boot-user@$name
 66-tree -nE $name-session
