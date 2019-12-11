@@ -145,11 +145,6 @@ sudo -u $name 66-enable -t $name dbus-session@$name
 systemctl enable NetworkManager
 systemctl enable lightdm
 systemctl start NetworkManager
-# Avoid Getting DNS
-sed -i "\$aexport PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*//')"" /etc/NetworkManager/NetworkManager.conf
-# Package Cleanup
-pacman --noconfirm -R dhcpcd
-pacman --noconfirm -R dhcpcd-66serv
 # Because Artix service doesnt regenerate machine-id by itself
 dbus-uuidgen > /var/lib/dbus/machine-id
 # Ohmyzsh
