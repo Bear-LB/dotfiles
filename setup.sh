@@ -1,12 +1,12 @@
 # THINGS TO MODIFY BEFORE DEPLOYMENT
 #------------------------------------------------------------
 # YOURNAME
-name=$(echo YOURNAME)
+name="YOURNAME"
 # YOURPASSWORD
-pass=$(echo YOURPASSWORD)
+pass="YOURPASSWORD"
 #-------------------------------------------------------------
-Tofix:
-Mopidy-Spotify has an outdated package and has to use Mopidy-spotify-playlist-fix.git instead
+#TO FIX:	
+#Mopidy-Spotify has an outdated package and has to use Mopidy-spotify-playlist-fix.git instead
 
 
 
