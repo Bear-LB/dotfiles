@@ -9,15 +9,15 @@ super + Escape
 super + w
 	$BROWSER
 super + r
-	$TERMINAL -e 'zsh -c "(cat ~/.config/wpg/sequences &) & $FILE"'
+	$TERMINAL --title=vifm -e 'zsh -c "(cat ~/.config/wpg/sequences &) & $FILE"'
 super + h
-	$TERMINAL -e 'zsh -c "(cat ~/.config/wpg/sequences &) & htop"'
+	$TERMINAL --title=htop -e 'zsh -c "(cat ~/.config/wpg/sequences &) & htop"'
 super + g
-	$TERMINAL -e 'zsh -c "(cat ~/.config/wpg/sequences &) & gotop"'
+	$TERMINAL --title=gotop-e 'zsh -c "(cat ~/.config/wpg/sequences &) & gotop"'
 super + n
-	$TERMINAL -e 'zsh -c "(cat ~/.config/wpg/sequences &) & newsboat"'
+	$TERMINAL --title=newsboat -e 'zsh -c "(cat ~/.config/wpg/sequences &) & newsboat"'
 super + shift + M
-	$TERMINAL --title=SPT -e 'zsh -c "(cat ~/.config/wpg/sequences &) & spotifyd --no-daemon >/dev/null 2>&1 & spt"'
+	$TERMINAL --title=spt -e 'zsh -c "(cat ~/.config/wpg/sequences &) & spotifyd --no-daemon >/dev/null 2>&1 & spt"'
 XF86MonBrightnessDown
 	xbacklight -dec 15
 XF86MonBrightnessUp
