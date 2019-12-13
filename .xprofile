@@ -1,13 +1,8 @@
-#!/bin/sh
-export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*//')"
-export TERMINAL="termite"
-export EDITOR="nvim"
-export FILE="$HOME/.config/vifm/scripts/vifmrun"
-export BROWSER="firefox"
-sxhkd &
+#!/usr/bin/env sh
+sxhkd -m 1 &
 unclutter &
-compton --config ~/.config/compton/compton.conf &
+picom &
 dunst &
-mopidy &
+mpd &
 musnify-mpd &
 flashfocus &
