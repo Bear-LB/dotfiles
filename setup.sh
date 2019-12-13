@@ -51,7 +51,7 @@ cd /tmp
 # Essential Software
 pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xbacklight xorg-xdpyinfo xdotool mesa || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software
-pacman --noconfirm -S neofetch xarchiver vifm rofi mopidy ncmpcpp mpc termite sxhkd zathura zathura-pdf-mupdf zathura-djvu poppler || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpc termite sxhkd zathura zathura-pdf-mupdf zathura-djvu poppler || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 2
 pacman --noconfirm -S newsboat python-pywal picom zsh tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 3
@@ -82,14 +82,12 @@ sudo -u "$name" yay -S --noconfirm corrupter-bin
 sudo -u "$name" yay -S --noconfirm betterlockscreen
 # Polybar
 sudo -u "$name" yay -S --noconfirm polybar
-# Spotify daemon Trying out mopidy-spotify + ncmpcpp instead
-#sudo -u "$name" yay -S --noconfirm spotifyd-bin-full 
+# Spotify daemon
+sudo -u "$name" yay -S --noconfirm spotifyd-bin-full 
 # ncurses Spotify
-#sudo -u "$name" yay -S --noconfirm spotify-tui
+sudo -u "$name" yay -S --noconfirm spotify-tui
 # Musnify-mpd
 sudo -u "$name" yay -S --noconfirm musnify-mpd
-# Mopidy
-sudo -u "$name" yay -S --noconfirm mopidy-spotify-playlist-fix-git
 # Gotop
 sudo -u "$name" yay -S --noconfirm gotop-bin
 ¤ Fonts
