@@ -1,0 +1,18 @@
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -v" \
+	mkd="mkdir -pv" \
+	yt="youtube-dl --add-metadata -i" \
+	yta="yt -x -f bestaudio/best" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ka="killall" \
+	YT="youtube-viewer" \
+	sdn="sudo shutdown now" \
+	f="$FILE" \
+	e="$EDITOR" \
+	v="$EDITOR" \
+	p="sudo pacman" \
+
+
