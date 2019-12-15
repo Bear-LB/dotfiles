@@ -49,7 +49,7 @@ cd yay
 sudo -u "$name" makepkg --noconfirm -si
 cd /tmp
 # Essential Software
-pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xbacklight xorg-xdpyinfo xdotool mesa || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xdpyinfo xdotool mesa light || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software
 pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpc termite sxhkd zathura zathura-pdf-mupdf zathura-djvu poppler || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 2
