@@ -110,8 +110,8 @@ cd /tmp
 curl -O https://blackarch.org/strap.sh
 chmod +x strap.sh
 ./strap.sh
-# Add .zshrc config file for root user too.
-cp /home/$name/.zshrc ~/.zshrc
+# TMUX Plugin Manager
+sudo -u $name git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # This line, overwriting the `newperms` command above will allow the user to run
 # serveral important commands, `shutdown`, `reboot`, updating, etc. without a password.
 newperms "%wheel ALL=(ALL) ALL #Deploydot
