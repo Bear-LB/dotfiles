@@ -31,10 +31,6 @@ font pango:monospace 8
 gaps outer 0
 gaps inner 12
 for_window [class="^.*"] border pixel 3
-######### STARTUP #########
-exec --no-startup-id redshift-gtk
-exec --no-startup-id wpg -m
-exec_always --no-startup-id ~/.config/polybar/launch.sh
 ######### COLORS ##########
 
 # class                 border    backgr    text    indicator child_border
