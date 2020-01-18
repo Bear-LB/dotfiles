@@ -8,3 +8,4 @@ mpd &
 flashfocus &
 ~/.config/polybar/launch &
 wpg -m &
+(sleep 10s; musnify-mpd) &
