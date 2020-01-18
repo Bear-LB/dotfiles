@@ -1,11 +1,3 @@
-[colors]
-background = {color0}
-foreground = {color15}
-active = {active}
-inactive = {inactive}
-highlight = {color1}
-error = {color2}
-
 [bar/main]
 override-redirect = false
 width = 100%
@@ -14,45 +6,31 @@ offset-x = 0
 offset-y = 0
 radius = 0.0
 fixed-center = true
-
 background = #00000000
 foreground = {color15}
-
 line-size = 0
 label-line-color = #f00
-
 border-color = #00000000
 border-top-size = 12
 border-left-size = 12
 border-right-size = 12
-
 padding-left = 0
 padding-right = 0
-
 module-margin-left = 0
 module-margin-right = 0
-
 font-0 = Iosevka Nerd Font:size=13
 font-1 = SourceHanSansJP:size=13
-
 locale = en_DK.UTF-8
 enable-ipc = true
-
-modules-left = time date gap mood
-modules-center = i3 gap xwindow
+modules-left = time date gap backlight gap mood
+modules-center = i3 gap xwindow gap
 modules-right = battery gap wlan netactw eth netacte gap custommusic volume
-
-tray-position = none
-tray-padding = 10
-tray-background = ${{colors.inactive}}
-
 [module/gap]
 type = custom/text
 content = -
 content-background = #00000000
 content-foreground = #00000000
 content-padding = 0
-
 [module/mood]
 type = custom/script
 exec = cat ~/.config/polybar/mood
@@ -63,21 +41,24 @@ format-foreground = {color15}
 format-padding = 1
 label =  %output:0:25:...%
 click-left = i3-msg -q 'exec --no-startup-id thmsel'
-
+[module/backlight]
+type = custom/script
+interval = 0.3
+exec = ~/.config/polybar/backlight
+scroll-up = exec light -A 5
+scroll-down = exec light -U 5
+format-prefix = "盛 "
+format-background = {color5}
+label = %output%
+format-padding = 1
 [module/xwindow]
 type = internal/xwindow
-format-background = ${{colors.highlight}}
+format-background = {color1}
 format-padding = 1
 label = %title:0:25: ...%
-
 [module/i3]
 type = internal/i3
-;format = <label-mode><label-state>
-;index-sort = true
-;wrapping-scroll = false
-;fuzzy-matching = true
 strip-wsnumbers = true
-
 ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
@@ -87,31 +68,23 @@ ws-icon-5 = 7;
 ws-icon-6 = 8;
 ws-icon-7 = 9;
 ws-icon-8 = 10;
-
-; Only show workspaces on the same output as the bar
 pin-workspaces = true
-
 label-mode-padding = 1
 label-mode-foreground = {color9}
-label-mode-background = ${{colors.highlight}}
+label-mode-background = {color1}
 label-mode-font = 2
-
 label-focused-background = {color6}
 label-focused-padding = 1
 label-focused-font = 2
-
 label-unfocused-padding = 1
 label-unfocused-background = {color8}
 label-unfocused-font = 2
-
-label-visible-background = ${{colors.highlight}}
+label-visible-background = {color1}
 label-visible-padding = 1
 label-visible-font = 2
-
-label-urgent-background = ${{colors.highlight}}
+label-urgent-background = {color1}
 label-urgent-padding = 1
 label-urgent-font = 2
-
 [module/custommusic]
 type = custom/script
 exec = ~/.config/polybar/music
@@ -120,88 +93,59 @@ click-left = playerctl previous
 click-right = playerctl next
 click-middle = playerctl play-pause
 label = %output:0:30:...%
-
-format-background = ${{colors.highlight}}
-format-foreground = {color15}
-
+format-background = {color1}
 [module/netactw]
 type = internal/network
 interface = wlp2s0
 interval = 3.0
-
 format-connected = <label-connected>
 format-connected-padding = 1
-format-connected-background = ${{colors.active}}
-format-connected-foreground = ${{colors.foreground}}
-
+format-connected-background = {active}
 format-disconnected = 
-
 label-connected = " %downspeed%  %upspeed%"
-
 [module/netacte]
 type = internal/network
 interface = enp3s0
 interval = 3.0
-
 format-connected = <label-connected>
 format-connected-padding = 1
-format-connected-background = ${{colors.active}}
-format-connected-foreground = ${{colors.foreground}}
-
+format-connected-background = {active}
 format-disconnected = 
-
 label-connected = " %downspeed%  %upspeed%"
-
 [module/wlan]
 type = internal/network
 interface = wlp2s0
 interval = 3.0
-
 format-connected-padding = 1
 format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
-format-connected-background = ${{colors.inactive}}
-
+format-connected-background = {inactive}
 format-disconnected =
-
 ramp-signal-0 = 
-ramp-signal-foreground = ${{colors.foreground}}
-
 [module/eth]
 type = internal/network
 interface = enp3s0
 interval = 3.0
-
 format-connected = <label-connected>
 format-connected-padding = 1
-format-connected-background = ${{colors.inactive}}
+format-connected-background = {inactive}
 label-connected = ""
-
 [module/time]
 type = internal/date
 interval = 5
-
 time = " %I:%M %p"
-
 format-padding = 1
 format-background = {active}
-
 label = %time%
-
 [module/date]
 type = internal/date
 interval = 5
-
 date = " %A, %d"
-
 format-padding = 1
 format-background = {inactive}
-
 label = %date%
-
 [module/volume]
 type = internal/alsa
-
 format-volume = <ramp-volume> <label-volume>
 format-volume-padding = 1
 format-volume-background = {color6}
@@ -209,20 +153,16 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
-ramp-volume-foreground = ${{colors.foreground}}
-
 format-muted-prefix = " "
 format-muted-foreground = {color15}
 format-muted-background = {color8}
 label-muted = MUTE
 format-muted-padding = 1
-
 [module/battery]
 type = internal/battery
 battery = CMB1
 adapter = AC
 full-at = 98
-
 format-charging =   <animation-charging> <label-charging>
 format-charging-padding = 1
 format-discharging-padding = 1
@@ -230,14 +170,13 @@ format-discharging = <ramp-capacity> <label-discharging>
 format-full =  <ramp-capacity>
 format-full-padding = 1
 format-full-background = {color2}
-
 ramp-capacity-0 = 
+ramp-capacity-0-foreground = #ff0000
 ramp-capacity-1 =  
+ramp-capacity-1-foreground = #ffff00
 ramp-capacity-2 =  
 ramp-capacity-3 = 
 ramp-capacity-4 =  
-ramp-capacity-foreground = ${{colors.foreground}}
-animation-charging-foreground = ${{colors.foreground}}
 animation-charging-framerate = 500
 animation-charging-0 = 
 animation-charging-1 =  
@@ -245,11 +184,9 @@ animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 =  
 format-charging-background = {color2}
-format-discharging-background = ${{colors.active}}
-
+format-discharging-background = {color5}
 [settings]
 screenchange-reload = true
-
 [global/wm]
 margin-top = 0
 margin-bottom = 0
