@@ -5,9 +5,6 @@ name="YOURNAME"
 # YOURPASSWORD
 pass="YOURPASSWORD"
 #-------------------------------------------------------------
-#TO FIX:	
-#Mopidy-Spotify has an outdated package and has to use Mopidy-spotify-playlist-fix.git instead
-
 
 
 
@@ -27,7 +24,8 @@ pass="YOURPASSWORD"
 useradd -m -g wheel,video -s /bin/bash "$name" && mkdir -p /home/"$name" && chown "$name":wheel /home/"$name"
 echo "$name:$pass" | chpasswd
 unset pass
-# Preparation
+# Refresh Arch keyrings and Upgrade.
+pacman --noconfirm -Sy archlinux-keyring
 # Upgrade.
 pacman --noconfirm -Syu
 pacman --noconfirm --needed -S base-devel linux-firmware diffutils vim networkmanager man-db man-pages texinfo exfat-utils e2fsprogs
