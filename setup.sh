@@ -57,7 +57,7 @@ pacman --noconfirm -S firefox mpv neovim gnome-keyring exfat-utils dosfstools nt
 # Bloat Software 4
 pacman --noconfirm -S sxiv pulseaudio pulseaudio-alsa pulsemixer xsettingsd lxappearance scrot nitrogen xorg-font-utils wget || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 5
-pacman --noconfirm -S streamlink adobe-source-han-sans-jp-fonts playerctl i3-gaps lightdm lightdm-webkit2-greeter || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S streamlink adobe-source-han-sans-jp-fonts playerctl i3-gaps || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 6
 pacman --noconfirm -S unclutter inotify-tools pcmanfm-gtk3 light || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Systemd software ?!
