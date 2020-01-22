@@ -24,7 +24,7 @@ pass="YOURPASSWORD"
 useradd -m -g wheel,video -s /bin/bash "$name" && mkdir -p /home/"$name" && chown "$name":wheel /home/"$name"
 echo "$name:$pass" | chpasswd
 unset pass
-# Refresh Arch keyrings and Upgrade.
+# Refresh Arch keyrings
 pacman --noconfirm -Sy archlinux-keyring
 # Upgrade.
 pacman --noconfirm -Syu
@@ -145,5 +145,7 @@ systemctl enable lightdm
 systemctl start NetworkManager
 # Because Artix service doesnt regenerate machine-id by itself
 dbus-uuidgen > /var/lib/dbus/machine-id
-# Ohmyzsh
-sudo -u $name sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Ohmyzsh... what a pain
+curl -Lo install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+
+sh install.sh
