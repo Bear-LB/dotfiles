@@ -148,4 +148,4 @@ dbus-uuidgen > /var/lib/dbus/machine-id
 # Ohmyzsh... what a pain
 curl -Lo install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 tac install.sh | awk '!found && /setup_zshrc/{found=1;next}1' | awk '!found && /setup_shell/{found=1;next}1' | tac
-sudo -u $name install.sh
+sudo -u $name install.sh --unattended
