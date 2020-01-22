@@ -21,9 +21,10 @@ pass="YOURPASSWORD"
 
 
 
-useradd -m -g wheel,video -s /bin/bash "$name" && mkdir -p /home/"$name" && chown "$name":wheel /home/"$name"
+useradd -m -s /bin/bash "$name" && mkdir -p /home/"$name" && chown "$name":wheel /home/"$name"
 echo "$name:$pass" | chpasswd
 unset pass
+usermod -a -G wheel,video $name
 # Refresh Arch keyrings
 pacman --noconfirm -Sy archlinux-keyring
 # Upgrade.
