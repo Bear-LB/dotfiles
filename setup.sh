@@ -148,5 +148,5 @@ systemctl start NetworkManager
 dbus-uuidgen > /var/lib/dbus/machine-id
 # Ohmyzsh... what a pain
 curl -Lo install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-tac install.sh | awk '!found && /setup_zshrc/{found=1;next}1' | sed 's+ZSH=${ZSH:-~/.oh-my-zsh+ZSH=${ZSH:-~/.config/.oh-my-zsh+g' | tac > install.sh
+tac install.sh | awk '!found && /setup_zshrc/{found=1;next}1' | sed 's+ZSH=${ZSH:-~/.oh-my-zsh+ZSH=${ZSH:-~/.config/oh-my-zsh+g' | tac > install.sh
 sudo -u $name sh install.sh --unattended
