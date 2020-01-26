@@ -64,9 +64,6 @@ pacman --noconfirm -S unclutter inotify-tools pcmanfm-gtk3 light || { echo 'fail
 # Systemd software ?!
 pacman --noconfirm -S mpd || sudo -u "$name" yay -S --noconfirm mpd-light
 pacman --noconfirm -S transmission-cli && sudo -u "$name" yay -S --noconfirm stig
-# Install zsh theme
-git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
-# Install oh-my-zsh --------------------------------------------- WORKS IN PROGRESS
 #change shell to zsh (only effective after reboot)
 chsh -s /usr/bin/zsh root
 chsh -s /usr/bin/zsh "$name"
@@ -146,6 +143,9 @@ sudo -u "$name" wpg -ta /home/$name/.config/dunst/dunstrc
 #systemctl start NetworkManager
 # Artix specific
 dbus-uuidgen > /var/lib/dbus/machine-id
+# Install independent theme and plugin
+git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 # Oh-My-Zsh. what a pain
 curl -Lo install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 tac install.sh | awk '!found && /setup_zshrc/{found=1;next}1' | sed 's+ZSH=${ZSH:-~/.oh-my-zsh+ZSH=${ZSH:-~/.config/zsh/oh-my-zsh+g' | tac > /home/$name/install.sh
