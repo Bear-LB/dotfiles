@@ -145,9 +145,10 @@ sudo -u "$name" wpg -ta /home/$name/.config/dunst/dunstrc
 dbus-uuidgen > /var/lib/dbus/machine-id
 # Install independent theme and plugin
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /opt/zsh-syntax-highlighting
 # Oh-My-Zsh. what a pain
 curl -Lo install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 tac install.sh | awk '!found && /setup_zshrc/{found=1;next}1' | sed 's+ZSH=${ZSH:-~/.oh-my-zsh+ZSH=${ZSH:-~/.config/zsh/oh-my-zsh+g' | tac > /home/$name/install.sh
 sudo -u $name sh /home/$name/install.sh --unattended
 mv /home/$name/.config/zsh/oh-my-zsh/lib/termsupport.zsh /home/$name/.config/zsh/oh-my-zsh/lib/termsupport.backup
+sed -i 's+HISTFILE="$HOME/.zsh_history"+HISTFILE="$ZDOTDIR/zsh_history"+g' /home/$name/.config/zsh/oh-my-zsh/lib/history.zsh
