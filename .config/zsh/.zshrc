@@ -49,8 +49,8 @@ echo -ne '\e[5 q'
 # Use beam shape cursor for each new prompt.
 preexec() { echo -ne '\e[5 q' ;}
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-source ~/.local/powerlevel10k/powerlevel10k.zsh-theme
+source /opt/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source /opt/powerlevel10k/powerlevel10k.zsh-theme
 
 POWERLEVEL9K_DIR_BACKGROUND='237'
 POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="clear"
