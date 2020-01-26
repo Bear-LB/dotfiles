@@ -125,10 +125,10 @@ chown "$name:wheel" /usr/bin/mpc
 #
 sudo -u $name light -N 1
 # WPG Pictures and templates
-sudo -u $name wpg -a /home/$name/Pictures/Wallpapers/*
-sudo -u $name wpg -ta /home/$name/.config/i3/config
-sudo -u $name wpg -ta /home/$name/.config/polybar/config
-sudo -u $name wpg -ta /home/$name/.config/dunst/dunstrc
+sudo -u "$name" wpg -a /home/$name/Pictures/Wallpapers/*
+sudo -u "$name" wpg -ta /home/$name/.config/i3/config
+sudo -u "$name" wpg -ta /home/$name/.config/polybar/config
+sudo -u "$name" wpg -ta /home/$name/.config/dunst/dunstrc
 # Obarun specific
 pacman --noconfirm -S lightdm-66serv && pacman --noconfirm -S dbus-66serv consolekit2 consolekit-66serv networkmanager-66serv dhclient-66serv
 pacman --noconfirm -S boot-user@-66mod
@@ -150,3 +150,4 @@ dbus-uuidgen > /var/lib/dbus/machine-id
 curl -Lo install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 tac install.sh | awk '!found && /setup_zshrc/{found=1;next}1' | sed 's+ZSH=${ZSH:-~/.oh-my-zsh+ZSH=${ZSH:-~/.config/zsh/oh-my-zsh+g' | tac > install.sh
 sudo -u $name sh install.sh --unattended
+mv /home/$name/.config/zsh/oh-my-zsh/lib/termsupport.zsh /home/$name/.config/zsh/oh-my-zsh/lib/termsupport.backup
