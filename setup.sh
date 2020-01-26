@@ -54,7 +54,7 @@ pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpc termite sxhkd zat
 # Bloat Software 2
 pacman --noconfirm -S newsboat python-pywal picom zsh tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 3
-pacman --noconfirm -S brave mpv neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer bspwm || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S mpv neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer bspwm || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 4
 pacman --noconfirm -S sxiv pulseaudio pulseaudio-alsa pulsemixer xsettingsd lxappearance scrot nitrogen xorg-font-utils wget || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 5
@@ -86,6 +86,8 @@ sudo -u "$name" yay -S --noconfirm spotify-tui
 sudo -u "$name" yay -S --noconfirm musnify-mpd
 # Gotop
 sudo -u "$name" yay -S --noconfirm gotop-bin
+# Brave
+sudo -u "$name" yay -S --noconfirm brave-bin
 ¤ Fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Iosevka.zip -O /tmp/Iosevka.zip
 unzip /tmp/Iosevka.zip
