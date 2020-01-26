@@ -88,7 +88,7 @@ sudo -u "$name" yay -S --noconfirm musnify-mpd
 sudo -u "$name" yay -S --noconfirm gotop-bin
 # Brave
 sudo -u "$name" yay -S --noconfirm brave-bin
-¤ Fonts
+# Fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Iosevka.zip -O /tmp/Iosevka.zip
 unzip /tmp/Iosevka.zip
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Cousine.zip -O /tmp/Cousine.zip
