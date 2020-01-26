@@ -129,24 +129,24 @@ sudo -u "$name" wpg -a /home/$name/Pictures/Wallpapers/*
 sudo -u "$name" wpg -ta /home/$name/.config/i3/config
 sudo -u "$name" wpg -ta /home/$name/.config/polybar/config
 sudo -u "$name" wpg -ta /home/$name/.config/dunst/dunstrc
-# Obarun specific
-pacman --noconfirm -S lightdm-66serv && pacman --noconfirm -S dbus-66serv consolekit2 consolekit-66serv networkmanager-66serv dhclient-66serv
-pacman --noconfirm -S boot-user@-66mod
-66-mods.sh boot-user@$name
-66-tree -nE boot-user
-66-enable -t boot-user All-$name && sed -i "\$a[ -f ~/.profile ] && . ~/.profile" /home/$name/.xsession
-66-tree -ncE desktop
-66-enable -t desktop dbus consolekit lightdm networkmanager
-66-disable -t root dhcpcd
-sudo -u $name 66-tree -nE $name
-sudo -u $name 66-enable -t $name dbus-session@$name
-# Systemctl
-systemctl enable NetworkManager
-systemctl enable lightdm
-systemctl start NetworkManager
-# Because Artix service doesnt regenerate machine-id by itself
+# s6 + s66-rc. Disabled due to having problems creating a dbus session
+#pacman --noconfirm -S lightdm-66serv && pacman --noconfirm -S dbus-66serv consolekit2 consolekit-66serv networkmanager-66serv dhclient-66serv
+#pacman --noconfirm -S boot-user@-66mod
+#66-mods.sh boot-user@$name
+#66-tree -nE boot-user
+#66-enable -t boot-user All-$name && sed -i "\$a[ -f ~/.profile ] && . ~/.profile" /home/$name/.xsession
+#66-tree -ncE desktop
+#66-enable -t desktop dbus consolekit lightdm networkmanager
+#66-disable -t root dhcpcd
+#sudo -u $name 66-tree -nE $name
+#sudo -u $name 66-enable -t $name dbus-session@$name
+# Systemd
+#systemctl enable NetworkManager
+#systemctl enable lightdm
+#systemctl start NetworkManager
+# Artix specific
 dbus-uuidgen > /var/lib/dbus/machine-id
-# Ohmyzsh... what a pain
+# Oh-My-Zsh. what a pain
 curl -Lo install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 tac install.sh | awk '!found && /setup_zshrc/{found=1;next}1' | sed 's+ZSH=${ZSH:-~/.oh-my-zsh+ZSH=${ZSH:-~/.config/zsh/oh-my-zsh+g' | tac > install.sh
 sudo -u $name sh install.sh --unattended
