@@ -54,7 +54,7 @@ pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpc termite sxhkd zat
 # Bloat Software 2
 pacman --noconfirm -S newsboat python-pywal picom zsh tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 3
-pacman --noconfirm -S firefox mpv neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer bspwm || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S brave mpv neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer bspwm || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 4
 pacman --noconfirm -S sxiv pulseaudio pulseaudio-alsa pulsemixer xsettingsd lxappearance scrot nitrogen xorg-font-utils wget || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 5
