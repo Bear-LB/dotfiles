@@ -1,8 +1,10 @@
-(cat ~/.config/wpg/sequences &)
 export ZSH=$HOME/.config/zsh/oh-my-zsh
+if [if [ "$(id -u)" != "0" ]; then
+	(cat ~/.config/wpg/sequences &)
+	source $ZSH/oh-my-zsh.sh
+fi
 plugins=(colored-man-pages
 	)
-source $ZSH/oh-my-zsh.sh
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 autoload -U compinit
 zstyle ':completion:*' menu select
