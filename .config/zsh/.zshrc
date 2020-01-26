@@ -1,5 +1,5 @@
 (cat ~/.config/wpg/sequences &)
-export ZSH=$HOME/.config/.oh-my-zsh
+export ZSH=$HOME/.config/zsh/oh-my-zsh
 plugins=(colored-man-pages
 	)
 source $ZSH/oh-my-zsh.sh
