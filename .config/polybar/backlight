@@ -1,1 +1,1 @@
-echo "$(light | cut -d. -f1)"
+echo "$(light 2>/dev/null | cut -d. -f1)"
