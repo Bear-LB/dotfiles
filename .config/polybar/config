@@ -127,6 +127,7 @@ interval = 3.0
 format-connected = <label-connected>
 format-connected-padding = 1
 format-connected-background = {active}
+format-connected-underline = {color4}
 format-disconnected = 
 label-connected = " %downspeed%  %upspeed%"
 [module/wlan]
@@ -147,6 +148,7 @@ interval = 3.0
 format-connected = <label-connected>
 format-connected-padding = 1
 format-connected-background = {inactive}
+format-connected-underline = {color4}
 label-connected = ""
 [module/time]
 type = internal/date
