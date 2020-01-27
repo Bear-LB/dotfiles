@@ -1,5 +1,4 @@
 #!/bin/sh
-
 newthm=$(wpg -c)
 echo $newthm > ~/.config/polybar/mood
-neocover
+polybar-msg hook mood 1
