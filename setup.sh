@@ -90,9 +90,9 @@ sudo -u "$name" yay -S --noconfirm gotop-bin
 sudo -u "$name" yay -S --noconfirm brave-bin
 # Fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Iosevka.zip -O /tmp/Iosevka.zip
-unzip /tmp/Iosevka.zip
+unzip /tmp/Iosevka.zip -d /tmp
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Cousine.zip -O /tmp/Cousine.zip
-unzip /tmp/Cousine.zip
+unzip /tmp/Cousine.zip -d /tmp
 rm /tmp/*Windows*
 mkdir /usr/share/fonts/iosevka && mkdir /usr/share/fonts/cousine/
 cp /tmp/Cousine* /usr/share/fonts/cousine/ && cp /tmp/Iosevka* /usr/share/fonts/iosevka/
