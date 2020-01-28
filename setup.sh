@@ -5,6 +5,7 @@ name="YOURUSERNAME"
 # Your user password
 pass="YOURPASSWORD"
 # Running in VMWare ?
+VMWAREGUEST=${VMWAREGUEST:-no}
 #-------------------------------------------------------------
 
 
@@ -144,6 +145,8 @@ sudo -u "$name" wpg -ta /home/$name/.config/dunst/dunstrc
 #systemctl enable NetworkManager
 #systemctl enable lightdm
 #systemctl start NetworkManager
+# VMWARE Guest
+
 # Artix specific
 dbus-uuidgen >| /etc/machine-id
 # Install independent theme and plugin
