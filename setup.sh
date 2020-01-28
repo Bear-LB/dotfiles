@@ -1,9 +1,10 @@
-# THINGS TO MODIFY BEFORE DEPLOYMENT
 #------------------------------------------------------------
-# YOURNAME
-name="YOURNAME"
-# YOURPASSWORD
+# THINGS TO MODIFY BEFORE DEPLOYMENT
+# Your username
+name="YOURUSERNAME"
+# Your user password
 pass="YOURPASSWORD"
+# Running in VMWare ?
 #-------------------------------------------------------------
 
 
