@@ -146,7 +146,15 @@ sudo -u "$name" wpg -ta /home/$name/.config/dunst/dunstrc
 #systemctl enable lightdm
 #systemctl start NetworkManager
 # VMWARE Guest
-
+if [ $VMWARE = yes ]; then
+	pacman --noconfirm -S open-vm-tools
+	mkdir /etc/runit/sv/vmtoolsd
+	cat > /etc/runit/sv/vmtoolsd/run << EOF
+	#!/bin/sh
+	exec /usr/bin/vmtoolsd
+	EOF
+	ln -s /etc/runit/sv/vmtoolsd /run/runit/service
+fi
 # Artix specific
 dbus-uuidgen >| /etc/machine-id
 # Install independent theme and plugin
