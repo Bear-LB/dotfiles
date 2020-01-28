@@ -150,9 +150,10 @@ if [ $VMWARE = yes ]; then
 	pacman --noconfirm -S open-vm-tools
 	mkdir /etc/runit/sv/vmtoolsd
 	cat > /etc/runit/sv/vmtoolsd/run << EOF
-	#!/bin/sh
-	exec /usr/bin/vmtoolsd
-	EOF
+#!/bin/sh
+exec /usr/bin/vmtoolsd
+EOF
+	chmod 755 /etc/runit/sv/vmtoolsd/run
 	ln -s /etc/runit/sv/vmtoolsd /run/runit/service
 fi
 # Artix specific
