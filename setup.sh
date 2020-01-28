@@ -109,7 +109,7 @@ curl -O https://blackarch.org/strap.sh
 chmod +x strap.sh
 ./strap.sh
 # TMUX Plugin Manager
-sudo -u $name git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+#sudo -u $name git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # This line, overwriting the `newperms` command above will allow the user to run
 # serveral important commands, `shutdown`, `reboot`, updating, etc. without a password.
 newperms "%wheel ALL=(ALL) ALL #Deploydot
@@ -144,7 +144,7 @@ sudo -u "$name" wpg -ta /home/$name/.config/dunst/dunstrc
 #systemctl enable lightdm
 #systemctl start NetworkManager
 # Artix specific
-dbus-uuidgen > /var/lib/dbus/machine-id
+dbus-uuidgen >| /etc/machine-id
 # Install independent theme and plugin
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /opt/zsh-syntax-highlighting
