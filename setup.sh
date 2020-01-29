@@ -146,7 +146,7 @@ sudo -u "$name" wpg -ta /home/$name/.config/dunst/dunstrc
 #systemctl enable lightdm
 #systemctl start NetworkManager
 # VMWARE Guest
-if [ $VMWARE = yes ]; then
+if [ $VMWAREGUEST = yes ]; then
 	pacman --noconfirm -S open-vm-tools
 	mkdir /etc/runit/sv/vmtoolsd
 	cat > /etc/runit/sv/vmtoolsd/run << EOF
