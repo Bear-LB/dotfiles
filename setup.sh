@@ -147,7 +147,7 @@ sudo -u "$name" wpg -ta /home/$name/.config/dunst/dunstrc
 #systemctl start NetworkManager
 # VMWARE Guest
 if [ $VMWAREGUEST = yes ]; then
-	pacman --noconfirm -S open-vm-tools
+	pacman --noconfirm -S open-vm-tools xf86-video-vmware
 	mkdir /etc/runit/sv/vmtoolsd
 	cat > /etc/runit/sv/vmtoolsd/run << EOF
 #!/bin/sh
