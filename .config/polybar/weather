@@ -3,7 +3,7 @@ weather=$(curl -Ss "https://wttr.in?0&T&Q" | cut -c 16- | cut -d ',' -f 1 | head
 [[ $weather == *Partly* ]] && echo " $weather"
 [[ $weather == *Cloudy* ]] && echo " $weather"
 [[ $weather == *Overcast* ]] && echo " $weather"
-[[ $weather == *"Light rain"* ]] && echo " $weather"
+[[ $weather == *"Light Rain"* ]] && echo " $weather"
 [[ $weather == *"Light drizzle"* ]] && echo "殺$weather"
 [[ $weather == *Patchy* ]] && echo " $weather"
 [[ $weather == *sleet* ]] && echo "ﭽ $weather"
