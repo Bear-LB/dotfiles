@@ -18,13 +18,13 @@ padding-left = 0
 padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
-font-0 = Iosevka Nerd Font:size=12
-font-1 = SourceHanSansJP:size=12
+font-0 = Iosevka Nerd Font:size=11
+font-1 = SourceHanSansJP:size=11
 locale = en_DK.UTF-8
 enable-ipc = true
-modules-left = time date gap backlight gap updates gapfix1 mood
+modules-left = time date gap updates gapfix mood gap customweather gap backlight
 modules-center = i3 gap xwindow
-modules-right = battery gap wlan netactw eth netacte gap custommusic volume
+modules-right = battery gap eth wlan netact netactw gap custommusic gap volume
 [module/gap]
 type = custom/text
 content = -
@@ -32,16 +32,15 @@ content-background = #00000000
 content-foreground = #00000000
 content-padding = 0
 [module/mood]
-type = custom/ipc
-hook-0 = cat ~/.config/polybar/mood
-initial = 1
-format = <output>
-format-background = {color2}
+type = custom/script
+exec = cat ~/.config/polybar/mood
+interval = 1
+format = <label>
+format-background = {color1}
 format-foreground = {color15}
 format-padding = 1
-format-underline = {color10}
+label =  %output:0:25:...%
 click-left = i3-msg -q 'exec --no-startup-id thmsel'
-click-right = i3-msg -q 'exec --no-startup-id thmsel'
 [module/backlight]
 type = custom/script
 interval = 0.3
@@ -49,18 +48,16 @@ exec = ~/.config/polybar/backlight
 scroll-up = exec light -A 5
 scroll-down = exec light -U 5
 format-prefix = "ﯦ "
-format-background = {color1}
-format-underline = {color9}
+format-background = {color3}
 label = %output%
 format-padding = 1
 [module/updates]
 type = custom/script
 exec = ~/.config/polybar/updates
 interval = 600
-format-background = {color3}
-format-underline = {color11}
+format-background = {color6}
 format-padding = 1
-[module/gapfix1]
+[module/gapfix]
 type = custom/script
 exec = ~/.config/polybar/updates
 interval = 600
@@ -70,7 +67,7 @@ label = %output:0:1:%
 type = internal/xwindow
 format-background = {color1}
 format-padding = 1
-label = %title:0:30:...%
+label = %title:0:30:-%
 [module/i3]
 type = internal/i3
 strip-wsnumbers = true
@@ -109,7 +106,13 @@ click-right = playerctl next
 click-middle = playerctl play-pause
 label = %output:0:30:... %
 format-background = {color1}
-format-underline = {color9}
+[module/customweather]
+type = custom/script
+exec = ~/.config/polybar/weather
+exec-if = ping wttr.in -c 1
+interval = 600
+format-background = {color2}
+format-padding = 1
 [module/netactw]
 type = internal/network
 interface = wlp2s0
@@ -171,14 +174,12 @@ type = internal/alsa
 format-volume = <ramp-volume> <label-volume>
 format-volume-padding = 1
 format-volume-background = {color6}
-format-volume-underline = {color14}
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
 format-muted-prefix = " "
 format-muted-background = {color8}
-format-muted-underline = {color0}
 label-muted = MUTE
 format-muted-padding = 1
 [module/battery]
@@ -207,9 +208,7 @@ animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 =  
 format-charging-background = {color2}
-format-charging-underline = {color10}
 format-discharging-background = {color5}
-format-discharging-underline = {color13}
 [settings]
 screenchange-reload = true
 [global/wm]
