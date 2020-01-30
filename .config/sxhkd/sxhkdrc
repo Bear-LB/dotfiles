@@ -17,7 +17,7 @@ super + g
 super + n
 	$TERMINAL --title=newsboat -e 'zsh -c "(cat ~/.config/wpg/sequences &) & newsboat"'
 super + shift + M
-	$TERMINAL --title=spt -e 'zsh -c "(cat ~/.config/wpg/sequences &) & spotifyd --no-daemon >/dev/null 2>&1 & spt"'
+	$TERMINAL --title=spt -e 'zsh -c "(cat ~/.config/wpg/sequences &) & nohup spotifyd --no-daemon 2>&1 & spt"'
 XF86MonBrightnessDown
 	xbacklight -dec 15
 XF86MonBrightnessUp
