@@ -24,7 +24,7 @@ locale = en_DK.UTF-8
 enable-ipc = true
 modules-left = time date gap updates gapfix mood gap customweather gap backlight
 modules-center = i3 gap xwindow
-modules-right = battery gap eth wlan netacte netactw gap custommusic gap volume
+modules-right = battery gap eth wlan netacte netactw gap custommusic volume
 [module/gap]
 type = custom/text
 content = -
