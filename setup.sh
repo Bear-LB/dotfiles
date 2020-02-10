@@ -123,13 +123,14 @@ echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 chown -R "$name:wheel" "/home/$name"
 # Because spotifyd executes command on song pause
 chown "$name:wheel" /usr/bin/mpc
-#
+# Avoid blank screen when setting brigtness
 sudo -u $name light -N 1
 # WPG Pictures and templates
 sudo -u "$name" wpg -a /home/$name/Pictures/Wallpapers/*
 sudo -u "$name" wpg -ta /home/$name/.config/i3/config
 sudo -u "$name" wpg -ta /home/$name/.config/polybar/config
 sudo -u "$name" wpg -ta /home/$name/.config/dunst/dunstrc
+sudo -u "$name" wpg-install.sh -gi
 # s6 + s66-rc. Disabled due to having problems creating a dbus session
 #pacman --noconfirm -S lightdm-66serv && pacman --noconfirm -S dbus-66serv consolekit2 consolekit-66serv networkmanager-66serv dhclient-66serv
 #pacman --noconfirm -S boot-user@-66mod
