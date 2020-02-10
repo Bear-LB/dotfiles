@@ -16,6 +16,7 @@ getuserandpass() { \
 	done
 	VMWAREGUEST=$(dialog --inputbox "Type 'yes' if running in VMware" 10 60 3>&1 1>&2 2>&3 3>&1)
 	}
+getuserandpass
 # Upgrade
 pacman --noconfirm -Syu
 pacman --noconfirm --needed -S base-devel linux-firmware diffutils vim networkmanager man-db man-pages texinfo exfat-utils e2fsprogs dialog
