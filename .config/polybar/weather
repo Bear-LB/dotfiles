@@ -8,4 +8,5 @@ weather=$(curl -Ss "https://wttr.in?0&T&Q" | cut -c 16- | cut -d ',' -f 1 | head
 [[ $weather == *Patchy* ]] && echo " $weather"
 [[ $weather == *sleet* ]] && echo "ﭽ $weather"
 [[ $weather == *Clear* ]] && echo " $weather"
+[[ $weather == *Shower* ]] && echo " $weather"
 
