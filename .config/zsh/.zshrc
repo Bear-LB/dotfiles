@@ -1,8 +1,8 @@
-export ZSH=$HOME/.config/zsh/oh-my-zsh
-if [ "$(id -u)" != "0" ]; then
-	(cat ~/.config/wpg/sequences &)
-	source $ZSH/oh-my-zsh.sh
-fi
+autoload -U history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^[[A" history-beginning-search-backward-end
+bindkey "^[[B" history-beginning-search-forward-end
 plugins=(colored-man-pages
 	)
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
@@ -48,6 +48,11 @@ zle -N zle-line-init
 echo -ne '\e[5 q'
 # Use beam shape cursor for each new prompt.
 preexec() { echo -ne '\e[5 q' ;}
+export ZSH=$HOME/.config/zsh/oh-my-zsh
+if [ "$(id -u)" != "0" ]; then
+	(cat ~/.config/wpg/sequences &)
+	source $ZSH/oh-my-zsh.sh
+fi
 
 source /opt/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source /opt/powerlevel10k/powerlevel10k.zsh-theme
