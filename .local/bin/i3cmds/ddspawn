@@ -15,5 +15,5 @@ then
 	i3 "[instance=\"dropdown_$script\"] scratchpad show; [instance=\"dropdown_$script\"] move position center"
 else
 	echo "Window not detected... spawning."
-	i3 "exec --no-startup-id $TERMINAL --name=dropdown_$script $@ -e \"zsh -c '(cat ~/.config/wpg/sequences &) & $script'"\"
+	i3 "exec --no-startup-id $TERMINAL --title $script --name=dropdown_$script $@ -e \"zsh -c '(cat ~/.config/wpg/sequences &) & $script'"\"
 fi
