@@ -4,7 +4,6 @@ sxhkd -m 1 &
 unclutter &
 picom &
 dunst &
-mpd &
 flashfocus &
 ~/.config/polybar/launch &
 wpg -m &
