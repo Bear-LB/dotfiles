@@ -1,9 +1,9 @@
 #!/bin/sh
-pidof mpd || exit
-player_status=$(timeout 1s playerctl status 2> /dev/null)
+pidof mpd >/dev/null || pidof spotifyd >/dev/null || exit
+player_status=$(playerctl status 2> /dev/null)
 if [ "$player_status" = "Playing" ]; then
 	echo "  $(playerctl metadata artist) - $(playerctl metadata title | sed 's/[(-].*//') "
-elif mpc | grep -q 'playing'; then
+elif mpc 2>&1 | grep -q 'playing'; then
 	echo "  $(mpc current) "
 else
 	echo ""
