@@ -24,7 +24,6 @@ newperms() {
 	sed -i "/#Deploydot/d" /etc/sudoers
 	echo "$* #Deploydot" >> /etc/sudoers ;}
 newperms "%wheel ALL=(ALL) NOPASSWD: ALL"
-getuserandpass
 useradd -m -s /bin/bash "$name" && mkdir -p /home/"$name" && chown "$name":wheel /home/"$name"
 echo "$name:$pass1" | chpasswd
 unset pass1 pass2
