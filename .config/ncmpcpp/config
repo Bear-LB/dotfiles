@@ -68,6 +68,6 @@ progressbar_color = "yellow"
 statusbar_color = "red"
 current_item_inactive_column_prefix = "red"
 
-execute_on_song_change = "~/.config/ncmpcpp/art.sh & playerctl -p spotifyd stop"
+execute_on_song_change = "~/.config/ncmpcpp/art.sh & playerctl -p spotifyd stop >/dev/null"
 
 
