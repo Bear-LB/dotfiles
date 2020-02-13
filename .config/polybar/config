@@ -32,14 +32,13 @@ content-background = #00000000
 content-foreground = #00000000
 content-padding = 0
 [module/mood]
-type = custom/script
-exec = cat ~/.config/polybar/mood
-interval = 1
-format = <label>
+type = custom/ipc
+hook-0 = cat ~/.config/polybar/mood
+initial = 1
+format =  <output>
 format-background = {color1}
 format-foreground = {color15}
 format-padding = 1
-label =  %output:0:25:...%
 click-left = i3-msg -q 'exec --no-startup-id thmsel'
 [module/backlight]
 type = custom/script
