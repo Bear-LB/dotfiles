@@ -124,7 +124,7 @@ format-disconnected =
 label-connected = " %downspeed%  %upspeed%"
 [module/netacte]
 type = internal/network
-interface = eth0
+interface = ${{file:~/.config/polybar/netadpt}}
 interval = 3.0
 format-connected = <label-connected>
 format-connected-padding = 1
@@ -145,7 +145,7 @@ format-disconnected =
 ramp-signal-0 = 
 [module/eth]
 type = internal/network
-interface = eth0
+interface = ${{file:~/.config/polybar/netadpt}}
 interval = 3.0
 format-connected = <label-connected>
 format-connected-padding = 1
