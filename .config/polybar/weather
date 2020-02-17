@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-weather=$(curl -Ss "https://wttr.in?0&T&Q" | cut -c 16- | cut -d ',' -f 1 | head -2 | xargs echo)
+weather=$(timeout 4 curl -Ss "https://wttr.in?0&T&Q" | cut -c 16- | cut -d ',' -f 1 | head -2 | xargs echo)
 [[ $weather == *Partly* ]] && echo " $weather"
 [[ $weather == *Cloudy* ]] && echo " $weather"
 [[ $weather == *Overcast* ]] && echo " $weather"
