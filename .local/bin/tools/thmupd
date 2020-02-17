@@ -1,4 +1,5 @@
 #!/bin/sh
 newthm=$(wpg -c)
 echo $newthm > ~/.config/polybar/mood
+echo $(ip route | grep '^default' | awk '{print $5}' | head -n1) > ~/.config/polybar/netadpt
 polybar-msg hook mood 1
