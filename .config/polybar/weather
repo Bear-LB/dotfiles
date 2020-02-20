@@ -9,4 +9,5 @@ weather=$(timeout 4 curl -Ss "https://wttr.in?0&T&Q" | cut -c 16- | cut -d ',' -
 [[ $weather == *sleet* ]] && echo "ﭽ $weather"
 [[ $weather == *Clear* ]] && echo " $weather"
 [[ $weather == *Shower* ]] && echo " $weather"
+[[ $weather == *Sunny* ]] && echo " $weather"
 
