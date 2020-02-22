@@ -5,7 +5,7 @@ super + shift + q
 super + d
 	rofi -show drun
 super + Escape
-	rofi-power
+	dmenupower
 super + w
 	$BROWSER
 super + r
