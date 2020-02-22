@@ -93,7 +93,7 @@ wget https://tools.suckless.org/dmenu/patches/xyw/dmenu-xyw-4.7.diff -O /tmp/dme
 cd /tmp/dmenu-4.9
 patch --merge -i dmenu-border-4.9.diff
 patch --merge -i dmenu-lineheight-4.9.diff
-patch --merge -i xyw/dmenu-xyw-4.7.diff
+patch --merge -i dmenu-xyw-4.7.diff
 make install
 
 # Fonts
