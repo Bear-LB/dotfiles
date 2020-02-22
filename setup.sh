@@ -90,10 +90,11 @@ tar -xvf /tmp/dmenu-4.9.tar.gz -C /tmp/
 wget https://tools.suckless.org/dmenu/patches/border/dmenu-border-4.9.diff -O /tmp/dmenu-4.9/dmenu-border-4.9.diff
 wget https://tools.suckless.org/dmenu/patches/line-height/dmenu-lineheight-4.9.diff -O /tmp/dmenu-4.9/dmenu-lineheight-4.9.diff
 wget https://tools.suckless.org/dmenu/patches/xyw/dmenu-xyw-4.7.diff -O /tmp/dmenu-4.9/dmenu-xyw-4.7.diff
-patch --merge -i /tmp/dmenu-4.9/dmenu-border-4.9.diff
-patch --merge -i /tmp/dmenu-4.9/dmenu-lineheight-4.9.diff
-patch --merge -i /tmp/dmenu-4.9/xyw/dmenu-xyw-4.7.diff
-make -C /tmp/dmenu-4-9 install
+cd /tmp/dmenu-4.9
+patch --merge -i dmenu-border-4.9.diff
+patch --merge -i dmenu-lineheight-4.9.diff
+patch --merge -i xyw/dmenu-xyw-4.7.diff
+make install
 
 # Fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Iosevka.zip -O /tmp/Iosevka.zip
