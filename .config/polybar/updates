@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if ! updates_arch=$(checkupdates 2>&1 | sed 1d | wc -l ); then
+if ! updates_arch=$(diff <(yay -Qum) <(yay -Qu) | sed 1d | wc -l ); then
     updates_arch=0
 fi
 
