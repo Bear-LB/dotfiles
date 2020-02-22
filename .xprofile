@@ -3,6 +3,7 @@ setxkbmap dk &
 sudo pacman -Syy
 sxhkd -m 1 &
 unclutter &
+xset r rate 300 50 &
 picom &
 dunst &
 flashfocus &
