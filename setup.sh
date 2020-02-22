@@ -85,11 +85,11 @@ sudo -u "$name" yay -S --noconfirm brave-bin
 sudo -u "$name" yay -S --noconfirm posy-cursors
 
 # DMenu
-wget https://dl.suckless.org/tools/dmenu-4.9.tar.gz /tmp/
-tar -xvf /tmp/dmenu-4.9.tar.gz
-wget https://tools.suckless.org/dmenu/patches/border/dmenu-border-4.9.diff /tmp/dmenu-4.9
-wget https://tools.suckless.org/dmenu/patches/line-height/dmenu-lineheight-4.9.diff /tmp/dmenu-4.9
-wget https://tools.suckless.org/dmenu/patches/xyw/dmenu-xyw-4.7.diff /tmp/dmenu-4.9
+wget https://dl.suckless.org/tools/dmenu-4.9.tar.gz -O /tmp/dmenu-4.9.tar.gz
+tar -xvf /tmp/dmenu-4.9.tar.gz -C /tmp/
+wget https://tools.suckless.org/dmenu/patches/border/dmenu-border-4.9.diff -O /tmp/dmenu-4.9/dmenu-border-4.9.diff
+wget https://tools.suckless.org/dmenu/patches/line-height/dmenu-lineheight-4.9.diff -O /tmp/dmenu-4.9/dmenu-lineheight-4.9.diff
+wget https://tools.suckless.org/dmenu/patches/xyw/dmenu-xyw-4.7.diff -O /tmp/dmenu-4.9/dmenu-xyw-4.7.diff
 patch --merge -i /tmp/dmenu-4.9/dmenu-border-4.9.diff
 patch --merge -i /tmp/dmenu-4.9/dmenu-lineheight-4.9.diff
 patch --merge -i /tmp/dmenu-4.9/xyw/dmenu-xyw-4.7.diff
