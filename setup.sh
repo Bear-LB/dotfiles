@@ -94,6 +94,7 @@ cd /tmp/dmenu-4.9
 patch --merge -i dmenu-border-4.9.diff
 patch --merge -i dmenu-lineheight-4.9.diff
 patch --merge -i dmenu-xyw-4.7.diff
+sed -i 's+border_width = 5;+border_width = 3;+g' config.def.h
 make install
 
 # Fonts
