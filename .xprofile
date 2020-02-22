@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 setxkbmap dk &
+sudo pacman -Syy
 sxhkd -m 1 &
 unclutter &
 picom &
