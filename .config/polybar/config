@@ -41,11 +41,11 @@ format-foreground = {color15}
 format-padding = 1
 click-left = i3-msg -q 'exec --no-startup-id thmsel'
 [module/backlight]
-type = custom/script
-interval = 0.3
-exec = ~/.config/polybar/backlight
-scroll-up = exec light -A 5
-scroll-down = exec light -U 5
+type = custom/ipc
+hook-0 = ~/.config/polybar/backlight
+initial = 1
+scroll-up = exec light -A 5 & polybar-msg hook backlight 1
+scroll-down = exec light -U 5 & polybar-msg hook backlight 1
 format-prefix = "ﯦ "
 format-background = {color3}
 label = %output%
