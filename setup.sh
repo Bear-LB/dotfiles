@@ -45,7 +45,7 @@ pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xdpyi
 # Bloat Software
 pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpc termite sxhkd zathura zathura-pdf-mupdf zathura-djvu poppler || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 2
-pacman --noconfirm -S newsboat python-pywal picom zsh tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S newsboat picom zsh tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 3
 pacman --noconfirm -S mpv neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer bspwm || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 4
@@ -54,23 +54,19 @@ pacman --noconfirm -S sxiv pulseaudio pulseaudio-alsa pulsemixer xsettingsd lxap
 pacman --noconfirm -S streamlink adobe-source-han-sans-jp-fonts playerctl i3-gaps || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 6
 pacman --noconfirm -S unclutter inotify-tools pcmanfm-gtk3 light xclip alsa-utils|| { echo 'failed at installing packages from official repo' ; exit 1; }
-# Systemd software ?!
+# SystemD software
 pacman --noconfirm -S mpd || sudo -u "$name" yay -S --noconfirm mpd-light
-pacman --noconfirm -S transmission-cli && sudo -u "$name" yay -S --noconfirm stig
 #change shell to zsh (only effective after reboot)
 chsh -s /usr/bin/zsh root
 chsh -s /usr/bin/zsh "$name"
 # Ueberzug
 sudo -u "$name" yay -S --noconfirm python-ueberzug
-# Flashfocus
-sudo -u "$name" yay -S --noconfirm flashfocus-git
-# WPGTK
-sudo -u "$name" yay -S --noconfirm wpgtk
+# Bumblebee and i3status
+sudo -u "$name" yay -S --noconfirm bumbleebee-status
+sudo -u "$name" yay -S --noconfirm i3status-rust
 # Corrupter for betterlockscreen
 sudo -u "$name" yay -S --noconfirm corrupter-bin
 sudo -u "$name" yay -S --noconfirm betterlockscreen
-# Polybar
-sudo -u "$name" yay -S --noconfirm polybar
 # Spotify daemon
 sudo -u "$name" yay -S --noconfirm spotifyd-bin-full 
 # ncurses Spotify
@@ -83,7 +79,6 @@ sudo -u "$name" yay -S --noconfirm gotop-bin
 sudo -u "$name" yay -S --noconfirm brave-bin
 # Cursor
 sudo -u "$name" yay -S --noconfirm posy-cursors
-
 # DMenu
 wget https://dl.suckless.org/tools/dmenu-4.9.tar.gz -O /tmp/dmenu-4.9.tar.gz
 tar -xvf /tmp/dmenu-4.9.tar.gz -C /tmp/
@@ -96,15 +91,10 @@ patch --merge -i dmenu-lineheight-4.9.diff
 patch --merge -i dmenu-xyw-4.7.diff
 sed -i 's+border_width = 5;+border_width = 3;+g' config.def.h
 make install
-
 # Fonts
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Iosevka.zip -O /tmp/Iosevka.zip
-unzip /tmp/Iosevka.zip -d /tmp
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.0.0/Cousine.zip -O /tmp/Cousine.zip
-unzip /tmp/Cousine.zip -d /tmp
-rm /tmp/*Windows*
-mkdir /usr/share/fonts/iosevka && mkdir /usr/share/fonts/cousine/
-cp /tmp/Cousine* /usr/share/fonts/cousine/ && cp /tmp/Iosevka* /usr/share/fonts/iosevka/
+pacman -S ttf-fantasque-sans-mono
+sudo -u "$name" yay -S --noconfirm ttf-font-awesome
+sudo -u "$name" yay -S --noconfirm nerd-fonts-hack
 fc-cache
 # Clone dotfiles to home
 dir=$(mktemp -d)
@@ -132,12 +122,6 @@ chown -R "$name:wheel" "/home/$name"
 chown "$name:wheel" /usr/bin/mpc
 # Avoid blank screen when setting brigtness
 sudo -u $name light -N 1
-# WPG Pictures and templates
-sudo -u "$name" wpg -a /home/$name/Pictures/Wallpapers/*
-sudo -u "$name" wpg -ta /home/$name/.config/i3/config
-sudo -u "$name" wpg -ta /home/$name/.config/polybar/config
-sudo -u "$name" wpg -ta /home/$name/.config/dunst/dunstrc
-sudo -u "$name" wpg-install.sh -gi
 # s6 + s66-rc. Disabled due to having problems creating a dbus session
 #pacman --noconfirm -S lightdm-66serv && pacman --noconfirm -S dbus-66serv consolekit2 consolekit-66serv networkmanager-66serv dhclient-66serv
 #pacman --noconfirm -S boot-user@-66mod
