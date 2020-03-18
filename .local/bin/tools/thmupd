@@ -1,8 +1,4 @@
 #!/bin/sh
-newthm=$(wpg -c)
-echo $newthm > ~/.config/polybar/mood
-echo $(ip route | grep '^default' | awk '{print $5}' | head -n1) > ~/.config/polybar/netadpt
-polybar-msg hook mood 1
 #fix width dmenu
 Xaxis=$(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f1)
 Xwidth="$(($Xaxis-30))"
