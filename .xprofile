@@ -5,8 +5,5 @@ unclutter &
 xset r rate 300 50 &
 picom &
 dunst &
-flashfocus &
-~/.config/polybar/launch &
-wpg -m &
 (sleep 3s; musnify-mpd) &
 (sleep 5s; sudo pacman -Syy) &
