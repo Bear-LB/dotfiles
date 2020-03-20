@@ -14,7 +14,7 @@ getuserandpass() { \
 		pass1=$(dialog --no-cancel --passwordbox "Passwords do not match.\\n\\nEnter password again." 10 60 3>&1 1>&2 2>&3 3>&1)
 		pass2=$(dialog --no-cancel --passwordbox "Retype password." 10 60 3>&1 1>&2 2>&3 3>&1)
 	done
-	VMWAREGUEST=$(dialog --inputbox "Type 'yes' if running in VMware" 10 60 3>&1 1>&2 2>&3 3>&1)
+	VMWAREGUEST=$(dialog --inputbox "Type 'yes' if running Arch with runit in VMware" 10 60 3>&1 1>&2 2>&3 3>&1)
 	}
 getuserandpass
 # Upgrade
