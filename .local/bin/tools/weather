@@ -1,13 +1,11 @@
 #!/usr/bin/env sh
-weather=$(timeout 4 curl -Ss "https://wttr.in?0&T&Q" 2>/dev/null | cut -c 16- | cut -d ',' -f 1 | head -2 | xargs echo)
+weather=$(curl -Ss "https://wttr.in?0&T&Q" | cut -c 16- | head -2 | xargs echo)
 [[ $weather == *Partly* ]] && echo " $weather"
 [[ $weather == *Cloudy* ]] && echo " $weather"
 [[ $weather == *Overcast* ]] && echo " $weather"
-[[ $weather == *"Light Rain"* ]] && echo " $weather"
-[[ $weather == *"Light Drizzle"* ]] && echo "殺$weather"
+[[ $weather == *"Light rain"* ]] && echo " $weather"
+[[ $weather == *"Light drizzle"* ]] && echo "殺$weather"
 [[ $weather == *Patchy* ]] && echo " $weather"
 [[ $weather == *sleet* ]] && echo "ﭽ $weather"
 [[ $weather == *Clear* ]] && echo " $weather"
-[[ $weather == *Shower* ]] && echo " $weather"
 [[ $weather == *Sunny* ]] && echo " $weather"
-

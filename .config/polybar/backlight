@@ -1,1 +1,0 @@
-echo "$(light 2>/dev/null | cut -d. -f1)"
