@@ -1,0 +1,11 @@
+#!/bin/sh
+
+[ "$(stat -c %y ~/.cache/corona | cut -d ' ' -f1 )" != "$(date '+%Y-%m-%d')" ] &&
+	curl -s https://corona-stats.online/denmark > ~/.cache/corona
+
+grep "Total" ~/.cache/corona |
+	sed 's/\x1b\[[0-9;]*m//g' |
+	sed "s/\s*//g ; s/║//g ; s/│/;/g" |
+	awk -F';' '{print "🤒" $3 " (" $9") 💀 " $5 " ("$7"%)"}'
+	#awk '{for(i=NF;i>=1;i--) printf "%s ", $i;print ""}'
+
