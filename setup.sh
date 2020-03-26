@@ -95,6 +95,7 @@ make install
 pacman -S --noconfirm ttf-fantasque-sans-mono
 sudo -u "$name" yay -S --noconfirm ttf-font-awesome
 sudo -u "$name" yay -S --noconfirm nerd-fonts-hack
+sudo -u "$name" yay -S --noconfirm ttf-iosevka
 fc-cache
 # Clone dotfiles to home
 dir=$(mktemp -d)
