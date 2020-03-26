@@ -63,7 +63,7 @@ chsh -s /usr/bin/zsh "$name"
 sudo -u "$name" yay -S --noconfirm python-ueberzug
 # Bumblebee and i3status
 sudo -u "$name" yay -S --noconfirm bumbleebee-status
-sudo -u "$name" yay -S --noconfirm i3status-rust
+sudo -u "$name" yay -S --noconfirm i3status-rust-git
 # Corrupter for betterlockscreen
 sudo -u "$name" yay -S --noconfirm corrupter-bin
 sudo -u "$name" yay -S --noconfirm betterlockscreen
