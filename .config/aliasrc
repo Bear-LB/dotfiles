@@ -9,7 +9,7 @@ alias \
 	diff="diff --color=auto" \
 	ka="killall" \
 	YT="youtube-viewer" \
-	sdn="sudo shutdown now" \
+	sdn="sudo poweroff now" \
 	f="$FILE" \
 	e="$EDITOR" \
 	v="$EDITOR" \
