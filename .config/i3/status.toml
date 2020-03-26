@@ -82,11 +82,11 @@ block = "uptime"
 [[block]]
 block = "sound"
 
-[[block]]
-block = "backlight"
+#[[block]]
+#block = "backlight"
 
-[[block]]
-block = "battery"
-interval = 1
-format = "{percentage}% {time}"
-device = "CMB1"
+#[[block]]
+#block = "battery"
+#interval = 1
+#format = "{percentage}% {time}"
+#device = "CMB1"
