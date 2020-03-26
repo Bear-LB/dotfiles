@@ -30,3 +30,7 @@ XF86AudioLowerVolume
 	lmc down 5
 XF86AudioRaiseVolume
 	lmc up 5
+super + Print
+	dmenurecord
+super + Delete
+	dmenurecord kill

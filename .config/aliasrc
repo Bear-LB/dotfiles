@@ -3,13 +3,15 @@ alias \
 	mv="mv -iv" \
 	rm="rm -v" \
 	mkd="mkdir -pv" \
+	ffmpeg="ffmpeg -hide_banner" \
 	yt="youtube-dl --add-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
+	ls="ls -hN --color=auto --group-directories-first" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	ka="killall" \
 	YT="youtube-viewer" \
-	sdn="sudo shutdown now" \
+	sdn="sudo poweroff now" \
 	f="$FILE" \
 	e="$EDITOR" \
 	v="$EDITOR" \

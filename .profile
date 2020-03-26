@@ -4,4 +4,5 @@ export ZDOTDIR="$HOME/.config/zsh"
 export EDITOR="nvim"
 export FILE="$HOME/.config/vifm/scripts/vifmrun"
 export BROWSER="brave"
+export READER="zathura"
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && exec startx

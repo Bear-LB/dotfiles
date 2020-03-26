@@ -5,5 +5,6 @@ unclutter &
 xset r rate 300 50 &
 picom &
 dunst &
+nitrogen --set-zoom-fill --random ~/Pictures/Wallpapers
 (sleep 3s; musnify-mpd) &
 (sleep 5s; sudo pacman -Syy) &
