@@ -50,7 +50,6 @@ echo -ne '\e[5 q'
 preexec() { echo -ne '\e[5 q' ;}
 export ZSH=$HOME/.config/zsh/oh-my-zsh
 if [ "$(id -u)" != "0" ]; then
-	(cat ~/.config/wpg/sequences &)
 	source $ZSH/oh-my-zsh.sh
 fi
 
