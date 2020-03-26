@@ -56,7 +56,7 @@ pacman --noconfirm -S streamlink adobe-source-han-sans-jp-fonts playerctl i3-gap
 pacman --noconfirm -S unclutter inotify-tools pcmanfm-gtk3 light xclip alsa-utils|| { echo 'failed at installing packages from official repo' ; exit 1; }
 # SystemD software
 pacman --noconfirm -S mpd || sudo -u "$name" yay -S --noconfirm mpd-light
-#change shell to zsh (only effective after reboot)
+#change shell to zsh (only
 chsh -s /usr/bin/zsh root
 chsh -s /usr/bin/zsh "$name"
 # Ueberzug
@@ -92,7 +92,7 @@ patch --merge -i dmenu-xyw-4.7.diff
 sed -i 's+border_width = 5;+border_width = 3;+g' config.def.h
 make install
 # Fonts
-pacman -S ttf-fantasque-sans-mono
+pacman -S --noconfirm ttf-fantasque-sans-mono
 sudo -u "$name" yay -S --noconfirm ttf-font-awesome
 sudo -u "$name" yay -S --noconfirm nerd-fonts-hack
 fc-cache
