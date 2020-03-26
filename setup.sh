@@ -103,10 +103,10 @@ cp -rfT "$dir/gitrepo" /home/$name
 cd /home/$name
 rm -rf .git
 # Add blackarch repo
-cd /tmp
-curl -O https://blackarch.org/strap.sh
-chmod +x strap.sh
-./strap.sh
+#cd /tmp
+#curl -O https://blackarch.org/strap.sh
+#chmod +x strap.sh
+#./strap.sh
 # TMUX Plugin Manager
 #sudo -u $name git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # This line, overwriting the `newperms` command above will allow the user to run
