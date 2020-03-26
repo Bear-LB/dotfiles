@@ -19,7 +19,7 @@ getuserandpass() { \
 getuserandpass
 # Upgrade
 pacman --noconfirm -Syu
-pacman --noconfirm --needed -S base-devel linux-firmware diffutils vim networkmanager man-db man-pages texinfo exfat-utils e2fsprogs dialog
+pacman --noconfirm --needed -S base-devel linux-firmware diffutils neovim networkmanager man-db man-pages texinfo exfat-utils e2fsprogs dialog
 newperms() {
 	sed -i "/#Deploydot/d" /etc/sudoers
 	echo "$* #Deploydot" >> /etc/sudoers ;}
