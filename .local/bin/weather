@@ -9,3 +9,4 @@ weather=$(curl -Ss "https://wttr.in?0&T&Q" | cut -c 16- | head -2 | xargs echo)
 [[ $weather == *sleet* ]] && echo "ﭽ $weather"
 [[ $weather == *Clear* ]] && echo " $weather"
 [[ $weather == *Sunny* ]] && echo " $weather"
+true
