@@ -3,8 +3,10 @@ alias \
 	mv="mv -iv" \
 	rm="rm -v" \
 	mkd="mkdir -pv" \
+	ffmpeg="ffmpeg -hide_banner" \
 	yt="youtube-dl --add-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
+	ls="ls -hN --color=auto --group-directories-first" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	ka="killall" \
