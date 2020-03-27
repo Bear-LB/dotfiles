@@ -143,6 +143,17 @@ EOF
 		ln -sf /etc/runit/sv/lightdm /run/runit/service
 	fi
 fi
+if [[ $WHICHINIT == *systemd* ]]; then 
+	if [ $VMWAREGUEST = yes ]; then
+		pacman --noconfirm -S open-vm-tools xf86-video-vmware
+		systemctl enable vmtoolsd && systemctl start vmtoolsd
+		systemctl enable vmware-vmblock-fuse && systemctl start vmware-vmblock-fuse
+	fi
+	if [ $INSTALLDM = yes ]; then
+		pacman -S --noconfirm lightdm lightdm-gtk-greeter
+		systemctl enable lightdm && systemctl start lightdm
+	fi
+fi
 	
 	
 # Install independent theme and plugin
