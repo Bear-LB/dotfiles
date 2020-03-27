@@ -143,7 +143,6 @@ EOF
 	fi
 	if [ $INSTALLDM = yes ]; then
 		pacman -S --noconfirm lightdm lightdm-gtk-greeter lightdm-runit
-		ln -sf /etc/runit/sv/lightdm /run/runit/service
 	fi
 fi
 if [[ $WHICHINIT == *systemd* ]]; then 
@@ -154,7 +153,7 @@ if [[ $WHICHINIT == *systemd* ]]; then
 	fi
 	if [ $INSTALLDM = yes ]; then
 		pacman -S --noconfirm lightdm lightdm-gtk-greeter
-		systemctl enable lightdm && systemctl start lightdm
+		systemctl enable lightdm
 	fi
 fi
 # Install independent theme and plugin
@@ -166,4 +165,5 @@ curl -LO https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.
 tac install.sh | awk '!found && /setup_zshrc/{found=1;next}1' | sed 's+ZSH=${ZSH:-~/.oh-my-zsh+ZSH=${ZSH:-~/.config/zsh/oh-my-zsh+g' | tac > /home/$name/install.sh
 sudo -u $name sh /home/$name/install.sh --unattended
 mv /home/$name/.config/zsh/oh-my-zsh/lib/termsupport.zsh /home/$name/.config/zsh/oh-my-zsh/lib/termsupport.backup
-sed -i 's+HISTFILE="$HOME/.zsh_history"+HISTFILE="$ZDOTDIR/zsh_history"+g' /home/$name/.config/zsh/oh-my-zsh/lib/history.zsh
+sed -i 's+HISTFILE="$HOME/.zsh_history"+HISTFILE="$ZDOTDIR/zsh_history"+g' /home/$name/.config/zsh/oh-my-zsh/lib/history.zsh && [[ $WHICHINIT == *runit* ]] && ln -sf /etc/runit/sv/lightdm /run/runit/service || [[ $WHICHINIT == *systemd* ]] && systemctl start lightdm
+
