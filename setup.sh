@@ -15,6 +15,7 @@ getuserandpass() { \
 		pass2=$(dialog --no-cancel --passwordbox "Retype password." 10 60 3>&1 1>&2 2>&3 3>&1)
 	done
 	VMWAREGUEST=$(dialog --inputbox "Type 'yes' if running in VMware" 10 60 3>&1 1>&2 2>&3 3>&1)
+	INSTALLDM=$(dialog --inputbox "Type 'yes' if you want a DM" 10 60 3>&1 1>&2 2>&3 3>&1)
 	}
 getuserandpass
 # Upgrade
@@ -139,23 +140,25 @@ sudo -u $name light -N 1
 #systemctl enable NetworkManager
 #systemctl enable lightdm
 #systemctl start NetworkManager
-# VMWARE Guest
-if [ $VMWAREGUEST = yes ]; then
-	pacman --noconfirm -S open-vm-tools xf86-video-vmware
-	mkdir /etc/runit/sv/vmtoolsd
-	cat > /etc/runit/sv/vmtoolsd/run << EOF
+WHICHINIT=$(stat /proc/1/exe | head -1)
+if [[ WHICHINIT == *runit* ]]; then 
+		dbus-uuidgen >| /etc/machine-id
+	if [ $VMWAREGUEST = yes ]; then
+		pacman --noconfirm -S open-vm-tools xf86-video-vmware
+		mkdir /etc/runit/sv/vmtoolsd
+		cat > /etc/runit/sv/vmtoolsd/run << EOF
 #!/bin/sh
 exec /usr/bin/vmtoolsd
 EOF
 	chmod 755 /etc/runit/sv/vmtoolsd/run
 	ln -s /etc/runit/sv/vmtoolsd /run/runit/service
+	fi
+	if [ $INSTALLDM = yes ]; then
+		pacman -S --noconfirm lightdm lightdm-gtk-greeter
+	fi
 fi
-# Artix specific
-whichinit=$(stat /proc/1/exe | head -1)
-[[ $whichinit == *systemd* ]] && echo "fuckyou"
-[[ $whichinit == *systemd* ]] &&
-[[ $whichinit == *systemd* ]] &&
-dbus-uuidgen >| /etc/machine-id
+	
+	
 # Install independent theme and plugin
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /opt/zsh-syntax-highlighting
