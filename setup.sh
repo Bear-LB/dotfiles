@@ -128,6 +128,7 @@ sudo -u $name light -N 1
 WHICHINIT=$(stat /proc/1/exe | head -1)
 if [[ $WHICHINIT == *runit* ]]; then 
 		dbus-uuidgen >| /etc/machine-id
+		rm /run/runit/service/agetty-tty3 /run/runit/service/agetty-tty4 /run/runit/service/agetty-tty5 /run/runit/service/agetty-tty6
 	if [ $VMWAREGUEST = yes ]; then
 		pacman --noconfirm -S open-vm-tools xf86-video-vmware
 		mkdir /etc/runit/sv/vmtoolsd
@@ -154,8 +155,6 @@ if [[ $WHICHINIT == *systemd* ]]; then
 		systemctl enable lightdm && systemctl start lightdm
 	fi
 fi
-	
-	
 # Install independent theme and plugin
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /opt/zsh-syntax-highlighting
