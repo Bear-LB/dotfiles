@@ -1,20 +1,26 @@
+#!/bin/sh
+
+# Use neovim for vim if present.
+command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+
 alias \
 	cp="cp -iv" \
 	mv="mv -iv" \
 	rm="rm -v" \
 	mkd="mkdir -pv" \
-	ffmpeg="ffmpeg -hide_banner" \
+        ffmpeg="ffmpeg -hide_banner" \
 	yt="youtube-dl --add-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
-	ls="ls -hN --color=auto --group-directories-first" \
+        ls="ls -hN --color=auto --group-directories-first" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
+        ccat="highlight --out-format=ansi" \
 	ka="killall" \
 	YT="youtube-viewer" \
-	sdn="sudo poweroff now" \
+	sdn="sudo openrc-shutdown -p now" \
 	f="$FILE" \
 	e="$EDITOR" \
 	v="$EDITOR" \
-	p="sudo pacman" \
+	p="sudo pacman"
 
 
