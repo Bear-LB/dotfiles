@@ -14,7 +14,7 @@ getuserandpass() { \
 		pass1=$(dialog --no-cancel --passwordbox "Passwords do not match.\\n\\nEnter password again." 10 60 3>&1 1>&2 2>&3 3>&1)
 		pass2=$(dialog --no-cancel --passwordbox "Retype password." 10 60 3>&1 1>&2 2>&3 3>&1)
 	done
-	VMWAREGUEST=$(dialog --inputbox "Type 'yes' if running Arch with runit in VMware" 10 60 3>&1 1>&2 2>&3 3>&1)
+	VMWAREGUEST=$(dialog --inputbox "Type 'yes' if running in VMware" 10 60 3>&1 1>&2 2>&3 3>&1)
 	}
 getuserandpass
 # Upgrade
@@ -151,6 +151,10 @@ EOF
 	ln -s /etc/runit/sv/vmtoolsd /run/runit/service
 fi
 # Artix specific
+whichinit=$(stat /proc/1/exe | head -1)
+[[ $whichinit == *systemd* ]] && echo "fuckyou"
+[[ $whichinit == *systemd* ]] &&
+[[ $whichinit == *systemd* ]] &&
 dbus-uuidgen >| /etc/machine-id
 # Install independent theme and plugin
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
