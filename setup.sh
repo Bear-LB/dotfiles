@@ -161,6 +161,7 @@ fi
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /opt/zsh-syntax-highlighting
 # Oh-My-Zsh. what a pain
+cd ~
 curl -LO https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 tac install.sh | awk '!found && /setup_zshrc/{found=1;next}1' | sed 's+ZSH=${ZSH:-~/.oh-my-zsh+ZSH=${ZSH:-~/.config/zsh/oh-my-zsh+g' | tac > /home/$name/install.sh
 sudo -u $name sh /home/$name/install.sh --unattended
