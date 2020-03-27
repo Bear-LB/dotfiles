@@ -48,15 +48,17 @@ pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpc termite sxhkd zat
 # Bloat Software 2
 pacman --noconfirm -S newsboat picom zsh tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 3
-pacman --noconfirm -S mpv neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer bspwm || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S mpv neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 4
-pacman --noconfirm -S sxiv pulseaudio pulseaudio-alsa pulsemixer xsettingsd lxappearance scrot nitrogen xorg-font-utils wget || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S sxiv xsettingsd lxappearance scrot nitrogen xorg-font-utils wget || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 5
 pacman --noconfirm -S streamlink adobe-source-han-sans-jp-fonts playerctl i3-gaps || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 6
 pacman --noconfirm -S unclutter inotify-tools pcmanfm-gtk3 light xclip alsa-utils|| { echo 'failed at installing packages from official repo' ; exit 1; }
-# SystemD software
+# Systemd software
 pacman --noconfirm -S mpd || sudo -u "$name" yay -S --noconfirm mpd-light
+# Trying to run without Pulseaudio
+# pacman --noconfirm -S pulseaudio pulseaudio-alsa pulsemixer
 #change shell to zsh (only
 chsh -s /usr/bin/zsh root
 chsh -s /usr/bin/zsh "$name"
