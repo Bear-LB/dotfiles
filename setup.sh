@@ -141,7 +141,7 @@ sudo -u $name light -N 1
 #systemctl enable lightdm
 #systemctl start NetworkManager
 WHICHINIT=$(stat /proc/1/exe | head -1)
-if [[ WHICHINIT == *runit* ]]; then 
+if [[ $WHICHINIT == *runit* ]]; then 
 		dbus-uuidgen >| /etc/machine-id
 	if [ $VMWAREGUEST = yes ]; then
 		pacman --noconfirm -S open-vm-tools xf86-video-vmware
