@@ -154,7 +154,8 @@ EOF
 	ln -s /etc/runit/sv/vmtoolsd /run/runit/service
 	fi
 	if [ $INSTALLDM = yes ]; then
-		pacman -S --noconfirm lightdm lightdm-gtk-greeter
+		pacman -S --noconfirm lightdm lightdm-gtk-greeter lightdm-runit
+		ln -sf /etc/runit/sv/lightdm /run/runit/service
 	fi
 fi
 	
