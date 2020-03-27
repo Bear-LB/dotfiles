@@ -39,7 +39,7 @@ max_width = 60
 [[block]]
 block = "custom"
 interval = 600
-command = "~/.config/polybar/updates"
+command = "~/.local/bin/updates"
 
 [[block]]
 block = "music"
