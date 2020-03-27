@@ -46,9 +46,9 @@ client.placeholder      $color0   $color8   $color15 $color0 $color8
 client.background       $color0
 ##### bar ####
 bar {
-	font pango:Fantasque Sans Mono, Hack Nerd Font 10 
+	font pango:Fantasque Sans Mono, Hack Nerd Font 10
 
-#  mode hide 
+#  mode hide
 
 	colors {
 		# Whole color settings
@@ -62,16 +62,16 @@ bar {
 		inactive_workspace #282828 #282828 #fbf1c7
 		urgent_workspace   #cc241d #cc241d #ebdbb2
 	}
- 
-	position top 
-	status_command i3status-rs ~/.config/i3/status.toml       
+
+	position top
+	status_command i3status-rs ~/.config/i3/status.toml
 }
 
 bar {
 	font pango:Fantasque Sans Mono, Font Awesome 5 Free, Hack Nerd Font 10
 
-#  mode hide 
-  workspace_buttons no 
+#  mode hide
+  workspace_buttons no
 
 	colors {
 		# Whole color settings
@@ -87,11 +87,11 @@ bar {
 
   }
 
-	position bottom 
-	status_command /usr/share/bumblebee-status/bumblebee-status -m nic network_traffic disk:root disk:home bluetooth shell:corona shell:weather time date  -p nic.states=^down root.format="{path}: {used}/{size} ({percent:05.02f}%)" root.path="/" home.path='/home' home.format="{path}: {used}/{size} ({percent:05.02f}%)" corona.command="~/.local/bin/corona" corona.interval=600 weather.command="~/.local/bin/weather" weather.interval=600 time.format="%H:%M:%S" date.format="%a, %b %d %Y" -t gruvbox-powerline 
+	position bottom
+	status_command /usr/share/bumblebee-status/bumblebee-status -m nic network_traffic disk:root disk:home bluetooth shell:corona shell:weather time date  -p nic.states=^down root.format="{path}: {used}/{size} ({percent:05.02f}%)" root.path="/" home.path='/home' home.format="{path}: {used}/{size} ({percent:05.02f}%)" corona.command="~/.local/bin/corona" corona.interval=600 weather.command="~/.local/bin/weather" weather.interval=600 time.format="%H:%M:%S" date.format="%a, %b %d %Y" -t customgruvbox
 }
- 
-# I3 RELATED EXEC COMMANDS # 
+
+# I3 RELATED EXEC COMMANDS #
 bindsym $mod+v exec i3 "[class=\"mpv\"] scratchpad show"
 bindsym $mod+m exec --no-startup-id ddspawn tmuxdd
 ###### KEYBINDINGS #######
