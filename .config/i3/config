@@ -88,7 +88,7 @@ bar {
   }
 
 	position bottom 
-	status_command /usr/share/bumblebee-status/bumblebee-status -m nic network_traffic disk:root disk:home bluetooth shell:corona shell:weather time date  -p nic.states=^down root.format="{path}: {used}/{size} ({percent:05.02f}%)" root.path="/" home.path='/home' home.format="{path}: {used}/{size} ({percent:05.02f}%)" corona.command="~/.local/bin/tools/corona" corona.interval=600 weather.command="~/.local/bin/tools/weather" weather.interval=600 time.format="%H:%M:%S" date.format="%a, %b %d %Y" -t gruvbox-powerline 
+	status_command /usr/share/bumblebee-status/bumblebee-status -m nic network_traffic disk:root disk:home bluetooth shell:corona shell:weather time date  -p nic.states=^down root.format="{path}: {used}/{size} ({percent:05.02f}%)" root.path="/" home.path='/home' home.format="{path}: {used}/{size} ({percent:05.02f}%)" corona.command="~/.local/bin/corona" corona.interval=600 weather.command="~/.local/bin/weather" weather.interval=600 time.format="%H:%M:%S" date.format="%a, %b %d %Y" -t gruvbox-powerline 
 }
  
 # I3 RELATED EXEC COMMANDS # 
