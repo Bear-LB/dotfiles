@@ -17,8 +17,8 @@ for_window [class="VirtualBox Machine"] floating enable
 ###### DEFINITIONS ######
 set $mod Mod4
 set $alt Mod1
-set $coloract "#AF960B"
-set $colorin "#1f2e35"
+set $coloract "#d5c4a1"
+set $colorin "#282828"
 set_from_resource $color15 i3wm.color15 "#fffff7"
 set_from_resource $split i3wm.color10 "#d9f75e"
 set_from_resource $coloru i3wm.color2 "#9FB156"
@@ -27,12 +27,10 @@ set_from_resource $color8 i3wm.color8 "#1f2e35"
 
 font pango:monospace 8
 
-exec --no-startup-id "sleep 2 && musnify-mpd"
 ##### GAPS & BORDERS ######
 gaps outer 0
 gaps inner 12
-for_window [class="^.*"] border pixel 2
-# Activate smart borders (always)
+for_window [class="^.*"] border pixel 3
 smart_borders on
 smart_gaps on
 ######### COLORS ##########
@@ -57,7 +55,7 @@ bar {
 		separator  #a89984
 
     #                  border  backgr. text
-		focused_workspace  #fbf1c7 #fbf1c7 #282828
+		focused_workspace  #d5c4a1 #d5c4a1 #282828
 		active_workspace   #282828 #282828 #fbf1c7
 		inactive_workspace #282828 #282828 #fbf1c7
 		urgent_workspace   #cc241d #cc241d #ebdbb2
@@ -93,7 +91,7 @@ bar {
 
 # I3 RELATED EXEC COMMANDS #
 bindsym $mod+v exec i3 "[class=\"mpv\"] scratchpad show"
-bindsym $mod+m exec --no-startup-id ddspawn tmuxdd
+bindsym $mod+m exec --no-startup-id ddspawn ncmpcppdd
 ###### KEYBINDINGS #######
 
 floating_modifier $mod
