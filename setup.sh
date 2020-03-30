@@ -143,8 +143,6 @@ EOF
 	fi
 	if [ $INSTALLDM = yes ]; then
 		pacman -S --noconfirm lightdm lightdm-gtk-greeter lightdm-runit
-		groupadd -r autologin
-		gpasswd -a $name autologin
 	fi
 fi
 if [[ $WHICHINIT == *systemd* ]]; then 
@@ -156,10 +154,14 @@ if [[ $WHICHINIT == *systemd* ]]; then
 	if [ $INSTALLDM = yes ]; then
 		pacman -S --noconfirm lightdm lightdm-gtk-greeter
 		systemctl enable lightdm
-		groupadd -r autologin
-		gpasswd -a $name autologin
 	fi
 fi
+if [ $INSTALLDM = yes ]; then
+	groupadd -r autologin
+	gpasswd -a $name autologin
+	sed -i "s/^#autologin-user=username/autologin-user=bear/" /etc/lightdm/lightdm.conf
+fi
+
 # Install independent theme and plugin
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /opt/zsh-syntax-highlighting
