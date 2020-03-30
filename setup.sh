@@ -159,7 +159,7 @@ fi
 if [ $INSTALLDM = yes ]; then
 	groupadd -r autologin
 	gpasswd -a $name autologin
-	sed -i "s/^#autologin-user=username/autologin-user=bear/" /etc/lightdm/lightdm.conf
+	sed -i "s/^#autologin-user=username/autologin-user=$name/" /etc/lightdm/lightdm.conf
 fi
 
 # Install independent theme and plugin
