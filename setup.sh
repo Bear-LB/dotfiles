@@ -143,6 +143,8 @@ EOF
 	fi
 	if [ $INSTALLDM = yes ]; then
 		pacman -S --noconfirm lightdm lightdm-gtk-greeter lightdm-runit
+		groupadd -r autologin
+		gpasswd -a $name autologin
 	fi
 fi
 if [[ $WHICHINIT == *systemd* ]]; then 
@@ -154,6 +156,8 @@ if [[ $WHICHINIT == *systemd* ]]; then
 	if [ $INSTALLDM = yes ]; then
 		pacman -S --noconfirm lightdm lightdm-gtk-greeter
 		systemctl enable lightdm
+		groupadd -r autologin
+		gpasswd -a $name autologin
 	fi
 fi
 # Install independent theme and plugin
