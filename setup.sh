@@ -28,7 +28,7 @@ newperms "%wheel ALL=(ALL) NOPASSWD: ALL"
 useradd -m -s /bin/bash "$name" && mkdir -p /home/"$name" && chown "$name":wheel /home/"$name"
 echo "$name:$pass1" | chpasswd
 unset pass1 pass2
-usermod -a -G wheel,video "$name"
+usermod -a -G wheel,video,audio "$name"
 # Use all cores for compile
 sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
 # Make pacman and yay nice-looking 
