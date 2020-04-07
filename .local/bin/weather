@@ -1,6 +1,6 @@
-#!/usr/bin/env sh
+#!/bin/sh
 timeout 10 bash -c -- 'while true; do sleep 2; ping -c1 www.wttr.in >/dev/null 2>&1 && break; done' &&
-	weather=$(curl -Ss "https://wttr.in?0&T&Q" | cut -c 16- | head -2 | xargs echo)
+	weather=$(curl -Ss "https://wttr.in?0&T&Q" | cut -c 16- | head -2 | xargs echo) || echo "No wttr info"
 [[ $weather == *Partly* ]] && echo " $weather"
 [[ $weather == *Cloudy* ]] && echo " $weather"
 [[ $weather == *Overcast* ]] && echo " $weather"
@@ -10,4 +10,3 @@ timeout 10 bash -c -- 'while true; do sleep 2; ping -c1 www.wttr.in >/dev/null 2
 [[ $weather == *sleet* ]] && echo "ﭽ $weather"
 [[ $weather == *Clear* ]] && echo " $weather"
 [[ $weather == *Sunny* ]] && echo " $weather"
-true
