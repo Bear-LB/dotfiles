@@ -5,5 +5,4 @@ export EDITOR="nvim"
 export FILE="$HOME/.config/vifm/scripts/vifmrun"
 export BROWSER="brave"
 export READER="zathura"
-export INTERFACE=$(ip route get 1.1.1.1 2>/dev/null | awk '{print $5')
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && exec startx
