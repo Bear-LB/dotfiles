@@ -1,0 +1,15 @@
+#!/bin/sh
+#timeout 4 bash -c -- 'while true; do sleep 2; ping -c1 www.wttr.in >/dev/null 2>&1 && break; done' &&
+#weather=$(curl -Ss "https://wttr.in?0&T&Q" | cut -c 16- | head -2 | xargs echo) || echo "No wttr info"
+#[[ $weather == *Partly* ]] && echo " $weather[7] | [1]"
+#[[ $weather == *Cloudy* ]] && echo " $weather[7] | [1]"
+#[[ $weather == *Overcast* ]] && echo " $weather[7] | [1]"
+#[[ $weather == *"Light Rain"* ]] && echo " $weather[7] | [1]"
+#[[ $weather == *"Light drizzle"* ]] && echo "殺$weather[7] | [1]"
+#[[ $weather == *Patchy* ]] && echo " $weather[7] | [1]"
+#[[ $weather == *sleet* ]] && echo "ﭽ $weather[7] | [1]"
+#[[ $weather == *Clear* ]] && echo " $weather[7] | [1]"
+#[[ $weather == *Sunny* ]] && echo " $weather[7] | [1]"
+weather=$(curl -s "https://wttr.in?format=1")
+[[ $weather != *°C* ]] && exit
+echo "$weather | "
