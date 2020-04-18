@@ -111,9 +111,11 @@ cd /home/$name
 rm -rf .git
 # Add blackarch repo
 cd /home/$name/.local/src/dwm
+mv /home/$name/.local/src/dwm/dwm.desktop /usr/share/xsessions/dwm.desktop
 sudo make install
 cd /home/$name/.local/src/dwmblocks
 sudo make install
+/usr/share/xsessions
 #cd /tmp
 #curl -O https://blackarch.org/strap.sh
 #chmod +x strap.sh
