@@ -50,16 +50,18 @@ pacman --noconfirm -S newsboat picom zsh tmux htop ed arandr ffmpeg atool mediai
 # Bloat Software 3
 pacman --noconfirm -S mpv neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 4
-pacman --noconfirm -S sxiv xsettingsd lxappearance qt5ct scrot nitrogen xorg-font-utils wget || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S sxiv lxappearance qt5ct scrot nitrogen xorg-font-utils wget || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 5
-pacman --noconfirm -S streamlink adobe-source-han-sans-jp-fonts playerctl i3-gaps || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S streamlink || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 6
 pacman --noconfirm -S unclutter inotify-tools pcmanfm-gtk3 light xclip alsa-utils|| { echo 'failed at installing packages from official repo' ; exit 1; }
 # Systemd software
 pacman --noconfirm -S mpd || sudo -u "$name" yay -S --noconfirm mpd-light
-# Audio
+# Pulseaudio
 pacman --noconfirm -S pulseaudio pulseaudio-alsa pulsemixer
-#change shell to zsh (only
+# I3
+#pacman --noconfirm -S i3-gaps
+#change shell to zsh
 chsh -s /usr/bin/zsh root
 chsh -s /usr/bin/zsh "$name"
 # Ueberzug
