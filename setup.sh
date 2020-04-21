@@ -40,7 +40,7 @@ cd /tmp
 sudo -u "$name" git clone https://aur.archlinux.org/yay.git
 cd yay
 sudo -u "$name" makepkg --noconfirm -si
-cd /tmp
+sudo -u "$name" yay -S --noconfirm libxft-bgra
 # Essential Software
 pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xdpyinfo xdotool mesa || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software
@@ -110,12 +110,11 @@ cp -rfT "$dir/gitrepo" /home/$name
 cd /home/$name
 rm -rf .git
 # Add blackarch repo
+mkdir /usr/share/xsessions && mv /home/$name/.local/src/dwm/dwm.desktop /usr/share/xsessions/dwm.desktop
 cd /home/$name/.local/src/dwm
-mv /home/$name/.local/src/dwm/dwm.desktop /usr/share/xsessions/dwm.desktop
 sudo make install
 cd /home/$name/.local/src/dwmblocks
 sudo make install
-/usr/share/xsessions
 #cd /tmp
 #curl -O https://blackarch.org/strap.sh
 #chmod +x strap.sh
