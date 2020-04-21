@@ -6,7 +6,7 @@ static const Block blocks[] = {
 	{"",	"dwmlan",	30,	0},
 	{"",	"dwmwan",	30,	0},
 	{"",	"dwmvolume",	0,	10},
-	{"",	"dwmweather",	10000,	0},
+	/*{"",	"dwmweather",	10000,	0},*/
 	/*{"",	"dwmfreespace",	1000,	0},*/
 	{"",	"dwmram",	4,	0},
 	{"",	"dwmcpu",	4,	0},
