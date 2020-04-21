@@ -12,4 +12,4 @@
 #[[ $weather == *Sunny* ]] && echo " $weather[7] | [1]"
 weather=$(curl -s "https://wttr.in?format=1")
 [[ $weather != *°C* ]] && exit
-echo "$weather | "
+echo "$weather  "

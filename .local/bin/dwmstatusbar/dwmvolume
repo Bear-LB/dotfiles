@@ -12,15 +12,15 @@ esac
 
 volstat="$(amixer get Master)"
 
-echo "$volstat" | grep "\[off\]" >/dev/null && echo -e "[9]🔇[7] | [1]" && exit
+echo "$volstat" | grep "\[off\]" >/dev/null && echo -e "🔇[1]  " && exit
 
 vol=$(echo "$volstat" | grep -o "\[[0-9]\+%\]" | sed "s/[^0-9]*//g;1q")
 
 if [ "$vol" -gt "70" ]; then
-echo -e "[6]🔊 $vol%[1] | "
+echo -e "[6]🔊 $vol%[1]  "
 elif [ "$vol" -lt "30" ]; then
-echo -e "[9]🔈 $vol%[1] | "
+echo -e "[9]🔈 $vol%[1]  "
 else
-echo -e "[4]🔉 $vol%[1] | "
+echo -e "[4]🔉 $vol%[1]  "
 fi
 

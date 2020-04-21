@@ -8,4 +8,4 @@ cpu=$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ))
 
 cpu_t=$(cat /sys/devices/platform/coretemp.0/hwmon/hwmon?/temp2_input)
 [[ $cpu_t == "" ]] && cpu_temp="SEN N/A" || cpu_temp=$(expr "$cpu_t" / 1000) && [ $cpu_temp -gt 50 ] && warn="[7]" ; [ $cpu_temp -gt 75 ] && warn="[5]" ; [ $cpu_temp -gt 0 ] && cpu_temp=$(echo $cpu_temp | awk '{print $1 "°C"}')
-echo "$warn $cpu% $cpu_temp[1] | "
+echo "$warn $cpu% $cpu_temp[1]  "
