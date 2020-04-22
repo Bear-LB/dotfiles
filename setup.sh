@@ -19,7 +19,7 @@ getuserandpass() { \
 	}
 getuserandpass
 # Upgrade
-pacman --noconfirm -Syu
+pacman --noconfirm -Syu || exit 1
 pacman --noconfirm --needed -S base-devel linux-firmware diffutils neovim man-db man-pages texinfo exfat-utils e2fsprogs
 newperms() {
 	sed -i "/#Deploydot/d" /etc/sudoers
@@ -48,7 +48,7 @@ pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpc sxhkd zathura zat
 # Bloat Software 2
 pacman --noconfirm -S newsboat picom zsh tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 3
-pacman --noconfirm -S mpv neovim gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S mpv gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 4
 pacman --noconfirm -S sxiv lxappearance qt5ct scrot nitrogen xorg-font-utils wget || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 5
