@@ -10,10 +10,10 @@ super + w
 	$BROWSER
 super + r
 	$TERMINAL --title=vifm -e 'zsh -c "(cat ~/.config/wpg/sequences &) & $FILE"'
-super + h
-	$TERMINAL --title=htop -e 'zsh -c "(cat ~/.config/wpg/sequences &) & htop"'
-super + g
-	$TERMINAL --title=gotop -e 'zsh -c "(cat ~/.config/wpg/sequences &) & gotop"'
+#super + h
+#	$TERMINAL --title=htop -e 'zsh -c "(cat ~/.config/wpg/sequences &) & htop"'
+#super + g
+#	$TERMINAL --title=gotop -e 'zsh -c "(cat ~/.config/wpg/sequences &) & gotop"'
 super + n
 	$TERMINAL --title=newsboat -e 'zsh -c "(cat ~/.config/wpg/sequences &) & newsboat"'
 super + shift + M
