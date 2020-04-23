@@ -21,6 +21,7 @@ alias \
 	f="$FILE" \
 	e="$EDITOR" \
 	v="$EDITOR" \
-	p="sudo pacman"
+	p="sudo pacman" \
+	br="br -h"
 
 
