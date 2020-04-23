@@ -115,6 +115,8 @@ cd /home/$name/.local/src/dwm
 sudo make install
 cd /home/$name/.local/src/dwmblocks
 sudo make install
+cd /home/$name/.local/src/st
+sudo make install
 #cd /tmp
 #curl -O https://blackarch.org/strap.sh
 #chmod +x strap.sh
