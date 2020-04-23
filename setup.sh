@@ -171,8 +171,9 @@ if [ $INSTALLDM = yes ]; then
 	sed -i "s/^#autologin-user=/autologin-user=$name/" /etc/lightdm/lightdm.conf
 fi
 
-# Install independent theme and plugin
+# Install independent plugins
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
+git clone https://github.com/zdharma/fast-syntax-highlighting /opt/fsh
 # Oh-My-Zsh. what a pain
 cd ~
 curl -LO https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
