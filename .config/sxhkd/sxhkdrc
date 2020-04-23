@@ -1,7 +1,5 @@
 super + Return
 	$TERMINAL
-super + shift + q
-	kill -9 `xdotool getwindowfocus getwindowpid`
 super + d
 	rofi -show drun
 super + Escape
@@ -9,7 +7,7 @@ super + Escape
 super + w
 	$BROWSER
 super + r
-	$TERMINAL --title=vifm -e 'zsh -c "(cat ~/.config/wpg/sequences &) & $FILE"'
+	$TERMINAL -t vifm -e $FILE
 #super + h
 #	$TERMINAL --title=htop -e 'zsh -c "(cat ~/.config/wpg/sequences &) & htop"'
 #super + g
