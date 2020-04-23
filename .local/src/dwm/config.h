@@ -99,8 +99,8 @@ static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x20
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	/*{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },*/
-	{ MODKEY|ShiftMask,             XK_m, 	   togglescratch,  {.v = scratchpadcmd } },
+	/*{ MODKEY|ShiftMask,           XK_Return, spawn,          {.v = termcmd } },*/
+	{ MODKEY,           		XK_m, 	   togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	STACKKEYS(MODKEY,                          focus)
 	STACKKEYS(MODKEY|ShiftMask,                push)
