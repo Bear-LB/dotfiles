@@ -54,7 +54,7 @@ if [ "$(id -u)" != "0" ]; then
 	source $ZSH/oh-my-zsh.sh
 fi
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source /opt/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 source /opt/powerlevel10k/powerlevel10k.zsh-theme
 
 POWERLEVEL9K_DIR_BACKGROUND='237'
@@ -80,7 +80,7 @@ POWERLEVEL9K_ROOT_INDICATOR_BACKGROUND='clear'
 
 POWERLEVEL9K_HOME_ICON="\ufb26"
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(root_indicator dir dir_writable_joined custom_git_pair vcs_joined)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status root_indicator dir dir_writable_joined custom_git_pair vcs_joined)
 POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''
 POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR='%F{007}\uf460%F{007}'
 
