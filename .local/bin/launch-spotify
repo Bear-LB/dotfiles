@@ -1,0 +1,2 @@
+#!/bin/sh
+pidof spotifyd >/dev/null || nohup spotifyd --no-daemon >/dev/null 2>&1 & spt
