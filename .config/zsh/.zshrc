@@ -6,12 +6,13 @@ bindkey "^[[B" history-beginning-search-forward-end
 plugins=(colored-man-pages
 	)
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
+
+# Basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
-
-# Include hidden files in autocomplete:
+#Include hidden files in autocomplete
 _comp_options+=(globdots)
 
 # Use vim keys in tab complete menu:
@@ -102,7 +103,7 @@ POWERLEVEL9K_OS_ICON_FOREGROUND='cyan'
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status go_version nvm os_icon)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=''
 POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR='%F{007}\uf104%F{007}'
 
