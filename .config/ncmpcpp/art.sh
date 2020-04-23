@@ -7,7 +7,7 @@
 
 MUSIC_DIR="$HOME/Music"
 COVER="/tmp/cover.png"
-COVER_SIZE=270
+COVER_SIZE=220
 
 BORDERS=false
 BORDER_WIDTH=5
