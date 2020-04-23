@@ -46,13 +46,13 @@ pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xdpyi
 # Bloat Software
 pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpc sxhkd zathura zathura-pdf-mupdf zathura-djvu poppler || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 2
-pacman --noconfirm -S newsboat picom zsh tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S newsboat picom tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 3
 pacman --noconfirm -S mpv gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 4
 pacman --noconfirm -S sxiv lxappearance qt5ct scrot nitrogen xorg-font-utils wget || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 5
-pacman --noconfirm -S streamlink || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S streamlink zsh zsh-syntax-highlighting || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 6
 pacman --noconfirm -S unclutter inotify-tools pcmanfm-gtk3 light xclip alsa-utils|| { echo 'failed at installing packages from official repo' ; exit 1; }
 # Systemd software
@@ -173,7 +173,6 @@ fi
 
 # Install independent theme and plugin
 git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /opt/zsh-syntax-highlighting
 # Oh-My-Zsh. what a pain
 cd ~
 curl -LO https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
