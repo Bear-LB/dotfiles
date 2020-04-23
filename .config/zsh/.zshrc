@@ -53,7 +53,7 @@ if [ "$(id -u)" != "0" ]; then
 	source $ZSH/oh-my-zsh.sh
 fi
 
-source /opt/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 source /opt/powerlevel10k/powerlevel10k.zsh-theme
 
 POWERLEVEL9K_DIR_BACKGROUND='237'
