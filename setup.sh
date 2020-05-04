@@ -44,7 +44,7 @@ sudo -u "$name" yay -S --noconfirm libxft-bgra
 # Essential Software
 pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xdpyinfo xdotool mesa || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software
-pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpc sxhkd zathura zathura-pdf-mupdf zathura-djvu poppler || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpc zathura zathura-pdf-mupdf zathura-djvu poppler || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 2
 pacman --noconfirm -S newsboat picom tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 3
