@@ -36,12 +36,6 @@ static char *colors[][3] = {
        [SchemeNorm] = { col_font, col_gray1, col_black },
        [SchemeSel]  = { col_gray1,  col_orange,  col_cyan },
        [SchemeTitle]  = { col_gray1, col_cyan,  col_cyan  },
-       [SchemeCol4]  = { col_orange, col_gray1,  col_cyan  },
-       [SchemeCol5]  = { col_urgent, col_gray1,  col_cyan  },
-       [SchemeCol6]  = { col_lime, col_gray1,  col_cyan  },
-       [SchemeCol7]  = { col_warn, col_gray1,  col_cyan  },
-       [SchemeCol8]  = { col_purple, col_gray1,  col_cyan  },
-       [SchemeCol9]  = { col_gray2, col_gray1,  col_cyan  },
 };
 
 typedef struct {
