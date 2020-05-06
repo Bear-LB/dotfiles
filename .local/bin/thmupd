@@ -1,5 +1,0 @@
-#!/bin/sh
-#fix width dmenu
-Xaxis=$(xrandr --current | grep '*' | uniq | awk '{print $1}' | cut -d 'x' -f1)
-Xwidth="$(($Xaxis-30))"
-sed -i "s/-w.*-x 12/-w $Xwidth -x 12/g" ~/.local/bin/tools/dmenupower
