@@ -1,9 +1,11 @@
-#!/usr/bin/env sh
+#!/bin/sh
+
+dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
+
 setxkbmap dk &
 unclutter &
 xset r rate 300 50 &
 picom &
 dunst &
 nitrogen --set-zoom-fill --random ~/Pictures/Wallpapers &
-dwmblocks &
-(sleep 5s; sudo pacman -Syy) &
+(sleep 2s; sudo pacman -Syy) &
