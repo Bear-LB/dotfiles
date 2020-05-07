@@ -85,18 +85,6 @@ sudo -u "$name" yay -S --noconfirm gotop-bin
 sudo -u "$name" yay -S --noconfirm brave-bin
 # Cursor
 sudo -u "$name" yay -S --noconfirm posy-cursors
-# DMenu
-wget https://dl.suckless.org/tools/dmenu-4.9.tar.gz -O /tmp/dmenu-4.9.tar.gz
-tar -xvf /tmp/dmenu-4.9.tar.gz -C /tmp/
-wget https://tools.suckless.org/dmenu/patches/border/dmenu-border-4.9.diff -O /tmp/dmenu-4.9/dmenu-border-4.9.diff
-wget https://tools.suckless.org/dmenu/patches/line-height/dmenu-lineheight-4.9.diff -O /tmp/dmenu-4.9/dmenu-lineheight-4.9.diff
-wget https://tools.suckless.org/dmenu/patches/xyw/dmenu-xyw-4.7.diff -O /tmp/dmenu-4.9/dmenu-xyw-4.7.diff
-cd /tmp/dmenu-4.9
-patch --merge -i dmenu-border-4.9.diff
-patch --merge -i dmenu-lineheight-4.9.diff
-patch --merge -i dmenu-xyw-4.7.diff
-sed -i 's+border_width = 5;+border_width = 3;+g' config.def.h
-make install
 # Fonts
 sudo -u "$name" yay -S --noconfirm ttf-font-awesome
 sudo -u "$name" yay -S --noconfirm nerd-fonts-hack
@@ -117,6 +105,8 @@ sudo make install
 cd /home/$name/.local/src/dwmblocks
 sudo make install
 cd /home/$name/.local/src/st
+sudo make install
+cd /home/$name/.local/src/dmenu
 sudo make install
 #cd /tmp
 #curl -O https://blackarch.org/strap.sh
