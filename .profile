@@ -1,9 +1,0 @@
-export PATH="$PATH:$(du "$HOME/.local/bin/" | cut -f2 | tr '\n' ':' | sed 's/:*//')"
-export TERMINAL="st"
-export ZDOTDIR="$HOME/.config/zsh"
-export EDITOR="nvim"
-export FILE="$HOME/.config/vifm/scripts/vifmrun"
-export BROWSER="brave"
-export READER="zathura"
-export QT_QPA_PLATFORMTHEME="qt5ct"
-[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && exec startx
