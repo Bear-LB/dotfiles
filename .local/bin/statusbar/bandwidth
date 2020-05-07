@@ -1,0 +1,44 @@
+#!/bin/sh
+#INTERFACE=$(ip route get 1.1.1.1 2>/dev/null | awk '{print $5}')
+#[[ $INTERFACE == "" ]] && exit
+#rxs=0
+#txs=0
+#rx1=$(cat /sys/class/net/$INTERFACE/statistics/rx_bytes)
+#tx1=$(cat /sys/class/net/$INTERFACE/statistics/tx_bytes)
+#sleep 3
+#rx2=$(cat /sys/class/net/$INTERFACE/statistics/rx_bytes)
+#tx2=$(cat /sys/class/net/$INTERFACE/statistics/tx_bytes)
+#rxs=$(expr $rx2 - $rx1)
+#txs=$(expr $tx2 - $tx1)
+#rxs=$(expr $rxs / 3)
+#txs=$(expr $txs / 3)
+#rxs=$(expr $rxs / 1024)
+#txs=$(expr $txs / 1024)
+#echo " [6]▼ ${rxs}KiB/s ▲ ${txs}KiB/s "
+#!/bin/sh
+
+# Module showing network traffic. Shows how much data has been received (RX) or
+# transmitted (TX) since the previous time this script ran. So if run every
+# second, gives network traffic per second.
+
+#case "$BLOCK_BUTTON" in
+#	3) notify-send "🌐 Network traffic module 🔻: Traffic received 🔺: Traffic transmitted" ;;
+#esac
+
+#case $BLOCK_BUTTON in
+#	1) setsid "$TERMINAL" -e nmtui &
+#esac
+
+rxfile="${XDG_CACHE_HOME:-$HOME/.cache}/rxlog"
+txfile="${XDG_CACHE_HOME:-$HOME/.cache}/txlog"
+
+rxcurrent="$(cat /sys/class/net/*/statistics/rx_bytes | tr '\n' '+' | sed 's/+$/\n/' | bc)"
+txcurrent="$(cat /sys/class/net/*/statistics/tx_bytes | tr '\n' '+' | sed 's/+$/\n/' | bc)"
+
+printf "🔻%skB 🔺%skB  \\n" \
+	"$(printf -- "(%s-%s)/1024\\n" "$rxcurrent" "$(cat "$rxfile")" | bc)" \
+	"$(printf -- "(%s-%s)/1024\\n" "$txcurrent" "$(cat "$txfile")" | bc)"
+
+# Log the current values for next run.
+echo "$rxcurrent" > "$rxfile"
+echo "$txcurrent" > "$txfile"

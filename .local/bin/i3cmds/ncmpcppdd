@@ -1,4 +1,0 @@
-#!/usr/bin/env sh
-tmux -L tmuxmusicserver kill-server
-tmux kill-session -t music
-tmux -L tmuxmusicserver -f ~/./tmux/no.conf new-session -s music "tmux source-file ~/.config/ncmpcpp/tmuxsession"

@@ -1,0 +1,9 @@
+#!/bin/sh
+case $BLOCK_BUTTON in
+	1) smicopy=$(nvidia-smi) && notify-send "$smicopy" ;;
+	3) notify-send "🖥 GPU module " "\- Shows GPU temperatre.
+- Click to show GPU information" ;;
+esac
+GPU_TEMP=$(nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits)
+echo "GPU $GPU_TEMP°C  "
+
