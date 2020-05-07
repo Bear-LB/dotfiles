@@ -64,8 +64,9 @@ pacman --noconfirm -S pulseaudio pulseaudio-alsa pulsemixer
 #change shell to zsh
 chsh -s /usr/bin/zsh root
 chsh -s /usr/bin/zsh "$name"
-# Ueberzug
+# Ueberzug and Preview
 sudo -u "$name" yay -S --noconfirm python-ueberzug
+sudo -u "$name" yay -S --noconfirm fontpreview-git
 # Bumblebee and i3status
 # sudo -u "$name" yay -S --noconfirm bumblebee-status
 # sudo -u "$name" yay -S --noconfirm i3status-rust-git
