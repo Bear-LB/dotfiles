@@ -185,7 +185,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_h,		setmfact,	{.f = -0.05} },
 	/* J and K are automatically bound above in STACKEYS */
 	{ MODKEY,			XK_l,		setmfact,      	{.f = +0.05} },
-	{ MODKEY,			XK_semicolon,	shiftview,	{ .i = 1 } },
+	{ MODKEY,			XK_ae,		shiftview,	{ .i = 1 } },
 	/* { MODKEY|ShiftMask,		XK_semicolon,	shiftview,	SHCMD("") }, */
 	{ MODKEY,			XK_apostrophe,	togglescratch,	{.ui = 1} },
 	/* { MODKEY|ShiftMask,		XK_apostrophe,	spawn,		SHCMD("") }, */
