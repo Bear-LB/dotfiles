@@ -52,7 +52,7 @@ pacman --noconfirm -S mpv gnome-keyring exfat-utils dosfstools ntfs-3g libnotify
 # Bloat Software 4
 pacman --noconfirm -S sxiv lxappearance qt5ct scrot nitrogen xorg-font-utils wget || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 5
-pacman --noconfirm -S streamlink zsh broot || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S streamlink zsh zsh-theme-powerlevel10k broot || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 6
 pacman --noconfirm -S unclutter inotify-tools pcmanfm-gtk3 light xclip alsa-utils || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Systemd software
@@ -163,7 +163,6 @@ if [ $INSTALLDM = yes ]; then
 fi
 
 # Install independent plugins
-git clone https://github.com/romkatv/powerlevel10k.git /opt/powerlevel10k
 git clone https://github.com/zdharma/fast-syntax-highlighting /opt/fsh
 # Oh-My-Zsh. what a pain
 cd ~
