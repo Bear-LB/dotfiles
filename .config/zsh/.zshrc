@@ -55,7 +55,7 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 source /opt/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null
-source /opt/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 POWERLEVEL9K_DIR_BACKGROUND='237'
 POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="clear"
