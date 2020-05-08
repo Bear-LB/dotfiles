@@ -18,8 +18,8 @@ static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#005577";
 static char selbgcolor[]            = "#005577";
-static const char col_gray1[]       = "#1d2021";
-static const char col_gray2[]       = "#a89984";
+static const char col_gray1[]       = "#282828";
+static const char col_gray2[]       = "#1d2021";
 static const char col_black[]       = "#000001";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#458588";
@@ -34,8 +34,8 @@ static const char col_red[]         = "#cc241d";
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { col_font, col_gray1, col_black },
-       [SchemeSel]  = { col_gray1,  col_orange,  col_cyan },
-       [SchemeTitle]  = { col_gray1, col_cyan,  col_cyan  },
+       [SchemeSel]  = { col_gray2,  col_orange,  col_cyan },
+       [SchemeTitle]  = { col_gray2, col_cyan,  col_cyan  },
 };
 
 typedef struct {
@@ -151,7 +151,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("st -e sudo nmtui") },
 	{ MODKEY,			XK_e,		spawn,		SHCMD("st -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook") },
 	{ MODKEY|ShiftMask,		XK_e,		spawn,		SHCMD("st -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
-	{ MODKEY,			XK_r,		spawn,		SHCMD("st -e lf") },
+	{ MODKEY,			XK_r,		spawn,		SHCMD("st -e vifmrun") },
 	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD("st -e htop") },
 	{ MODKEY,			XK_t,		setlayout,	{.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,		XK_t,		setlayout,	{.v = &layouts[1]} },
