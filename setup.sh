@@ -91,6 +91,7 @@ sudo -u "$name" yay -S --noconfirm nerd-fonts-hack
 sudo -u "$name" yay -S --noconfirm ttf-iosevka
 sudo -u "$name" yay -S --noconfirm ttf-joypixels
 sudo -u "$name" yay -S --noconfirm nerd-fonts-cascadia-code
+sudo -u "$name" yay -S --noconfirm siji-git
 fc-cache
 # Clone dotfiles to home
 dir=$(mktemp -d)
