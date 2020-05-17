@@ -86,12 +86,10 @@ sudo -u "$name" yay -S --noconfirm brave-bin
 # Cursor
 sudo -u "$name" yay -S --noconfirm posy-cursors
 # Fonts
-sudo -u "$name" yay -S --noconfirm ttf-font-awesome
 sudo -u "$name" yay -S --noconfirm nerd-fonts-hack
 sudo -u "$name" yay -S --noconfirm ttf-iosevka
 sudo -u "$name" yay -S --noconfirm ttf-joypixels
 sudo -u "$name" yay -S --noconfirm nerd-fonts-cascadia-code
-sudo -u "$name" yay -S --noconfirm siji-git
 fc-cache
 # Clone dotfiles to home
 dir=$(mktemp -d)
