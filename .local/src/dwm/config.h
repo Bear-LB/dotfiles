@@ -105,6 +105,7 @@ static const Layout layouts[] = {
 	{ MOD,	XK_k,		ACTION##stack,	{.i = INC(-1) } }, \
 	{ MOD,	XK_Left,	ACTION##stack,	{.i = INC(+1) } }, \
 	{ MOD,	XK_Right,	ACTION##stack,	{.i = INC(-1) } }, \
+	{ MOD, 	XK_v, 		ACTION##stack,	{.i = 0 } }, \
 	/* { MOD, XK_grave, ACTION##stack, {.i = PREVSEL } }, \ */
 	/* { MOD, XK_q,     ACTION##stack, {.i = 0 } }, \ */
 	/* { MOD, XK_a,     ACTION##stack, {.i = 1 } }, \ */
