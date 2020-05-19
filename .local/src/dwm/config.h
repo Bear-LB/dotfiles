@@ -101,8 +101,10 @@ static const Layout layouts[] = {
 	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 #define STACKKEYS(MOD,ACTION) \
-	{ MOD,	XK_j,	ACTION##stack,	{.i = INC(+1) } }, \
-	{ MOD,	XK_k,	ACTION##stack,	{.i = INC(-1) } }, \
+	{ MOD,	XK_j,		ACTION##stack,	{.i = INC(+1) } }, \
+	{ MOD,	XK_k,		ACTION##stack,	{.i = INC(-1) } }, \
+	{ MOD,	XK_Left,	ACTION##stack,	{.i = INC(+1) } }, \
+	{ MOD,	XK_Right,	ACTION##stack,	{.i = INC(-1) } }, \
 	/* { MOD, XK_grave, ACTION##stack, {.i = PREVSEL } }, \ */
 	/* { MOD, XK_q,     ACTION##stack, {.i = 0 } }, \ */
 	/* { MOD, XK_a,     ACTION##stack, {.i = 1 } }, \ */
@@ -184,8 +186,9 @@ static Key keys[] = {
 	{ MODKEY,			XK_g,		shiftview,	{ .i = -1 } },
 	/* { MODKEY|ShiftMask,		XK_g,		spawn,		SHCMD("") }, */
 	{ MODKEY,			XK_h,		setmfact,	{.f = -0.05} },
-	/* J and K are automatically bound above in STACKEYS */
 	{ MODKEY,			XK_l,		setmfact,      	{.f = +0.05} },
+	{ MODKEY,			XK_Down,	setmfact,	{.f = -0.05} },
+	{ MODKEY,			XK_Up,		setmfact,      	{.f = +0.05} },
 	{ MODKEY,			XK_ae,		shiftview,	{ .i = 1 } },
 	/* { MODKEY|ShiftMask,		XK_semicolon,	shiftview,	SHCMD("") }, */
 	{ MODKEY,			XK_apostrophe,	togglescratch,	{.ui = 1} },
