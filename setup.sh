@@ -59,11 +59,7 @@ pacman --noconfirm -S unclutter inotify-tools pcmanfm-gtk3 light xclip alsa-util
 pacman --noconfirm -S mpd || sudo -u "$name" yay -S --noconfirm mpd-light
 # Pulseaudio
 pacman --noconfirm -S pulseaudio pulseaudio-alsa pulsemixer
-# I3
-#pacman --noconfirm -S i3-gaps
-#change shell to zsh
-chsh -s /usr/bin/zsh root
-chsh -s /usr/bin/zsh "$name"
+
 # Ueberzug and Preview
 sudo -u "$name" yay -S --noconfirm python-ueberzug
 sudo -u "$name" yay -S --noconfirm fontpreview-git
@@ -97,7 +93,12 @@ git clone -b master --depth 1 https://github.com/Batresh/dotfiles "$dir/gitrepo"
 cp -rfT "$dir/gitrepo" /home/$name
 cd /home/$name
 rm -rf .git
-# Add blackarch repo
+
+# Shell change
+chsh -s /usr/bin/zsh root
+chsh -s /usr/bin/zsh "$name"
+sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
+
 mkdir /usr/share/xsessions && mv /home/$name/.local/src/dwm/dwm.desktop /usr/share/xsessions/dwm.desktop
 cd /home/$name/.local/src/dwm
 sudo make install
@@ -107,13 +108,6 @@ cd /home/$name/.local/src/st
 sudo make install
 cd /home/$name/.local/src/dmenu
 sudo make install
-#cd /tmp
-#curl -O https://blackarch.org/strap.sh
-#chmod +x strap.sh
-#./strap.sh
-# TMUX Plugin Manager
-#sudo -u $name git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-# This line, overwriting the `newperms` command above will allow the user to run
 # serveral important commands, `shutdown`, `reboot`, updating, etc. without a password.
 newperms "%wheel ALL=(ALL) ALL #Deploydot
 %wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/poweroff,/usr/bin/halt,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Sy,/usr/bin/pacman -Syy,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/yay,/usr/bin/pacman -Syyuw --noconfirm"
