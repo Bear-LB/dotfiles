@@ -1,4 +1,14 @@
-# Loop through all attached batteries.
+ #!/bin/sh
+case $BLOCK_BUTTON in
+	3) notify-send "🔋 Battery module" "🔋: discharging
+🛑: not charging
+♻: stagnant charge
+🔌: charging
+⚡: charged
+❗: battery very low!" ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+
 for battery in /sys/class/power_supply/????
 do
 	# Get its remaining capacity and charge status.
