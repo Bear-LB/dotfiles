@@ -21,12 +21,15 @@ Plug 'kovetskiy/sxhkd-vim'
 Plug 'ap/vim-css-color'
 call plug#end()
 
-set bg=light
 set go=a
 set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
 
+#colors
+let g:gruvbox_contrast_dark = 'hard'
+set bg=dark
+autocmd vimenter * colorscheme gruvbox
 " Some basics:
 	nnoremap c "_c
 	set nocompatible
