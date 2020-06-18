@@ -9,16 +9,16 @@ static const int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int swallowfloating    = 0;
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "CaskaydiaCove Nerd Font:size=10", "JoyPixels:pixelsize=10:antialias=true:autohint=true"  };
+static const char *fonts[]          = { "Caskaydia Cove Nerd Font:size=10:antialias=true:autohint=true", "JoyPixels:pixelsize=10:antialias=true:autohint=true"  };
 static char dmenufont[]             = "monospace:size=10";
-static char normbgcolor[]           = "#282828";
-static char normbordercolor[]       = "#504945";
 static char normfgcolor[]           = "#ebdbb2";
-static char selfgcolor[]            = "#1d2021";
-static char selbordercolor[]        = "#e78a4e";
-static char selbgcolor[]            = "#e78a4e";
-static char titbgcolor[]            = "#89b482";
-static char titfgcolor[]            = "#1d2021";
+static char normbgcolor[]           = "#282828";
+static char normbordercolor[]       = "#928374";
+static char selfgcolor[]            = "#fbf1c7";
+static char selbgcolor[]            = "#076678";
+static char selbordercolor[]        = "#076678";
+static char titfgcolor[]            = "#b8bb26";
+static char titbgcolor[]            = "#282828";
 static char *colors[][3] = {
        /*               fg           bg           border   */
        [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
