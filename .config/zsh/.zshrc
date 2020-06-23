@@ -20,7 +20,7 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
-
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 # vi mode
 bindkey -v
 export KEYTIMEOUT=1
