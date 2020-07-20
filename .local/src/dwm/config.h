@@ -32,7 +32,7 @@ typedef struct {
 } Sp;
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
 const char *spcmd2[] = {"st", "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-e", "bc", "-lq", NULL };
-const char *spcmd3[] = {"st", "-n", "spmusic", "-g", "100x20", "-e", "launch-tmux-music", NULL };
+const char *spcmd3[] = {"st", "-n", "spmusic", "-g", "100x20", "-e", "ncmpcpp-ueberzug", "--ignore-config-errors",  NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
