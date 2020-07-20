@@ -13,7 +13,6 @@ reserved_playlist_cols=30
 reserved_cols_in_percent="false"
 force_square="false"
 square_alignment="top"
-
 left_aligned="true"
 
 # Only set this if the geometries are wrong or ncmpcpp shouts at you to do it.
