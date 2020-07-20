@@ -50,7 +50,7 @@ pacman --noconfirm -S newsboat picom tmux htop ed arandr ffmpeg atool mediainfo 
 # Bloat Software 3
 pacman --noconfirm -S mpv gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 4
-pacman --noconfirm -S sxiv lxappearance qt5ct scrot nitrogen xorg-font-utils wget || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S sxiv lxappearance qt5ct scrot nitrogen xorg-font-util wget || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 5
 pacman --noconfirm -S streamlink zsh zsh-theme-powerlevel10k broot || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 6
