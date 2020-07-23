@@ -52,7 +52,7 @@ pacman --noconfirm -S mpv gnome-keyring exfat-utils dosfstools ntfs-3g libnotify
 # Bloat Software 4
 pacman --noconfirm -S sxiv lxappearance qt5ct scrot nitrogen xorg-font-util wget || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 5
-pacman --noconfirm -S streamlink zsh zsh-theme-powerlevel10k broot || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S streamlink zsh zsh-theme-powerlevel10k zsh-history-substring-search broot || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 6
 pacman --noconfirm -S unclutter inotify-tools pcmanfm-gtk3 light xclip alsa-utils pamixer || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Systemd software
@@ -158,7 +158,7 @@ if [ $INSTALLDM = yes ]; then
 	sed -i "s/^#autologin-user=/autologin-user=$name/" /etc/lightdm/lightdm.conf
 fi
 # Install independent plugins
-git clone https://github.com/zdharma/fast-syntax-highlighting /opt/fsh
+git clone https://github.com/zdharma/fast-syntax-highlighting /usr/share/zsh/plugins/fsh
 [[ $WHICHINIT == *runit* ]] && ln -sf /etc/runit/sv/lightdm /run/runit/service
 [[ $WHICHINIT == *systemd* ]] && systemctl start lightdm
 
