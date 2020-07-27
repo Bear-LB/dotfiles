@@ -1,3 +1,4 @@
+#!/bin/sh
 # Refresh Arch keyrings
 pacman --noconfirm -Sy archlinux-keyring
 pacman --noconfirm -S dialog
