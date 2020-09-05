@@ -41,7 +41,7 @@ cd /tmp
 sudo -u "$name" git clone https://aur.archlinux.org/yay.git
 cd yay
 sudo -u "$name" makepkg --noconfirm -si
-sudo -u "$name" yay -S --noconfirm libxft-bgra
+sudo -u "$name" yay -S --noconfirm libxft-bgra-git
 # Essential Software
 pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xdpyinfo xdotool mesa || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software
