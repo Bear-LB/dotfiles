@@ -9,7 +9,7 @@ static const int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int swallowfloating    = 0;
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Caskaydia Cove Nerd Font:size=10:antialias=true:autohint=true", "JoyPixels:pixelsize=10:antialias=true:autohint=true"  };
+static const char *fonts[]          = { "Caskaydia Cove Nerd Font:size=11:antialias=true:autohint=true", "JoyPixels:pixelsize=11:antialias=true:autohint=true"  };
 static char dmenufont[]             = "monospace:size=10";
 static char normfgcolor[]           = "#ebdbb2";
 static char normbgcolor[]           = "#282828";
@@ -245,6 +245,7 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioRewind,	spawn,		SHCMD("mpc seek -10") },
 	{ 0, XF86XK_AudioForward,	spawn,		SHCMD("mpc seek +10") },
 	{ 0, XF86XK_AudioMedia,		spawn,		SHCMD("st -e ncmpcpp") },
+	{ 0, XF86XK_AudioMicMute,	spawn,		SHCMD("pactl set-source-mute @DEFAULT_SOURCE@ toggle") },
 	{ 0, XF86XK_PowerOff,		spawn,		SHCMD("sysact") },
 	{ 0, XF86XK_Calculator,		spawn,		SHCMD("st -e bc -l") },
 	{ 0, XF86XK_Sleep,		spawn,		SHCMD("sudo -A zzz") },
