@@ -8,4 +8,5 @@ case $BLOCK_BUTTON in
 esac
 MEMUSED=$(free -h | awk '(NR == 2) {print $3}')
 MEMTOT=$(free -h |awk '(NR == 2) {print $2}')
-echo "RAM ${MEMUSED}/${MEMTOT}  "
+echo " ${MEMUSED}/${MEMTOT} "
+#echo "RAM ${MEMUSED}/${MEMTOT}  "

@@ -11,7 +11,7 @@ fi
 updates=$(("$updates_arch" + "$updates_aur"))
 
 if [ "$updates" -gt 0 ]; then
-    echo " $updates_arch  $updates_aur "
+    echo "^c#83a598^$updates_arch  $updates_aur ^c#fe8019^^d^ "
 else
-    echo ""
+    exit 0
 fi

@@ -1,0 +1,15 @@
+#!/bin/sh
+case $BLOCK_BUTTON in
+	1) setsid "$TERMINAL" -e nmtui & ;;
+	3) notify-send "🌐 Internet module" "\- Click to connect" ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+icon=
+conname=$(nmcli -a | grep 'Wired connection' | awk 'NR==1{print $1}')
+if [ "$conname" = "" ]; then
+	conname=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -c 5-)
+	[ -z $conname ] || icon=
+	[ -z $conname ] && echo "Intfail " && > ~/.cache/conname && exit 0
+fi
+printf "$conname" > ~/.cache/conname
+echo -e "$icon ^c#d3869b^$conname^d^ "

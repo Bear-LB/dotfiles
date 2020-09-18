@@ -1,0 +1,20 @@
+#!/bin/sh
+case $BLOCK_BUTTON in
+	1) light -S 95 ;;
+	2) light -S 2 ;;
+	4) light -A 2 ;;
+	5) light -U 5 ;;
+	3) notify-send "📢 Light module" "\- Shows volume 🔊, 🔇 if muted.
+- Middle click to mute.
+- Scroll to change." ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac
+value=$(light | cut -c -2 | tr -d .)
+if [ "$value" -gt "49" ]; then
+	icon="🌕"
+elif [ "$value" -lt "10" ]; then
+	icon="🌑"
+else
+	icon="🌗"
+fi
+echo "$icon^c#fabd2f^$value ^c#fe8019^^d^ "

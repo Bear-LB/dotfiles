@@ -13,8 +13,8 @@ sleep 0.5
 read cpu a b c idle rest < /proc/stat
 total=$((a+b+c+idle))
 cpu=$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ))
-[ $cpu -gt 90 ] && warn=‼
+[ $cpu -gt 90 ] && warn="‼"
 cpu_t=$(cat /sys/class/hwmon/hwmon?/temp1_input)
-[[ $cpu_t == "" ]] && cputemp="SEN N/A⁉" || cputemp=$(expr "$cpu_t" / 1000) && [ $cputemp -gt 70 ] && warn2=⚠️
-[[ $cputemp != "SEN N/A⁉" ]] && cputemp=$(echo $cputemp | awk '{print $1 "°C"}')
-echo " $cpu%$warn $cputemp$warn2  "
+[[ $cpu_t == "" ]] && cputemp="SEN N/A⁉" || cputemp=$(expr "$cpu_t" / 1000) && [ $cputemp -gt 70 ] && warn2=^c#fabd2f^
+[[ $cputemp != "SEN N/A" ]] && cputemp=$(echo $cputemp | awk '{print $1 "°C"}')
+echo " $cpu%$warn $cputemp$warn2 "
