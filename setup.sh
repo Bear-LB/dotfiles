@@ -21,7 +21,7 @@ getuserandpass() { \
 getuserandpass
 # Upgrade
 pacman --noconfirm -Syu || exit 1
-pacman --noconfirm --needed -S base-devel linux-firmware diffutils neovim man-db man-pages texinfo exfat-utils e2fsprogs
+pacman --noconfirm --needed -S base-devel linux-firmware diffutils neovim man-db man-pages wget texinfo exfat-utils e2fsprogs
 newperms() {
 	sed -i "/#Deploydot/d" /etc/sudoers
 	echo "$* #Deploydot" >> /etc/sudoers ;}
@@ -43,7 +43,7 @@ cd yay
 sudo -u "$name" makepkg --noconfirm -si
 sudo -u "$name" yay -S --noconfirm libxft-bgra-git
 # Essential Software
-pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xdpyinfo xdotool mesa || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xdpyinfo xdotool || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software
 pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpc zathura zathura-pdf-mupdf zathura-djvu poppler || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 2
@@ -51,22 +51,18 @@ pacman --noconfirm -S newsboat picom tmux htop ed arandr ffmpeg atool mediainfo 
 # Bloat Software 3
 pacman --noconfirm -S mpv gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 4
-pacman --noconfirm -S sxiv lxappearance qt5ct scrot nitrogen xorg-font-util wget bmon || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S sxiv lxappearance qt5ct scrot nitrogen xorg-font-util bmon || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 5
 pacman --noconfirm -S streamlink zsh zsh-theme-powerlevel10k zsh-history-substring-search broot pacman-contrib || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 6
-pacman --noconfirm -S unclutter inotify-tools pcmanfm-gtk3 light xclip alsa-utils pamixer highlight chafa || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S unclutter inotify-tools pcmanfm-gtk3 xclip alsa-utils || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Systemd software
 pacman --noconfirm -S mpd || sudo -u "$name" yay -S --noconfirm mpd-light
 # Pulseaudio
-pacman --noconfirm -S pulseaudio pulseaudio-alsa pulsemixer
-
+pacman --noconfirm -S pulseaudio pulseaudio-alsa pulsemixer pamixer
 # Ueberzug and Preview
 sudo -u "$name" yay -S --noconfirm python-ueberzug
 sudo -u "$name" yay -S --noconfirm fontpreview-git
-# Bumblebee and i3status
-# sudo -u "$name" yay -S --noconfirm bumblebee-status
-# sudo -u "$name" yay -S --noconfirm i3status-rust-git
 # Corrupter for betterlockscreen
 sudo -u "$name" yay -S --noconfirm corrupter-bin
 sudo -u "$name" yay -S --noconfirm betterlockscreen
@@ -74,10 +70,6 @@ sudo -u "$name" yay -S --noconfirm betterlockscreen
 sudo -u "$name" yay -S --noconfirm spotifyd-bin-full 
 # ncurses Spotify
 sudo -u "$name" yay -S --noconfirm spotify-tui-bin
-# Musnify-mpd
-sudo -u "$name" yay -S --noconfirm musnify-mpd
-# Gotop
-sudo -u "$name" yay -S --noconfirm gotop-bin
 # Brave
 sudo -u "$name" yay -S --noconfirm brave-bin
 # Cursor
