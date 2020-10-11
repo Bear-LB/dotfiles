@@ -117,6 +117,21 @@ chown -R "$name:wheel" "/home/$name"
 chown "$name:wheel" /usr/bin/mpc
 # Avoid blank screen when setting brigtness
 sudo -u $name light -N 1
+# Tap to click
+[ ! -f /etc/X11/xorg.conf.d/40-libinput.conf ] && echo "Section "InputClass"
+        Identifier "libinput touchpad catchall"
+        MatchIsTouchpad "on"
+        MatchDevicePath "/dev/input/event*"
+        Driver "libinput"
+	# Enable left mouse button by tapping
+	Option "Tapping" "on"
+EndSection" > /etc/X11/xorg.conf.d/40-libinput.conf
+# Fix fluidsynth/pulseaudio issue.
+grep -q "OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'" /etc/conf.d/fluidsynth ||
+	echo "OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'" >> /etc/conf.d/fluidsynth
+# Start/restart PulseAudio.
+killall pulseaudio; sudo -u "$name" pulseaudio --start
+
 WHICHINIT=$(stat /proc/1/exe | head -1)
 if [[ $WHICHINIT == *runit* ]]; then 
 		dbus-uuidgen >| /etc/machine-id
