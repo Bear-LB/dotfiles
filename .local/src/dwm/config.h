@@ -9,7 +9,7 @@ static const int corner_radius           = 10;
 static const unsigned int borderpx       = 3;   /* border pixel of windows */
 #endif // ROUNDED_CORNERS_PATCH
 
-static const unsigned int snap           = 0;  /* snap pixel */
+static const unsigned int snap           = 7;  /* snap pixel */
 #if VANITYGAPS_PATCH
 static const unsigned int gappih         = 20;  /* horiz inner gap between windows */
 static const unsigned int gappiv         = 20;  /* vert inner gap between windows */
@@ -81,7 +81,7 @@ static void (*bartabmonfns[])(Monitor *) = { monocle /* , customlayoutfn */ };
 #if BAR_PANGO_PATCH
 static const char font[]                 = "monospace 10";
 #else
-static const char *fonts[]               = { "Caskaydia Cove Nerd Font:size=11:antialias=true:hinting=true", "Joypixels:size=9:antialias=true:hinting=true", };
+static const char *fonts[]               = { "Material Design Icons:size=13:antialias=true:hinting=true", "Caskaydia Cove Nerd Font:size=11:antialias=true:hinting=true", "Joypixels:size=9:antialias=true:hinting=true" };
 #endif // BAR_PANGO_PATCH
 static const char dmenufont[]            = "mono:size=11";
 
@@ -134,18 +134,18 @@ static char urgfloatcolor[]              = "#db8fd9";
 static char normfloatbgcolor[]           = "#83a598";
 static char actfloatbgcolor[]            = "#83a598";
 static char selTTBbgcolor[]              = "#45707a";
-static char selLTRbgcolor[]              = "#945e80";
-static char selCMbgcolor[]              = "#c35e0a";
-static char selCFMbgcolor[]              = "#c65e0a";
-static char selMONObgcolor[]             = "#b47109";
+static char selLTRbgcolor[]              = "#458588";
+static char selCMbgcolor[]               = "#6c782e";
+static char selCFMbgcolor[]              = "#79740e";
+static char selMONObgcolor[]             = "#c14a4a";
 static char selGRIDbgcolor[]             = "#005500";
 static char selGRD1bgcolor[]             = "#005500";
 static char selGRD2bgcolor[]             = "#005500";
 static char selGRDMbgcolor[]             = "#508822";
 static char selHGRDbgcolor[]             = "#b98822";
 static char selDWDLbgcolor[]             = "#4c7a5d";
-static char selSPRLbgcolor[]             = "#6c782e";
-static char selDECKbgcolor[]             = "#c14a4a";
+static char selSPRLbgcolor[]             = "#427b58";
+static char selDECKbgcolor[]             = "#9F758A";
 static char selfloatbgcolor[]            = "#458588";
 #endif // BAR_FLEXWINTITLE_PATCH
 
@@ -475,7 +475,7 @@ static const BarRule barrules[] = {
 	{ 'A',      0,     BAR_ALIGN_RIGHT,  width_status,            draw_status,            click_status,            "status" },
 	#endif // BAR_STATUS2D_PATCH | BAR_STATUSCMD_PATCH
 	#if BAR_LTSYMBOL_PATCH
-	{ -1,       0,     BAR_ALIGN_RIGHT,   width_ltsymbol,          draw_ltsymbol,          click_ltsymbol,          "layout" },
+	{ -1,       0,     BAR_ALIGN_LEFT,   width_ltsymbol,          draw_ltsymbol,          click_ltsymbol,          "layout" },
 	#endif // BAR_LTSYMBOL_PATCH
 
 	#if BAR_FLEXWINTITLE_PATCH
@@ -765,17 +765,17 @@ static const Layout layouts[] = {
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	#if TILE_LAYOUT
-	{ " ",      tile },    /* first entry is default */
+	{ "󰙀",      tile },    /* first entry is default */
 	#endif
 	#if BSTACK_LAYOUT
-	{ " 響",      bstack },
+	{ "󰕪",      bstack },
 	#endif
+	#if FIBONACCI_DWINDLE_LAYOUT
+        { "󰕴",     dwindle },
+        #endif
 	#if FIBONACCI_SPIRAL_LAYOUT
 	{ "(@)",      spiral },
 	#endif
-	#if FIBONACCI_DWINDLE_LAYOUT
-        { "[\\]",     dwindle },
-        #endif
 	#if DECK_LAYOUT
 	{ "[D]",      deck },
 	#endif
