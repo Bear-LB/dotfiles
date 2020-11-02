@@ -94,7 +94,7 @@ chsh -s /usr/bin/zsh root
 chsh -s /usr/bin/zsh "$name"
 sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
 
-mkdir /usr/share/xsessions && mv /home/$name/.local/src/dwm/dwm.desktop /usr/share/xsessions/dwm.desktop
+mkdir /usr/share/xsessions && mv /home/$name/.local/share/extras/dwm.desktop /usr/share/xsessions/dwm.desktop
 cd /home/$name/.local/src/dwm
 sudo make install
 cd /home/$name/.local/src/dwmblocks
