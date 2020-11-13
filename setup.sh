@@ -1,6 +1,6 @@
 #!/bin/sh
 # Refresh Arch keyrings
-pacman -Q artix-keyring >/dev/null 2>&1 && pacman --noconfirm -S archlinux-keyring >/dev/null 2>&1
+pacman -Q artix-keyring >/dev/null 2>&1 && pacman --noconfirm -S artix-keyring >/dev/null 2>&1
 pacman --noconfirm -S archlinux-keyring >/dev/null 2>&1
 pacman --noconfirm -S dialog
 # Get name and pass variables
