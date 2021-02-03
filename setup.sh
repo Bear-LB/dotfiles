@@ -113,7 +113,7 @@ newperms "%wheel ALL=(ALL) ALL #Deploydot
 rmmod pcspkr
 echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 # Permissions
-chown -R "$name:wheel" "/home/$name"
+chown "$name":wheel /home/"$name"
 # Because spotifyd executes command on song pause
 chown "$name:wheel" /usr/bin/mpc
 # Avoid blank screen when setting brigtness
