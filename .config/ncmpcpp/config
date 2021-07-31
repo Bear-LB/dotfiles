@@ -7,24 +7,17 @@ mpd_music_dir = ~/Music
 
 execute_on_song_change="~/.config/ncmpcpp/art.sh & pkill -RTMIN+11 dwmblocks"
 
-
-
-
 playlist_disable_highlight_delay = "3"
 message_delay_time = "1"
 header_visibility = "yes"
 header_window_color = "12"
 statusbar_visibility = "yes"
 statusbar_time_color = "6"
-#song_list_format = "{%a - }{%t}|{$5%f$9}$R{$7(%l)$9}"
-#song_list_format = "$6{%a »$4 %t $/r$/u$R$b$1%l$/b  }|{%f$/r}"
 song_window_title_format = "{%a - }{%t}|{%f}"
 song_columns_list_format = "(32)[green]{a} (33)[red]{f}{f} (30)[blue]{b}(5f) [magenta]{l}"
-#now_playing_prefix = "$b$6 »» "
 now_playing_prefix = "$b$8»$2»$4»$3» "
-#now_playing_suffix = "$b"
 playlist_display_mode = "columns" (classic/columns)
-browser_display_mode = "columns" (classic/columns)
+browser_display_mode = "columns"
 titles_visibility = "no"
 alternative_ui_separator_color = "cyan"
 #progressbar_look = "─╼"
@@ -37,12 +30,8 @@ alternative_ui_separator_color = "cyan"
 #progressbar_look = "─╼ "
 progressbar_look = "=>━"
 user_interface = "alternative" (classic/alternative)
-#alternative_header_first_line_format = $2$b» $7{%f} $2«$/b
-#alternative_header_first_line_format = "{$b$2%a$9} $1|$9 {$5%t$9}"
 alternative_header_first_line_format = $4$b»  $2{%t}|{%f} $0{/%D/} $4«$/b
 alternative_header_second_line_format = $3{%a $4-} $5{%b}$0
-#alternative_header_second_line_format = $5{%b}$0
-#|{/%D/}
 header_text_scrolling = "yes"
 display_remaining_time = "no"
 display_volume_level = "yes"
@@ -50,17 +39,13 @@ ignore_leading_the = "yes"
 empty_tag_marker = ""
 enable_window_title = "yes"
 colors_enabled = "yes"
-header_window_color = "cyan"
 volume_color = "3"
 state_line_color = "blue"
 state_flags_color = "9"
 main_window_color = "cyan"
 color1 = "cyan"
 color2 = "cyan"
-main_window_highlight_color = "cyan"
-#progressbar_color = "red"
 statusbar_color = "cyan"
-active_column_color = "cyan"
 progressbar_color = "9"
 progressbar_elapsed_color = "3"
 discard_colors_if_item_is_selected = "yes"
@@ -78,5 +63,4 @@ startup_slave_screen = playlist
 locked_screen_width_part = 29
 
 active_window_border = "white"
-browser_display_mode = columns
 display_bitrate = "yes"

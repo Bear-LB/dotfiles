@@ -3,7 +3,7 @@
 
 # SETTINGS
 music_library="$HOME/Music"
-fallback_image="$XDG_CONFIG_HOME/ncmpcpp/fallback.png"
+fallback_image="$XDG_CONFIG_HOME/ncmpcpp/fallback.jpg"
 padding_top=5
 padding_bottom=1
 padding_right=1
