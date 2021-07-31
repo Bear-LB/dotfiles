@@ -1,28 +1,23 @@
 //Modify this file to change what commands output to your statusbar, and recompile using the make command.
 static const Block blocks[] = {
 	/*Icon*/	/*Command*/		/*Update Interval*/	/*Update Signal*/
-	/*{"",	"seplayout",	0,	0},*/
-	{"",	"music",	0,	11},
-	/*{"",	"splitter",	0,	0},*/
-	{"",	"bandwidth",	1,	16},
-	{"",	"splitter",	0,	0},
-	{"",	"nm-intinfo",	20,	8},
-	{"",	"nm-laninfo",	20,	8},
-	{"",	"nm-waninfo",	20,	8},
-	{"",	"splitter",	0,	0},
-	/*{"",	"dwmweather",	10000,	0},*/
-	{"",	"cpu",		4,	3},
-	{"",	"splitter",	0,	0},
-	{"",	"ram",		10,	2},
-	{"",	"splitter",	0,	0},
-	/*{"",	"nvidgpu",		4,	9},*/
-	{"",	"volume",	5,	10},
-	{"",	"splitter",	0,	0},
-	{"",	"battery",	5,	4},
-	/*{"",	"corona",	10000,	0},*/
-	{"",	"backlight",	0,	1},
-	{"",	"updates",	10000,	0},
-	{"",	"clock",	60,	0},
+	{"",	"sp-bandwidth",			1,	16},
+	{"",	"sp-splitter",			0,	0},
+	{"",	"sp-nm-intinfo",		20,	8},
+	{"",	"sp-nm-laninfo",		20,	8},
+	{"",	"sp-nm-waninfo",		20,	8},
+	{"",	"sp-splitter",			0,	0},
+	{"",	"sp-cpu",			4,	3},
+	{"",	"sp-splitter",			0,	0},
+	{"",	"sp-ram",			10,	2},
+	{"",	"sp-music",			0,	11},
+	{"",	"sp-volume",			5,	10},
+	{"",	"sp-splitter",			0,	0},
+	{"",	"sp-backlight",			0,	1},
+	{"",	"sp-battery",			5,	4},
+	{"",	"sb-mailbox",			180,	12},
+	{"",	"sp-updates",			10000,	0},
+	{"",	"sp-clock",			60,	0},
 };
 
 //sets delimeter between status commands. NULL character ('\0') means no delimeter.
