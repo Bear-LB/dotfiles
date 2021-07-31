@@ -17,4 +17,4 @@ elif [ "$value" -lt "10" ]; then
 else
 	icon="🌗"
 fi
-echo "$icon^c#fabd2f^$value ^c#fe8019^^d^ "
+echo "$icon^c#fabd2f^$value ^c#fe8019^^d^ "

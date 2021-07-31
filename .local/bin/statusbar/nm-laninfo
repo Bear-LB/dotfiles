@@ -1,9 +1,0 @@
-#!/bin/sh
-case $BLOCK_BUTTON in
-	1) setsid "$TERMINAL" -e nmtui & ;;
-	3) notify-send "🌐 Internet module" "\- Click to connect" ;;
-	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
-esac
-[ -s ~/.cache/conname ] || exit 0
-PRIVATE=$(nmcli -a | grep 'inet4' | awk '{print $2}')
-echo -e "($PRIVATE"

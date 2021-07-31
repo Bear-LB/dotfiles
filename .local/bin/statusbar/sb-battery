@@ -21,6 +21,6 @@ do
 	 [ "$capacity" -le 26 ] && [ "$capacity" -gt 5 ] && [ "$status" = "🔋" ] && status="  " && color="^c#fb4934^❗"
 	 [ "$capacity" -le 6 ] && [ "$status" = "🔋" ] && status="  " && color="^c#cc241d^❗❗❗"
 
-	echo "$color$status$capacity% ^c#fe8019^^d^ "
+	echo "$color$status$capacity% ^c#fe8019^^d^ "
 	unset warn
 done
