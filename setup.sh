@@ -73,8 +73,6 @@ sudo -u "$name" yay -S --noconfirm spotifyd-bin-full
 sudo -u "$name" yay -S --noconfirm spotify-tui-bin
 # Brave
 sudo -u "$name" yay -S --noconfirm brave-bin
-# Cursor
-sudo -u "$name" yay -S --noconfirm posy-cursors
 # Fonts
 sudo -u "$name" yay -S --noconfirm nerd-fonts-hack
 sudo -u "$name" yay -S --noconfirm ttf-iosevka
@@ -104,8 +102,12 @@ sudo make install
 cd /home/$name/.local/src/dmenu
 sudo make install
 
-# Music cover for ncmpcpp
-cp /home/$name/Music/cover.png /tmp/
+mkdir /home/"$name"/.icons
+cd /tmp
+git clone https://github.com/sainnhe/gruvbox-material-gtk
+cp -r gruvbox-materials-gtk/icons/Gruvbox-Material-Dark /home/"$name"/.icons
+rm /tmp/gruvbox-material-gtk
+
 # serveral important commands, `shutdown`, `reboot`, updating, etc. without a password.
 newperms "%wheel ALL=(ALL) ALL #Deploydot
 %wheel ALL=(ALL) NOPASSWD: /usr/bin/shutdown,/usr/bin/reboot,/usr/bin/poweroff,/usr/bin/halt,/usr/bin/systemctl suspend,/usr/bin/wifi-menu,/usr/bin/mount,/usr/bin/umount,/usr/bin/pacman -Sy,/usr/bin/pacman -Syy,/usr/bin/pacman -Syu,/usr/bin/pacman -Syyu,/usr/bin/packer -Syu,/usr/bin/packer -Syyu,/usr/bin/systemctl restart NetworkManager,/usr/bin/rc-service NetworkManager restart,/usr/bin/pacman -Syyu --noconfirm,/usr/bin/loadkeys,/usr/bin/yay,/usr/bin/pacman -Syyuw --noconfirm"
