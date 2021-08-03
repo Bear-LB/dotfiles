@@ -1,6 +1,6 @@
 #!/bin/sh
 # Refresh Arch keyrings
-pacman -Q artix-keyring >/dev/null 2>&1 && pacman --noconfirm -S artix-keyring >/dev/null 2>&1
+pacman -Q artix-keyring >/dev/null 2>&1 && pacman --noconfirm -S artix-keyring artix-archlinux-support >/dev/null 2>&1
 pacman --noconfirm -S archlinux-keyring >/dev/null 2>&1
 pacman --noconfirm -S dialog
 # Get name and pass variables
@@ -48,7 +48,7 @@ pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xdpyi
 # Bloat Software
 pacman --noconfirm -S neofetch xarchiver vifm rofi ncmpcpp mpc zathura zathura-pdf-mupdf zathura-djvu poppler || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 2
-pacman --noconfirm -S newsboat picom tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S newsboat xcompmgr tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 3
 pacman --noconfirm -S mpv gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 4
