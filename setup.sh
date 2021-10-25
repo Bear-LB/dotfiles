@@ -1,8 +1,20 @@
 #!/bin/sh
-# Refresh Arch keyrings
-pacman -Q artix-keyring >/dev/null 2>&1 && pacman --noconfirm -S artix-keyring artix-archlinux-support >/dev/null 2>&1
-pacman --noconfirm -S archlinux-keyring >/dev/null 2>&1
+# Refresh Arch keyrings and install dialog
 pacman --noconfirm -S dialog
+case "$(readlink -f /sbin/init)" in
+	*systemd* )
+		pacman --noconfirm -S archlinux-keyring >/dev/null 2>&1
+			;;
+		*)
+		pacman --noconfirm --needed -S artix-keyring artix-archlinux-support >/dev/null 2>&1
+		for repo in extra community; do
+			grep -q "^\[$repo\]" /etc/pacman.conf ||
+				echo "[$repo]
+Include = /etc/pacman.d/mirrorlist-arch" >> /etc/pacman.conf
+		done
+		pacman-key --populate archlinux
+			;;
+esac ;}
 # Get name and pass variables
 getuserandpass() { \
 	name=$(dialog --inputbox "First, please enter a name for the user account." 10 60 3>&1 1>&2 2>&3 3>&1) || exit
@@ -34,8 +46,8 @@ usermod -a -G wheel,video,audio "$name"
 # Use all cores for compile
 sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
 # Make pacman and yay nice-looking 
-grep "^Color" /etc/pacman.conf >/dev/null || sed -i "s/^#Color/Color/" /etc/pacman.conf
-grep "ILoveCandy" /etc/pacman.conf >/dev/null || sed -i "/#VerbosePkgLists/a ILoveCandy" /etc/pacman.conf
+grep -q "ILoveCandy" /etc/pacman.conf || sed -i "/#VerbosePkgLists/a ILoveCandy" /etc/pacman.conf
+sed -i "s/^#ParallelDownloads = 8$/ParallelDownloads = 5/;s/^#Color$/Color/" /etc/pacman.conf
 # Install Yay and Git
 pacman --noconfirm -S git
 cd /tmp
@@ -64,13 +76,6 @@ pacman --noconfirm -S pulseaudio pulseaudio-alsa pulsemixer pamixer
 # Ueberzug and Preview
 sudo -u "$name" yay -S --noconfirm python-ueberzug
 sudo -u "$name" yay -S --noconfirm fontpreview-git
-# Corrupter for betterlockscreen
-sudo -u "$name" yay -S --noconfirm corrupter-bin
-sudo -u "$name" yay -S --noconfirm betterlockscreen
-# Spotify daemon
-sudo -u "$name" yay -S --noconfirm spotifyd-bin-full 
-# ncurses Spotify
-sudo -u "$name" yay -S --noconfirm spotify-tui-bin
 # Brave
 sudo -u "$name" yay -S --noconfirm brave-bin
 # Fonts
@@ -116,8 +121,6 @@ rmmod pcspkr
 echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 # Permissions
 chown "$name":wheel /home/"$name"
-# Because spotifyd executes command on song pause
-chown "$name:wheel" /usr/bin/mpc
 # Avoid blank screen when setting brigtness
 sudo -u $name light -N 1
 # Tap to click
