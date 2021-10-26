@@ -68,7 +68,7 @@ pacman --noconfirm -S sxiv lxappearance qt5ct scrot nitrogen xorg-font-util bmon
 # Bloat Software 5
 pacman --noconfirm -S streamlink zsh zsh-theme-powerlevel10k zsh-history-substring-search broot pacman-contrib || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 6
-pacman --noconfirm -S unclutter inotify-tools pcmanfm-gtk3 xclip alsa-utils || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S unclutter inotify-tools pcmanfm-gtk3 xclip alsa-utils rsync || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Systemd software
 pacman --noconfirm -S mpd || sudo -u "$name" yay -S --noconfirm mpd-light
 # Pulseaudio
