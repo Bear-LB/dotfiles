@@ -14,7 +14,7 @@ Include = /etc/pacman.d/mirrorlist-arch" >> /etc/pacman.conf
 		done
 		pacman-key --populate archlinux
 			;;
-esac ;}
+esac
 # Get name and pass variables
 getuserandpass() { \
 	name=$(dialog --inputbox "First, please enter a name for the user account." 10 60 3>&1 1>&2 2>&3 3>&1) || exit
@@ -45,7 +45,7 @@ unset pass1 pass2
 usermod -a -G wheel,video,audio "$name"
 # Use all cores for compile
 sed -i "s/-j2/-j$(nproc)/;s/^#MAKEFLAGS/MAKEFLAGS/" /etc/makepkg.conf
-# Make pacman and yay nice-looking 
+# Make pacman and yay nice-looking
 grep -q "ILoveCandy" /etc/pacman.conf || sed -i "/#VerbosePkgLists/a ILoveCandy" /etc/pacman.conf
 sed -i "s/^#ParallelDownloads = 8$/ParallelDownloads = 5/;s/^#Color$/Color/" /etc/pacman.conf
 # Install Yay and Git
@@ -62,15 +62,13 @@ pacman --noconfirm -S neofetch xarchiver vifm highlight rofi ncmpcpp mpc zathura
 # Bloat Software 2
 pacman --noconfirm -S newsboat xcompmgr tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 3
-pacman --noconfirm -S mpv gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S mpv mpd gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 4
 pacman --noconfirm -S sxiv lxappearance qt5ct scrot nitrogen xorg-font-util bmon || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 5
 pacman --noconfirm -S streamlink zsh zsh-theme-powerlevel10k zsh-history-substring-search broot pacman-contrib || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 6
 pacman --noconfirm -S unclutter inotify-tools pcmanfm-gtk3 xclip alsa-utils rsync || { echo 'failed at installing packages from official repo' ; exit 1; }
-# Systemd software
-pacman --noconfirm -S mpd || sudo -u "$name" yay -S --noconfirm mpd-light
 # Pulseaudio
 pacman --noconfirm -S pulseaudio pulseaudio-alsa pulsemixer pamixer
 # Ueberzug and Preview
@@ -98,6 +96,7 @@ chsh -s /usr/bin/zsh "$name"
 sudo -u "$name" mkdir -p "/home/$name/.cache/zsh/"
 
 mkdir /usr/share/xsessions && mv /home/$name/.local/share/extras/dwm.desktop /usr/share/xsessions/dwm.desktop
+mv /home/$name/.local/share/extras/siji.ttf /usr/share/fonts/TTF/
 cd /home/$name/.local/src/dwm
 sudo make install
 cd /home/$name/.local/src/dwmblocks
@@ -120,7 +119,7 @@ newperms "%wheel ALL=(ALL) ALL #Deploydot
 rmmod pcspkr
 echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 # Permissions
-chown "$name":wheel /home/"$name"
+chown -R "$name":wheel /home/"$name"
 # Avoid blank screen when setting brigtness
 sudo -u $name light -N 1
 # Tap to click
@@ -139,7 +138,7 @@ grep -q "OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'" /etc/conf.d/fluidsynth
 killall pulseaudio; sudo -u "$name" pulseaudio --start
 
 WHICHINIT=$(stat /proc/1/exe | head -1)
-if [[ $WHICHINIT == *runit* ]]; then 
+if [[ $WHICHINIT == *runit* ]]; then
 		dbus-uuidgen >| /etc/machine-id
 		rm /run/runit/service/agetty-tty3 /run/runit/service/agetty-tty4 /run/runit/service/agetty-tty5 /run/runit/service/agetty-tty6
 	if [ $VMWAREGUEST = yes ]; then
@@ -156,7 +155,7 @@ EOF
 		pacman -S --noconfirm lightdm lightdm-gtk-greeter lightdm-runit
 	fi
 fi
-if [[ $WHICHINIT == *systemd* ]]; then 
+if [[ $WHICHINIT == *systemd* ]]; then
 	if [ $VMWAREGUEST = yes ]; then
 		pacman --noconfirm -S open-vm-tools xf86-video-vmware
 		systemctl enable vmtoolsd && systemctl start vmtoolsd
@@ -176,5 +175,3 @@ fi
 git clone https://github.com/zdharma/fast-syntax-highlighting /usr/share/zsh/plugins/fsh
 [[ $WHICHINIT == *runit* ]] && ln -sf /etc/runit/sv/lightdm /run/runit/service
 [[ $WHICHINIT == *systemd* ]] && systemctl start lightdm
-
-	
