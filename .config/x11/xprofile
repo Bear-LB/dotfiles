@@ -1,13 +1,15 @@
 #!/bin/sh
-
-setxkbmap dk &
-unclutter &
+xrandr --dpi 96
 xset r rate 300 50 &
-xcompmgr &
-dunst &
+setxkbmap dk &
 nitrogen --set-zoom-fill --random ~/Pictures/Wallpapers &
 (sleep 2s; sudo pacman -Syy) &
 
-pidof -s runit &&
-	! pidof -s pulseaudio >/dev/null 2>&1 &&
-	setsid -f pulseaudio --start --exit-idle-time=-1 >/dev/null 2>&1
+autostart="mpd xcompmgr dunst unclutter pipewire"
+
+for program in $autostart; do
+	pidof -s "$program" || setsid -f "$program"
+done >/dev/null 2>&1
+
+# Ensure that xrdb has finished running before moving on to start the WM/DE.
+[ -n "$xrdbpid" ] && wait "$xrdbpid"
