@@ -60,7 +60,7 @@ pacman --noconfirm -S xorg-server xorg-xwininfo xorg-xinit xorg-xprop xorg-xdpyi
 # Bloat Software
 pacman --noconfirm -S neofetch xarchiver vifm highlight rofi ncmpcpp mpc zathura zathura-pdf-mupdf zathura-djvu poppler || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 2
-pacman --noconfirm -S newsboat xcompmgr tmux htop ed arandr ffmpeg atool mediainfo youtube-dl unrar unzip socat || { echo 'failed at installing packages from official repo' ; exit 1; }
+pacman --noconfirm -S newsboat xcompmgr tmux htop ed arandr ffmpeg atool mediainfo yt-dlp unrar unzip socat || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 3
 pacman --noconfirm -S mpv mpd gnome-keyring exfat-utils dosfstools ntfs-3g libnotify dunst bc ffmpegthumbnailer || { echo 'failed at installing packages from official repo' ; exit 1; }
 # Bloat Software 4
