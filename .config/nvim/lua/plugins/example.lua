@@ -41,6 +41,18 @@ return {
     'rebelot/kanagawa.nvim',
   },
 
+  {
+    "folke/tokyonight.nvim",
+    opts = {
+      transparent = true,
+      style = moon,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      }
+    }
+  },
+
   -- load last colorscheme 
   {
     "https://github.com/raddari/last-color.nvim",
@@ -68,16 +80,17 @@ return {
 
   -- disable trouble
   --{ "folke/trouble.nvim", enabled = false },
-
-  -- override nvim-cmp and add cmp-emoji
   {
-    "hrsh7th/nvim-cmp",
-    dependencies = { "hrsh7th/cmp-emoji" },
-    ---@param opts cmp.ConfigSchema
-    opts = function(_, opts)
-      table.insert(opts.sources, { name = "emoji" })
-    end,
+    "saghen/blink.cmp",
+    ---@class PluginLspOpts
+    opts = {
+      signature = { enabled = true },
+      keymap = {
+        preset = "super-tab",
+      }
+    }
   },
+
 
   -- change some telescope options and a keymap to browse plugin files
   {
@@ -111,7 +124,6 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
-        xml = {},
         lemminx = {},
       },
     },
