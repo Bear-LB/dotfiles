@@ -1,9 +1,10 @@
 # vim: expandtab tabstop=3 syntax=sh foldmethod=marker foldmarker={{,}}
 # uses zsh for shell scripting
 # Basic Settings {{
+#set shell fish
 set preview true
 set hidden true
-#set shell /usr/bin/sh
+#set shell /usr/bin/fish
 #set drawbox true
 set scrolloff 3
 set incsearch true
@@ -217,7 +218,7 @@ cmd fzf_grep ${{
 		 --bind "start:reload:$RG_PREFIX {q}" \
 		 --bind "change:reload:sleep 0.1; $RG_PREFIX {q} || true" \
 		 --delimiter : \
-		 --preview 'bat --color=always {1} --highlight-line {2}' \
+		 --preview 'batcat --color=always {1} --highlight-line {2}' \
 		 --preview-window 'up,60%,border-bottom,+{2}+3/3,~3' \
 		 --bind "enter:become($EDITOR {1} +{2})"
 }}
@@ -232,7 +233,7 @@ cmd grep_pdf ${{
 		for f in $files ; do
 			pdftotext "$f" - 2>/dev/null | rg --smart-case --color=always "$keyword" && printf '\x1b[33;1m  %s\x1b[0m\n' "$f" || true
 		done
-	} | bat --paging=always
+	} | batcat --paging=always
 }}
 
 cmd z_cd %{{
@@ -387,7 +388,8 @@ map tr restore_trash
 
 # Search Mappings. {{
 map ff fzf_jump
-map f/ fzf_grep
+map fg fzf_grep
+map f- fzf_grep
 map fp grep_pdf "pdf"
 map F filter
 #map ss stripspace

@@ -31,7 +31,7 @@ image/x-xcf)
    [ ! -f "$CACHE.jpg" ] && magick "$1[0]" "$CACHE.jpg"
    image "$CACHE.jpg" "$2" "$3" "$4" "$5" "$1"
    ;;
-image/*) chafa -f sixel -s "$2x$3" --animate off --polite on "$1" ;;
+image/*) chafa -f kitty -s "$2x$3" --animate off --polite on "$1" ;;
 text/html) lynx -width="$4" -display_charset=utf-8 -dump "$1" ;;
 text/troff) man ./ "$1" | col -b ;;
 text/* | */xml | application/json | application/x-ndjson) batcat -p --theme ansi --terminal-width "$(($4 - 2))" -f "$1" ;;
