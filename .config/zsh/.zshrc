@@ -78,7 +78,7 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 # Powerlevel10k
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source $ZDOTDIR/powerlevel10k/powerlevel10k.zsh-theme
 
 POWERLEVEL9K_DIR_BACKGROUND='237'
 POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="clear"
@@ -101,7 +101,7 @@ POWERLEVEL9K_GO_VERSION_FOREGROUND='081'
 
 POWERLEVEL9K_ROOT_INDICATOR_BACKGROUND='clear'
 
-POWERLEVEL9K_HOME_ICON="\ufb26"
+#POWERLEVEL9K_HOME_ICON="\ufb26"
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status root_indicator dir dir_writable_joined custom_git_pair vcs_joined)
 POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=''
@@ -150,5 +150,5 @@ POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='clear'
 POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='010'
 
 # Load syntax highlighting; should be last.
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-source /usr/share/zsh/plugins/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+source $ZDOTDIR/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $ZDOTDIR/zsh/plugins/fsh/fast-syntax-highlighting.plugin.zsh 2>/dev/null
