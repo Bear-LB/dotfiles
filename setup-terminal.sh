@@ -44,6 +44,7 @@ cd /tmp/neovim/
 git checkout stable
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 make install
+rm /usr/share/nvim/runtime/colors/*
 
 ln -sfv /home/"$USER"/GIT/dotfiles/.config/lf /home/"$USER"/.config/
 ln -sfv /home/"$USER"/GIT/dotfiles/.config/nvim /home/"$USER"/.config/
