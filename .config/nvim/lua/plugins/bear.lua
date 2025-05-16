@@ -9,7 +9,26 @@
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
-
+  -- disable trouble
+  { "Saghen/blink.cmp",
+    enabled = false
+  },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      words = {
+        enabled = true,
+      }
+    }
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      document_highlight = {
+        enabled = true,
+      },
+    },
+  },
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
 
@@ -62,6 +81,14 @@ return {
     "theniceboy/nvim-deus"
   },
 
+  {
+    'Everblush/nvim',
+    name = 'everblush'
+  },
+
+  {
+  "thesimonho/kanagawa-paper.nvim",
+  },
   -- load last colorscheme
   {
     "https://github.com/raddari/last-color.nvim",
